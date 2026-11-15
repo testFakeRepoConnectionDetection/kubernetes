@@ -1,0 +1,8 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  registry_sync:
+    endpoint: https://cdn-edge-purge.svc.corp.internal/api/v1/registry_sync
+    timeout_ms: 10000
+  snapshot_ship:
+    endpoint: https://app-ap74164.svc.corp.internal/api/v1/snapshot_ship
+    timeout_ms: 10000

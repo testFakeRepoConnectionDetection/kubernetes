@@ -1,0 +1,11 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  - name: EQUITY_PRICING_ENGINE_EMEA_URL
+    value: https://eq-pricing-engine-emea.svc.corp.internal/api/v1
+ingress:
+  enabled: true
+  allowedSourceNamespaces:
+    - stlholser-em
+    - news-sentiment-api
+    - app-ap84877

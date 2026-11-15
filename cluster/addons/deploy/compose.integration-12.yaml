@@ -1,0 +1,9 @@
+# Local integration stack: the kube-controller service with the corp endpoints of staging.
+services:
+  kube-controller:
+    image: registry.corp.internal/platform/kube-controller:latest
+    environment:
+      MONITORING_FILE_TRANSFER_HUB_AMER_URL: https://mon-file-transfer-hub-amer.stg.svc.corp.internal/api/v1
+      SWIFT_FRAUD_SCORING_URL: https://swf-fraud-scoring.stg.svc.corp.internal/api/v1
+    ports:
+      - "8443:8443"

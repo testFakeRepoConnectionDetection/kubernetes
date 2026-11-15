@@ -1,0 +1,10 @@
+# Local integration stack: the kube-controller service with the corp endpoints of staging.
+services:
+  kube-controller:
+    image: registry.corp.internal/platform/kube-controller:latest
+    environment:
+      # Liquidity Risk Collateral Engine
+      EXT_GW_572_URL: https://ext-gw-572.stg.svc.corp.internal/api/v1
+      COMMODITIES_BOOKING_SERVICE_APAC_URL: https://cm-booking-service-apac.stg.svc.corp.internal/api/v1
+    ports:
+      - "8443:8443"

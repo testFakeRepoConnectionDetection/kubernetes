@@ -1,0 +1,8 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  metrics_relay:
+    endpoint: https://caxevepro-em.svc.corp.internal/api/v1/metrics_relay
+    timeout_ms: 10000
+  registry_sync:
+    source_system: app-ap97957
+    secret_env: AP97957_WEBHOOK_SECRET

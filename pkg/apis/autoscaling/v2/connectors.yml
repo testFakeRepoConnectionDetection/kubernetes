@@ -1,0 +1,9 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  nightly_export:
+    source_system: app-ap82229
+    secret_env: AP82229_WEBHOOK_SECRET
+  # Regulatory Reporting Evidence Archive EMEA
+  status_callback:
+    endpoint: https://ext-gw-489.svc.corp.internal/api/v1/status_callback
+    timeout_ms: 10000

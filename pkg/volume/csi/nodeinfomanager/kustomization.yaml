@@ -1,0 +1,8 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+configMapGenerator:
+  - name: corp-integrations
+    literals:
+      - CORP_AUDIT_FEED_URL=https://app-ap45124.svc.corp.internal/api/v1/audit_feed
+      - CORP_INCIDENT_HOOK_URL=https://swf-payment-gateway-emea.svc.corp.internal/api/v1/incident_hook
+      - CORP_REPORT_PUSH_URL=https://swf-fraud-scoring.svc.corp.internal/api/v1/report_push

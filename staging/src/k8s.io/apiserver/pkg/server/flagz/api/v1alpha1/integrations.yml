@@ -1,0 +1,9 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  registry_sync:
+    endpoint: https://tsvtramon-em.svc.corp.internal/api/v1/registry_sync
+    timeout_ms: 10000
+  # Deposits Document Store EMEA
+  status_callback:
+    endpoint: https://ext-gw-979.svc.corp.internal/api/v1/status_callback
+    timeout_ms: 10000
