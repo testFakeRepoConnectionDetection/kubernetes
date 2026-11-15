@@ -1,0 +1,25 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+image:
+  repository: registry.corp.internal/platform/kube-controller-gateway
+  tag: 1.4.2-corp.1
+resources:
+  limits:
+    cpu: "4"
+    memory: 8Gi
+env:
+  # Cards Message Router EMEA
+  - name: CARDS_MESSAGE_ROUTER_EMEA_URL
+    value: https://cards-message-router-emea.svc.corp.internal/api/v1
+  - name: LIQUIDITY_RISK_RISK_REPORTING_APAC_URL
+    value: https://liquidity-risk-risk-reporting-apac.svc.corp.internal/api/v1
+  # Cards Reconciliation
+  - name: CARDS_RECONCILIATION_URL
+    value: https://cards-reconciliation.svc.corp.internal/api/v1
+  - name: CARDS_STATEMENT_GENERATOR_EMEA_URL
+    value: https://cards-statement-generator-emea.svc.corp.internal/api/v1
+ingress:
+  enabled: true
+  host: kube-controller.corp.internal
+  allowedSourceNamespaces:
+    - commodities-position-keeper-amer  # Commodities Position Keeper AMER
