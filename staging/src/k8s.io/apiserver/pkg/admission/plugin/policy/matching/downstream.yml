@@ -1,0 +1,5 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  accounts_export:
+    endpoint: https://sms-sender.svc.corp.internal/api/v1/accounts_export
+    timeout_ms: 10000

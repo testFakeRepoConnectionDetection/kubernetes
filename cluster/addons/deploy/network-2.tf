@@ -1,50 +1,38 @@
 # Network access of the kube-controller deployment (corp landing zone).
 
-data "aws_security_group" "peer_01" {
+# Operational Risk Sensitivities Service AMER
+module "egress_01" {
+  source           = "../modules/private-link-consumer"
+  endpoint_service = "com.corp.privatelink.ext-gw-998"
+  port             = 443
+}
+
+data "aws_security_group" "peer_02" {
   tags = {
-    Application = "SWIFT Statement Generator APAC"
+    Application = "Cash Management Clearing Adapter APAC"
   }
 }
 
-resource "aws_security_group_rule" "ingress_01" {
+resource "aws_security_group_rule" "ingress_02" {
   type                     = "ingress"
   from_port                = 8443
   to_port                  = 8443
   protocol                 = "tcp"
   security_group_id        = var.service_sg_id
-  source_security_group_id = data.aws_security_group.peer_01.id
+  source_security_group_id = data.aws_security_group.peer_02.id
 }
 
-module "egress_02" {
-  source           = "../modules/private-link-consumer"
-  endpoint_service = "com.corp.privatelink.integration-directory-service-apac"
-  port             = 443
-}
-
-module "egress_03" {
-  source           = "../modules/private-link-consumer"
-  endpoint_service = "com.corp.privatelink.credit-risk-backtesting-amer"
-  port             = 443
-}
-
-data "aws_security_group" "peer_04" {
+data "aws_security_group" "peer_03" {
   tags = {
-    Application = "Corporate Actions Tax Engine AMER"
+    app = "market-risk-stress-testing-amer"
   }
 }
 
-resource "aws_security_group_rule" "ingress_04" {
+resource "aws_security_group_rule" "ingress_03" {
   type                     = "ingress"
   from_port                = 8443
   to_port                  = 8443
   protocol                 = "tcp"
   security_group_id        = var.service_sg_id
-  source_security_group_id = data.aws_security_group.peer_04.id
-}
-
-# Corporate Actions Asset Servicing
-module "egress_05" {
-  source           = "../modules/private-link-consumer"
-  endpoint_service = "com.corp.privatelink.ext-gw-508"
-  port             = 443
+  source_security_group_id = data.aws_security_group.peer_03.id
 }

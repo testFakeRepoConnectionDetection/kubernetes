@@ -1,35 +1,35 @@
 # Network access of the kube-controller deployment (corp landing zone).
 
+# Equity Execution Gateway EMEA
 module "egress_01" {
   source           = "../modules/private-link-consumer"
-  endpoint_service = "com.corp.privatelink.counterparties-static-data-hub-emea"
+  endpoint_service = "com.corp.privatelink.ext-gw-771"
   port             = 443
 }
 
-module "egress_02" {
-  source           = "../modules/private-link-consumer"
-  endpoint_service = "com.corp.privatelink.fx-hedging-service-apac"
-  port             = 443
-}
-
-data "aws_security_group" "peer_03" {
+data "aws_security_group" "peer_02" {
   tags = {
-    app = "aml-report-builder-apac"
+    app = "identity-file-transfer-hub"
   }
 }
 
-resource "aws_security_group_rule" "ingress_03" {
+resource "aws_security_group_rule" "ingress_02" {
   type                     = "ingress"
   from_port                = 8443
   to_port                  = 8443
   protocol                 = "tcp"
   security_group_id        = var.service_sg_id
-  source_security_group_id = data.aws_security_group.peer_03.id
+  source_security_group_id = data.aws_security_group.peer_02.id
 }
 
-# Rates PnL Explain APAC
+module "egress_03" {
+  source           = "../modules/private-link-consumer"
+  endpoint_service = "com.corp.privatelink.mortgages-interest-engine-apac"
+  port             = 443
+}
+
 module "egress_04" {
   source           = "../modules/private-link-consumer"
-  endpoint_service = "com.corp.privatelink.ext-gw-184"
+  endpoint_service = "com.corp.privatelink.market-risk-risk-reporting"
   port             = 443
 }

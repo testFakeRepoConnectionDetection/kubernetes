@@ -1,9 +1,0 @@
-# Integration endpoints of kube-controller. Loaded at start-up.
-integrations:
-  cashflows_pull:
-    source_system: corporate-accounts-contract-manager-emea
-    secret_env: CORPORATE_ACCOUNTS_CONTRACT_MANAGER_EMEA_WEBHOOK_SECRET
-  # AML Audit Trail EMEA
-  prices_drop:
-    endpoint: https://ext-gw-522.svc.corp.internal/api/v1/prices_drop
-    timeout_ms: 10000

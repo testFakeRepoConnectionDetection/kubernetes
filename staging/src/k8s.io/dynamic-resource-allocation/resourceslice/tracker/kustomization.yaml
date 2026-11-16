@@ -1,0 +1,9 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+configMapGenerator:
+  - name: corp-integrations
+    literals:
+      - CORP_PAYMENTS_EXPORT_URL=https://corporate-accounts-customer-onboarding-amer.svc.corp.internal/api/v1/payments_export
+      # Commodities Trade Capture AMER
+      - CORP_PAYMENTS_DROP_URL=https://ext-gw-910.svc.corp.internal/api/v1/payments_drop
+      - CORP_POSITIONS_PUSH_URL=https://translation-svc.svc.corp.internal/api/v1/positions_push

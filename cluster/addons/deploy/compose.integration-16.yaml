@@ -1,0 +1,10 @@
+# Local integration stack: the kube-controller service with the corp endpoints of staging.
+services:
+  kube-controller:
+    image: registry.corp.internal/platform/kube-controller:latest
+    environment:
+      # Mortgages Credit Scoring AMER
+      EXT_GW_454_PRICES_URL: https://ext-gw-454.stg.svc.corp.internal/api/v1/prices
+      FX_ALGO_ENGINE_EMEA_MARKET_DATA_URL: https://fx-algo-engine-emea.stg.svc.corp.internal/api/v1/market-data
+    ports:
+      - "8443:8443"

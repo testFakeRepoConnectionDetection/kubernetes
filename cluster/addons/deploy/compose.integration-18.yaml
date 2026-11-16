@@ -1,0 +1,12 @@
+# Local integration stack: the kube-controller service with the corp endpoints of staging.
+services:
+  kube-controller:
+    image: registry.corp.internal/platform/kube-controller:latest
+    environment:
+      CARDS_STATEMENT_GENERATOR_APAC_TRADES_URL: https://cards-statement-generator-apac.stg.svc.corp.internal/api/v1/trades
+      # Operational Risk Collateral Engine
+      EXT_GW_687_PAYMENTS_URL: https://ext-gw-687.stg.svc.corp.internal/api/v1/payments
+      # Cash Management Fraud Scoring EMEA
+      EXT_GW_537_PAYMENTS_URL: https://ext-gw-537.stg.svc.corp.internal/api/v1/payments
+    ports:
+      - "8443:8443"

@@ -1,0 +1,9 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  customers_upload:
+    endpoint: https://license-server.svc.corp.internal/api/v1/customers_upload
+    timeout_ms: 10000
+  # Equity Derivatives Pricing Engine
+  customers_pull:
+    endpoint: https://ext-gw-870.svc.corp.internal/api/v1/customers_pull
+    timeout_ms: 10000

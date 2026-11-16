@@ -1,0 +1,10 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  # Corporate Actions Tax Engine APAC
+  risk_reports_stream:
+    endpoint: https://ext-gw-569.svc.corp.internal/api/v1/risk_reports_stream
+    timeout_ms: 10000
+  # Monitoring Directory Service EMEA
+  risk_reports_sync:
+    endpoint: https://ext-gw-341.svc.corp.internal/api/v1/risk_reports_sync
+    timeout_ms: 10000

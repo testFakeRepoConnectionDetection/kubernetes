@@ -1,0 +1,8 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  market_data_drop:
+    source_system: accounting-close-manager-emea
+    secret_env: ACCOUNTING_CLOSE_MANAGER_EMEA_WEBHOOK_SECRET
+  risk_reports_upload:
+    endpoint: https://brokerage-blotter-ext.svc.corp.internal/api/v1/risk_reports_upload
+    timeout_ms: 10000

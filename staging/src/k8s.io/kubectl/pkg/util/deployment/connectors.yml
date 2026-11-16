@@ -1,0 +1,12 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  # Equity Derivatives Trade Capture APAC
+  ledger_entries_sync:
+    endpoint: https://ext-gw-415.svc.corp.internal/api/v1/ledger_entries_sync
+    timeout_ms: 10000
+  cashflows_stream:
+    source_system: cost-allocation-funding-planner
+    secret_env: COST_ALLOCATION_FUNDING_PLANNER_WEBHOOK_SECRET
+  trades_push:
+    endpoint: https://counterparty-risk-var-engine-apac.svc.corp.internal/api/v1/trades_push
+    timeout_ms: 10000

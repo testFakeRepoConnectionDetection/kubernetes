@@ -1,0 +1,14 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  - name: KYC_CASE_MANAGER_APAC_TRADES_URL
+    value: https://kyc-case-manager-apac.svc.corp.internal/api/v1/trades
+  # Data Platform Directory Service EMEA
+  - name: EXT_GW_274_RISK_REPORTS_URL
+    value: https://ext-gw-274.svc.corp.internal/api/v1/risk-reports
+  - name: AML_SCREENING_ENGINE_APAC_CASHFLOWS_URL
+    value: https://aml-screening-engine-apac.svc.corp.internal/api/v1/cashflows
+ingress:
+  enabled: true
+  allowedSourceNamespaces:
+    - corporate-actions-instruction-manager-apac

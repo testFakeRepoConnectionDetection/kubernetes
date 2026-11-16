@@ -1,9 +1,0 @@
-apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
-configMapGenerator:
-  - name: corp-integrations
-    literals:
-      - CORP_CASHFLOWS_PUSH_URL=https://liquidity-risk-scenario-store-apac.svc.corp.internal/api/v1/cashflows_push
-      # Integration Event Bus AMER
-      - CORP_MARKET_DATA_SYNC_URL=https://ext-gw-461.svc.corp.internal/api/v1/market_data_sync
-      - CORP_TRADES_FEED_URL=https://counterparty-risk-var-engine-apac.svc.corp.internal/api/v1/trades_feed

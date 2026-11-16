@@ -1,0 +1,14 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  # Cards Message Router AMER
+  - name: EXT_GW_335_PRICES_URL
+    value: https://ext-gw-335.svc.corp.internal/api/v1/prices
+  - name: SEPA_STATEMENT_GENERATOR_TRADES_URL
+    value: https://sepa-statement-generator.svc.corp.internal/api/v1/trades
+ingress:
+  enabled: true
+  allowedSourceNamespaces:
+    - ext-gw-592  # Deposits Document Store
+    - ext-gw-151  # Credit Risk Backtesting AMER
+    - market-risk-stress-testing-amer

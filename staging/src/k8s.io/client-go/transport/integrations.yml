@@ -1,0 +1,12 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  # Corporate Accounts Interest Engine EMEA
+  prices_feed:
+    source_system: ext-gw-372
+    secret_env: EXT_GW_372_WEBHOOK_SECRET
+  positions_upload:
+    endpoint: https://counterparty-risk-risk-reporting-emea.svc.corp.internal/api/v1/positions_upload
+    timeout_ms: 10000
+  risk_reports_drop:
+    endpoint: https://integration-directory-service.svc.corp.internal/api/v1/risk_reports_drop
+    timeout_ms: 10000

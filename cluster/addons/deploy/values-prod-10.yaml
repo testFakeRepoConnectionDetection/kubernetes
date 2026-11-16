@@ -1,0 +1,14 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  # Commodities PnL Explain AMER
+  - name: EXT_GW_768_POSITIONS_URL
+    value: https://ext-gw-768.svc.corp.internal/api/v1/positions
+  # Corporate Accounts Document Store EMEA
+  - name: EXT_GW_881_MARKET_DATA_URL
+    value: https://ext-gw-881.svc.corp.internal/api/v1/market-data
+ingress:
+  enabled: true
+  allowedSourceNamespaces:
+    - ext-gw-743  # Retail Accounts Credit Scoring EMEA
+    - ext-gw-655  # Trade Surveillance Rules Engine AMER

@@ -1,0 +1,5 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  ledger_entries_push:
+    source_system: operational-risk-collateral-engine-emea
+    secret_env: OPERATIONAL_RISK_COLLATERAL_ENGINE_EMEA_WEBHOOK_SECRET
