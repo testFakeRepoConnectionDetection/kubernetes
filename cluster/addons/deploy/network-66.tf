@@ -1,43 +1,21 @@
 # Network access of the kube-controller deployment (corp landing zone).
 
-data "aws_security_group" "peer_01" {
-  tags = {
-    app = "operational-risk-exposure-calculator"
-  }
+module "egress_01" {
+  source           = "../modules/private-link-consumer"
+  endpoint_service = "com.corp.privatelink.messaging-log-collector-emea"
+  port             = 443
 }
 
-resource "aws_security_group_rule" "ingress_01" {
-  type                     = "ingress"
-  from_port                = 8443
-  to_port                  = 8443
-  protocol                 = "tcp"
-  security_group_id        = var.service_sg_id
-  source_security_group_id = data.aws_security_group.peer_01.id
-}
-
+# Corporate Accounts Product Catalog APAC
 module "egress_02" {
   source           = "../modules/private-link-consumer"
-  endpoint_service = "com.corp.privatelink.data-platform-event-bus-emea"
+  endpoint_service = "com.corp.privatelink.ext-gw-276"
   port             = 443
 }
 
+# SWIFT Statement Generator EMEA
 module "egress_03" {
   source           = "../modules/private-link-consumer"
-  endpoint_service = "com.corp.privatelink.counterparty-risk-sensitivities-service-apac"
+  endpoint_service = "com.corp.privatelink.ext-gw-663"
   port             = 443
-}
-
-data "aws_security_group" "peer_04" {
-  tags = {
-    Application = "Legal Entities Data Quality Monitor APAC"
-  }
-}
-
-resource "aws_security_group_rule" "ingress_04" {
-  type                     = "ingress"
-  from_port                = 8443
-  to_port                  = 8443
-  protocol                 = "tcp"
-  security_group_id        = var.service_sg_id
-  source_security_group_id = data.aws_security_group.peer_04.id
 }

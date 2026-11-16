@@ -1,38 +1,20 @@
 # Network access of the kube-controller deployment (corp landing zone).
 
-data "aws_security_group" "peer_01" {
-  tags = {
-    app = "market-risk-scenario-store-apac"
-  }
+module "egress_01" {
+  source           = "../modules/private-link-consumer"
+  endpoint_service = "com.corp.privatelink.calendars-enrichment-service-amer"
+  port             = 443
 }
 
-resource "aws_security_group_rule" "ingress_01" {
-  type                     = "ingress"
-  from_port                = 8443
-  to_port                  = 8443
-  protocol                 = "tcp"
-  security_group_id        = var.service_sg_id
-  source_security_group_id = data.aws_security_group.peer_01.id
-}
-
-data "aws_security_group" "peer_02" {
-  tags = {
-    app = "accounting-ftp-calculator"
-  }
-}
-
-resource "aws_security_group_rule" "ingress_02" {
-  type                     = "ingress"
-  from_port                = 8443
-  to_port                  = 8443
-  protocol                 = "tcp"
-  security_group_id        = var.service_sg_id
-  source_security_group_id = data.aws_security_group.peer_02.id
+module "egress_02" {
+  source           = "../modules/private-link-consumer"
+  endpoint_service = "com.corp.privatelink.calendars-distribution-service-amer"
+  port             = 443
 }
 
 data "aws_security_group" "peer_03" {
   tags = {
-    app = "liquidity-risk-limit-monitor-amer"
+    Application = "SWIFT Sanctions Filter AMER"
   }
 }
 
@@ -47,7 +29,7 @@ resource "aws_security_group_rule" "ingress_03" {
 
 data "aws_security_group" "peer_04" {
   tags = {
-    Application = "Deposits Interest Engine APAC"
+    app = "kyc-transaction-monitor"
   }
 }
 
@@ -58,4 +40,10 @@ resource "aws_security_group_rule" "ingress_04" {
   protocol                 = "tcp"
   security_group_id        = var.service_sg_id
   source_security_group_id = data.aws_security_group.peer_04.id
+}
+
+module "egress_05" {
+  source           = "../modules/private-link-consumer"
+  endpoint_service = "com.corp.privatelink.commodities-algo-engine"
+  port             = 443
 }

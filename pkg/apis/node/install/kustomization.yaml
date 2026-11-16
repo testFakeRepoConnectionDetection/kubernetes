@@ -1,7 +1,0 @@
-apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
-configMapGenerator:
-  - name: corp-integrations
-    literals:
-      - CORP_PAYMENTS_STREAM_URL=https://counterparty-risk-limit-monitor.svc.corp.internal/api/v1/payments_stream
-      - CORP_CASHFLOWS_SYNC_URL=https://monitoring-directory-service-apac.svc.corp.internal/api/v1/cashflows_sync

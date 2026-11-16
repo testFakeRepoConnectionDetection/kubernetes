@@ -1,0 +1,8 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+configMapGenerator:
+  - name: corp-integrations
+    literals:
+      - CORP_ACCOUNTS_UPLOAD_URL=https://legal-entities-data-quality-monitor-apac.svc.corp.internal/api/v1/accounts_upload
+      - CORP_TRADES_PULL_URL=https://rates-algo-engine.svc.corp.internal/api/v1/trades_pull
+      - CORP_PRICES_STREAM_URL=https://corporate-accounts-repayment-scheduler-emea.svc.corp.internal/api/v1/prices_stream

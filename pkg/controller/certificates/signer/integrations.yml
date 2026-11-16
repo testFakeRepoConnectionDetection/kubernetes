@@ -1,9 +1,0 @@
-# Integration endpoints of kube-controller. Loaded at start-up.
-integrations:
-  # FX Pricing Engine AMER
-  ledger_entries_push:
-    source_system: ext-gw-438
-    secret_env: EXT_GW_438_WEBHOOK_SECRET
-  customers_push:
-    endpoint: https://credit-trade-blotter-amer.svc.corp.internal/api/v1/customers_push
-    timeout_ms: 10000

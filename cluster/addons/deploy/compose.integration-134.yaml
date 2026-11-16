@@ -1,0 +1,10 @@
+# Local integration stack: the kube-controller service with the corp endpoints of staging.
+services:
+  kube-controller:
+    image: registry.corp.internal/platform/kube-controller:latest
+    environment:
+      MONITORING_SCHEDULER_AMER_POSITIONS_URL: https://monitoring-scheduler-amer.stg.svc.corp.internal/api/v1/positions
+      DEPOSITS_CUSTOMER_ONBOARDING_LEDGER_ENTRIES_URL: https://deposits-customer-onboarding.stg.svc.corp.internal/api/v1/ledger-entries
+      FX_BOOKING_SERVICE_APAC_TRADES_URL: https://fx-booking-service-apac.stg.svc.corp.internal/api/v1/trades
+    ports:
+      - "8443:8443"

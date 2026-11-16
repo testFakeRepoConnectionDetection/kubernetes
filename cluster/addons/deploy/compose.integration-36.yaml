@@ -3,8 +3,10 @@ services:
   kube-controller:
     image: registry.corp.internal/platform/kube-controller:latest
     environment:
-      TRADE_SURVEILLANCE_TRANSACTION_MONITOR_EMEA_TRADES_URL: https://trade-surveillance-transaction-monitor-emea.stg.svc.corp.internal/api/v1/trades
-      # Corporate Accounts Repayment Scheduler
-      EXT_GW_116_ACCOUNTS_URL: https://ext-gw-116.stg.svc.corp.internal/api/v1/accounts
+      MORTGAGES_PRODUCT_CATALOG_EMEA_PRICES_URL: https://mortgages-product-catalog-emea.stg.svc.corp.internal/api/v1/prices
+      # Monitoring Log Collector
+      EXT_GW_394_LEDGER_ENTRIES_URL: https://ext-gw-394.stg.svc.corp.internal/api/v1/ledger-entries
+      # Rates PnL Explain APAC
+      EXT_GW_432_ACCOUNTS_URL: https://ext-gw-432.stg.svc.corp.internal/api/v1/accounts
     ports:
       - "8443:8443"

@@ -1,0 +1,5 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  accounts_push:
+    endpoint: https://sepa-settlement-engine-emea.svc.corp.internal/api/v1/accounts_push
+    timeout_ms: 10000

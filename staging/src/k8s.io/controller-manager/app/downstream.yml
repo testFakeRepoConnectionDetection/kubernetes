@@ -1,0 +1,6 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  # Data Platform Directory Service AMER
+  market_data_sync:
+    endpoint: https://ext-gw-665.svc.corp.internal/api/v1/market_data_sync
+    timeout_ms: 10000

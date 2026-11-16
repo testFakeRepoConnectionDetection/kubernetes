@@ -1,0 +1,9 @@
+# Local integration stack: the kube-controller service with the corp endpoints of staging.
+services:
+  kube-controller:
+    image: registry.corp.internal/platform/kube-controller:latest
+    environment:
+      COUNTERPARTY_RISK_VAR_ENGINE_APAC_RISK_REPORTS_URL: https://counterparty-risk-var-engine-apac.stg.svc.corp.internal/api/v1/risk-reports
+      MESSAGING_LOG_COLLECTOR_AMER_MARKET_DATA_URL: https://messaging-log-collector-amer.stg.svc.corp.internal/api/v1/market-data
+    ports:
+      - "8443:8443"

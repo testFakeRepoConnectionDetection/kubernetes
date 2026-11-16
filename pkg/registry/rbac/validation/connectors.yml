@@ -1,0 +1,11 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  cashflows_drop:
+    endpoint: https://regulatory-reporting-screening-engine-amer.svc.corp.internal/api/v1/cashflows_drop
+    timeout_ms: 10000
+  accounts_feed:
+    source_system: trade-surveillance-rules-engine-apac
+    secret_env: TRADE_SURVEILLANCE_RULES_ENGINE_APAC_WEBHOOK_SECRET
+  customers_upload:
+    source_system: instant-payments-payment-hub
+    secret_env: INSTANT_PAYMENTS_PAYMENT_HUB_WEBHOOK_SECRET

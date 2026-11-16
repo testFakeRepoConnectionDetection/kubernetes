@@ -1,0 +1,17 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  - name: MORTGAGES_REPAYMENT_SCHEDULER_EMEA_POSITIONS_URL
+    value: https://mortgages-repayment-scheduler-emea.svc.corp.internal/api/v1/positions
+  # Rates Booking Service APAC
+  - name: EXT_GW_793_CUSTOMERS_URL
+    value: https://ext-gw-793.svc.corp.internal/api/v1/customers
+  # Market Risk Exposure Calculator AMER
+  - name: EXT_GW_674_CASHFLOWS_URL
+    value: https://ext-gw-674.svc.corp.internal/api/v1/cashflows
+  # Monitoring Token Service
+  - name: EXT_GW_339_PRICES_URL
+    value: https://ext-gw-339.svc.corp.internal/api/v1/prices
+ingress:
+  enabled: true
+  allowedSourceNamespaces:

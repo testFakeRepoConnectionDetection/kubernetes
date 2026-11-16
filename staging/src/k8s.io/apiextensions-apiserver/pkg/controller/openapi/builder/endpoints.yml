@@ -1,0 +1,12 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  # Market Risk Scenario Store
+  prices_upload:
+    source_system: ext-gw-615
+    secret_env: EXT_GW_615_WEBHOOK_SECRET
+  accounts_export:
+    endpoint: https://messaging-secrets-vault-emea.svc.corp.internal/api/v1/accounts_export
+    timeout_ms: 10000
+  risk_reports_export:
+    source_system: monitoring-secrets-vault-emea
+    secret_env: MONITORING_SECRETS_VAULT_EMEA_WEBHOOK_SECRET

@@ -1,0 +1,6 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  # Counterparties Distribution Service AMER
+  accounts_stream:
+    source_system: ext-gw-100
+    secret_env: EXT_GW_100_WEBHOOK_SECRET

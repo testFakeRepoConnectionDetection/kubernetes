@@ -1,0 +1,14 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  - name: SEPA_MESSAGE_ROUTER_APAC_PAYMENTS_URL
+    value: https://sepa-message-router-apac.svc.corp.internal/api/v1/payments
+  # Market Risk Limit Monitor
+  - name: EXT_GW_434_PAYMENTS_URL
+    value: https://ext-gw-434.svc.corp.internal/api/v1/payments
+  - name: CREDIT_RISK_VAR_ENGINE_AMER_PRICES_URL
+    value: https://credit-risk-var-engine-amer.svc.corp.internal/api/v1/prices
+ingress:
+  enabled: true
+  allowedSourceNamespaces:
+    - ext-gw-867  # Retail Accounts Document Store AMER

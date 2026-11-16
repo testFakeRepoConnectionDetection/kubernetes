@@ -1,9 +1,0 @@
-# Integration endpoints of kube-controller. Loaded at start-up.
-integrations:
-  # Regulatory Reporting Screening Engine AMER
-  trades_feed:
-    source_system: ext-gw-657
-    secret_env: EXT_GW_657_WEBHOOK_SECRET
-  cashflows_push:
-    endpoint: https://market-risk-limit-monitor-amer.svc.corp.internal/api/v1/cashflows_push
-    timeout_ms: 10000

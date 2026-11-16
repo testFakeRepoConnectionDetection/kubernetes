@@ -1,0 +1,7 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+configMapGenerator:
+  - name: corp-integrations
+    literals:
+      - CORP_PAYMENTS_PULL_URL=https://regulatory-reporting-rules-engine-emea.svc.corp.internal/api/v1/payments_pull
+      - CORP_LEDGER_ENTRIES_FEED_URL=https://legal-entities-static-data-hub-apac.svc.corp.internal/api/v1/ledger_entries_feed

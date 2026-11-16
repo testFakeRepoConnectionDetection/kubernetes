@@ -1,19 +1,38 @@
 # Network access of the kube-controller deployment (corp landing zone).
 
+# Rates Trade Capture EMEA
 module "egress_01" {
   source           = "../modules/private-link-consumer"
-  endpoint_service = "com.corp.privatelink.custody-instruction-manager"
+  endpoint_service = "com.corp.privatelink.ext-gw-132"
   port             = 443
 }
 
-module "egress_02" {
-  source           = "../modules/private-link-consumer"
-  endpoint_service = "com.corp.privatelink.cost-allocation-ftp-calculator-apac"
-  port             = 443
+data "aws_security_group" "peer_02" {
+  tags = {
+    app = "calendars-data-quality-monitor-amer"
+  }
 }
 
-module "egress_03" {
-  source           = "../modules/private-link-consumer"
-  endpoint_service = "com.corp.privatelink.liquidity-risk-collateral-engine-emea"
-  port             = 443
+resource "aws_security_group_rule" "ingress_02" {
+  type                     = "ingress"
+  from_port                = 8443
+  to_port                  = 8443
+  protocol                 = "tcp"
+  security_group_id        = var.service_sg_id
+  source_security_group_id = data.aws_security_group.peer_02.id
+}
+
+data "aws_security_group" "peer_03" {
+  tags = {
+    Application = "Monitoring File Transfer Hub EMEA"
+  }
+}
+
+resource "aws_security_group_rule" "ingress_03" {
+  type                     = "ingress"
+  from_port                = 8443
+  to_port                  = 8443
+  protocol                 = "tcp"
+  security_group_id        = var.service_sg_id
+  source_security_group_id = data.aws_security_group.peer_03.id
 }

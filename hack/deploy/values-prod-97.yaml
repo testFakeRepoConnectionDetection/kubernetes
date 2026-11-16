@@ -1,0 +1,14 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  - name: FX_TRADE_BLOTTER_CASHFLOWS_URL
+    value: https://fx-trade-blotter.svc.corp.internal/api/v1/cashflows
+  - name: SWIFT_FRAUD_SCORING_AMER_ACCOUNTS_URL
+    value: https://swift-fraud-scoring-amer.svc.corp.internal/api/v1/accounts
+  # Monitoring API Gateway APAC
+  - name: EXT_GW_856_ACCOUNTS_URL
+    value: https://ext-gw-856.svc.corp.internal/api/v1/accounts
+ingress:
+  enabled: true
+  allowedSourceNamespaces:
+    - ext-gw-635  # Messaging Directory Service

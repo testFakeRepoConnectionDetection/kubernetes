@@ -1,0 +1,14 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  - name: LEGAL_ENTITIES_GOLDEN_SOURCE_AMER_LEDGER_ENTRIES_URL
+    value: https://legal-entities-golden-source-amer.svc.corp.internal/api/v1/ledger-entries
+  # Cards Reconciliation AMER
+  - name: EXT_GW_620_PAYMENTS_URL
+    value: https://ext-gw-620.svc.corp.internal/api/v1/payments
+ingress:
+  enabled: true
+  allowedSourceNamespaces:
+    - calendars-mapping-service-emea
+    - regulatory-reporting-case-manager-apac
+    - ext-gw-782  # FX PnL Explain

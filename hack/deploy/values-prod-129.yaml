@@ -1,0 +1,13 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  # Cost Allocation Accruals Engine EMEA
+  - name: EXT_GW_522_LEDGER_ENTRIES_URL
+    value: https://ext-gw-522.svc.corp.internal/api/v1/ledger-entries
+  - name: SEPA_RECONCILIATION_AMER_PAYMENTS_URL
+    value: https://sepa-reconciliation-amer.svc.corp.internal/api/v1/payments
+ingress:
+  enabled: true
+  allowedSourceNamespaces:
+    - ext-gw-126  # Retail Accounts Batch Processor AMER
+    - ext-gw-629  # Market Risk Sensitivities Service AMER

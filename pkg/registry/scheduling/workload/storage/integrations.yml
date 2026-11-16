@@ -1,0 +1,6 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  # Liquidity Risk Collateral Engine EMEA
+  trades_sync:
+    source_system: ext-gw-327
+    secret_env: EXT_GW_327_WEBHOOK_SECRET

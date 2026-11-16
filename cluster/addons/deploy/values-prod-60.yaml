@@ -1,0 +1,17 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  # Counterparty Risk Sensitivities Service EMEA
+  - name: EXT_GW_529_PRICES_URL
+    value: https://ext-gw-529.svc.corp.internal/api/v1/prices
+  # Treasury Funding Planner APAC
+  - name: EXT_GW_303_CASHFLOWS_URL
+    value: https://ext-gw-303.svc.corp.internal/api/v1/cashflows
+  # FX PnL Explain EMEA
+  - name: EXT_GW_107_PAYMENTS_URL
+    value: https://ext-gw-107.svc.corp.internal/api/v1/payments
+ingress:
+  enabled: true
+  allowedSourceNamespaces:
+    - ext-gw-568  # Data Platform Directory Service EMEA
+    - ext-gw-283  # Identity Scheduler APAC

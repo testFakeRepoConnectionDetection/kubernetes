@@ -1,0 +1,6 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  # Operational Risk Exposure Calculator EMEA
+  payments_drop:
+    source_system: ext-gw-850
+    secret_env: EXT_GW_850_WEBHOOK_SECRET

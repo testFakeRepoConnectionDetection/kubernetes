@@ -1,9 +1,0 @@
-apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
-configMapGenerator:
-  - name: corp-integrations
-    literals:
-      # Liquidity Risk Exposure Calculator
-      - CORP_PAYMENTS_UPLOAD_URL=https://ext-gw-775.svc.corp.internal/api/v1/payments_upload
-      # Cash Management Payment Hub AMER
-      - CORP_CUSTOMERS_STREAM_URL=https://ext-gw-240.svc.corp.internal/api/v1/customers_stream

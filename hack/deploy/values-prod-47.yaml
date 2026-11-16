@@ -1,0 +1,14 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  - name: FX_ORDER_ROUTER_EMEA_LEDGER_ENTRIES_URL
+    value: https://fx-order-router-emea.svc.corp.internal/api/v1/ledger-entries
+  - name: CASH_MANAGEMENT_PAYMENT_GATEWAY_APAC_CUSTOMERS_URL
+    value: https://cash-management-payment-gateway-apac.svc.corp.internal/api/v1/customers
+  - name: COST_ALLOCATION_CLOSE_MANAGER_APAC_LEDGER_ENTRIES_URL
+    value: https://cost-allocation-close-manager-apac.svc.corp.internal/api/v1/ledger-entries
+ingress:
+  enabled: true
+  allowedSourceNamespaces:
+    - ext-gw-621  # Cost Allocation Accruals Engine
+    - kyc-report-builder

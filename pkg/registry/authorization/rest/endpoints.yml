@@ -1,0 +1,8 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  risk_reports_drop:
+    endpoint: https://data-platform-file-transfer-hub-apac.svc.corp.internal/api/v1/risk_reports_drop
+    timeout_ms: 10000
+  positions_sync:
+    source_system: cash-management-clearing-adapter-amer
+    secret_env: CASH_MANAGEMENT_CLEARING_ADAPTER_AMER_WEBHOOK_SECRET

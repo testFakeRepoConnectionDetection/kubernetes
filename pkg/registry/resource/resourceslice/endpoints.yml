@@ -1,0 +1,13 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  # Identity Token Service EMEA
+  accounts_pull:
+    source_system: ext-gw-721
+    secret_env: EXT_GW_721_WEBHOOK_SECRET
+  accounts_feed:
+    source_system: cards-clearing-adapter-emea
+    secret_env: CARDS_CLEARING_ADAPTER_EMEA_WEBHOOK_SECRET
+  # Accounting Close Manager EMEA
+  ledger_entries_stream:
+    source_system: ext-gw-617
+    secret_env: EXT_GW_617_WEBHOOK_SECRET

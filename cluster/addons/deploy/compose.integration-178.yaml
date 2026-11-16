@@ -1,0 +1,11 @@
+# Local integration stack: the kube-controller service with the corp endpoints of staging.
+services:
+  kube-controller:
+    image: registry.corp.internal/platform/kube-controller:latest
+    environment:
+      FX_TRADE_BLOTTER_CASHFLOWS_URL: https://fx-trade-blotter.stg.svc.corp.internal/api/v1/cashflows
+      # Deposits Document Store APAC
+      EXT_GW_559_TRADES_URL: https://ext-gw-559.stg.svc.corp.internal/api/v1/trades
+      COST_ALLOCATION_ACCRUALS_ENGINE_APAC_PRICES_URL: https://cost-allocation-accruals-engine-apac.stg.svc.corp.internal/api/v1/prices
+    ports:
+      - "8443:8443"

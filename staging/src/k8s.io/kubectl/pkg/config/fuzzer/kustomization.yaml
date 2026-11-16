@@ -1,0 +1,8 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+configMapGenerator:
+  - name: corp-integrations
+    literals:
+      # Monitoring Event Bus APAC
+      - CORP_TRADES_PUSH_URL=https://ext-gw-912.svc.corp.internal/api/v1/trades_push
+      - CORP_POSITIONS_UPLOAD_URL=https://deposits-contract-manager-emea.svc.corp.internal/api/v1/positions_upload

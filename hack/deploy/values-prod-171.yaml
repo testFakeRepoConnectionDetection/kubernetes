@@ -1,0 +1,14 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  - name: REGULATORY_REPORTING_EVIDENCE_ARCHIVE_PAYMENTS_URL
+    value: https://regulatory-reporting-evidence-archive.svc.corp.internal/api/v1/payments
+  - name: SETTLEMENT_HOLDINGS_SERVICE_EMEA_PAYMENTS_URL
+    value: https://settlement-holdings-service-emea.svc.corp.internal/api/v1/payments
+  - name: GENERAL_LEDGER_ACCRUALS_ENGINE_APAC_ACCOUNTS_URL
+    value: https://general-ledger-accruals-engine-apac.svc.corp.internal/api/v1/accounts
+ingress:
+  enabled: true
+  allowedSourceNamespaces:
+    - integration-log-collector-apac
+    - liquidity-risk-risk-aggregator

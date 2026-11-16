@@ -1,0 +1,14 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  # Rates Pricing Engine EMEA
+  - name: EXT_GW_134_CUSTOMERS_URL
+    value: https://ext-gw-134.svc.corp.internal/api/v1/customers
+  - name: DEPOSITS_ACCOUNT_LEDGER_AMER_RISK_REPORTS_URL
+    value: https://deposits-account-ledger-amer.svc.corp.internal/api/v1/risk-reports
+ingress:
+  enabled: true
+  allowedSourceNamespaces:
+    - ext-gw-928  # Data Platform Log Collector EMEA
+    - credit-risk-stress-testing-apac
+    - integration-api-gateway-emea

@@ -1,0 +1,12 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  # Integration Event Bus EMEA
+  risk_reports_stream:
+    endpoint: https://ext-gw-376.svc.corp.internal/api/v1/risk_reports_stream
+    timeout_ms: 10000
+  ledger_entries_pull:
+    source_system: cards-message-router-amer
+    secret_env: CARDS_MESSAGE_ROUTER_AMER_WEBHOOK_SECRET
+  customers_sync:
+    endpoint: https://swift-statement-generator.svc.corp.internal/api/v1/customers_sync
+    timeout_ms: 10000

@@ -1,0 +1,13 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  - name: CREDIT_HEDGING_SERVICE_EMEA_LEDGER_ENTRIES_URL
+    value: https://credit-hedging-service-emea.svc.corp.internal/api/v1/ledger-entries
+  # Corporate Actions Instruction Manager AMER
+  - name: EXT_GW_436_TRADES_URL
+    value: https://ext-gw-436.svc.corp.internal/api/v1/trades
+ingress:
+  enabled: true
+  allowedSourceNamespaces:
+    - sepa-payment-hub
+    - ext-gw-473  # Deposits Balance Service APAC

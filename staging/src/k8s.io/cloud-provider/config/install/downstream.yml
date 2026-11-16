@@ -1,0 +1,6 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  # Prices Golden Source
+  ledger_entries_sync:
+    endpoint: https://ext-gw-148.svc.corp.internal/api/v1/ledger_entries_sync
+    timeout_ms: 10000

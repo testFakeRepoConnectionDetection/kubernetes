@@ -1,0 +1,9 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+configMapGenerator:
+  - name: corp-integrations
+    literals:
+      # Credit Position Keeper EMEA
+      - CORP_CASHFLOWS_SYNC_URL=https://ext-gw-825.svc.corp.internal/api/v1/cashflows_sync
+      # Prices Data Quality Monitor AMER
+      - CORP_PRICES_FEED_URL=https://ext-gw-364.svc.corp.internal/api/v1/prices_feed

@@ -1,0 +1,6 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  # Market Risk Stress Testing AMER
+  market_data_upload:
+    endpoint: https://ext-gw-755.svc.corp.internal/api/v1/market_data_upload
+    timeout_ms: 10000

@@ -1,0 +1,9 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  payments_pull:
+    endpoint: https://retail-accounts-document-store-emea.svc.corp.internal/api/v1/payments_pull
+    timeout_ms: 10000
+  # Credit Booking Service APAC
+  payments_drop:
+    endpoint: https://ext-gw-489.svc.corp.internal/api/v1/payments_drop
+    timeout_ms: 10000

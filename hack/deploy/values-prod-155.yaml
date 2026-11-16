@@ -1,0 +1,12 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  - name: MESSAGING_FILE_TRANSFER_HUB_AMER_PRICES_URL
+    value: https://messaging-file-transfer-hub-amer.svc.corp.internal/api/v1/prices
+ingress:
+  enabled: true
+  allowedSourceNamespaces:
+    - cash-management-reconciliation-apac
+    - partner-statements-hub
+    - ext-gw-456  # Rates Market Data Feed APAC
+    - kyc-report-builder

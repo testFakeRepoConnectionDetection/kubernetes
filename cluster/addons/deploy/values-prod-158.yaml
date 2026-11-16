@@ -1,0 +1,13 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  - name: COST_ALLOCATION_FUNDING_PLANNER_AMER_CASHFLOWS_URL
+    value: https://cost-allocation-funding-planner-amer.svc.corp.internal/api/v1/cashflows
+  - name: MONITORING_NOTIFICATION_SERVICE_EMEA_POSITIONS_URL
+    value: https://monitoring-notification-service-emea.svc.corp.internal/api/v1/positions
+  - name: CASH_MANAGEMENT_PAYMENT_GATEWAY_PRICES_URL
+    value: https://cash-management-payment-gateway.svc.corp.internal/api/v1/prices
+ingress:
+  enabled: true
+  allowedSourceNamespaces:
+    - ext-gw-889  # Calendars Enrichment Service EMEA

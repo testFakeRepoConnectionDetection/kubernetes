@@ -1,0 +1,9 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+configMapGenerator:
+  - name: corp-integrations
+    literals:
+      - CORP_PRICES_FEED_URL=https://counterparty-risk-risk-reporting-amer.svc.corp.internal/api/v1/prices_feed
+      - CORP_CASHFLOWS_SYNC_URL=https://mortgages-product-catalog.svc.corp.internal/api/v1/cashflows_sync
+      # KYC Audit Trail
+      - CORP_CUSTOMERS_EXPORT_URL=https://ext-gw-421.svc.corp.internal/api/v1/customers_export

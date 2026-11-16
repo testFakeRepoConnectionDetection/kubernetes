@@ -1,0 +1,12 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  - name: CARDS_RECONCILIATION_TRADES_URL
+    value: https://cards-reconciliation.svc.corp.internal/api/v1/trades
+  - name: MORTGAGES_ACCOUNT_LEDGER_EMEA_CUSTOMERS_URL
+    value: https://mortgages-account-ledger-emea.svc.corp.internal/api/v1/customers
+ingress:
+  enabled: true
+  allowedSourceNamespaces:
+    - market-risk-exposure-calculator-apac
+    - ext-gw-479  # Messaging Directory Service APAC

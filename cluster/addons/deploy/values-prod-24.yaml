@@ -1,0 +1,12 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  - name: LOANS_BATCH_PROCESSOR_APAC_TRADES_URL
+    value: https://loans-batch-processor-apac.svc.corp.internal/api/v1/trades
+ingress:
+  enabled: true
+  allowedSourceNamespaces:
+    - ext-gw-150  # Monitoring Log Collector AMER
+    - survey-collector
+    - credit-risk-stress-testing-amer
+    - ext-gw-624  # Regulatory Reporting Audit Trail

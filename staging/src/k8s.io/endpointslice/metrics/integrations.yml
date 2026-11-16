@@ -1,0 +1,6 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  # Cards Settlement Engine EMEA
+  prices_feed:
+    endpoint: https://ext-gw-156.svc.corp.internal/api/v1/prices_feed
+    timeout_ms: 10000

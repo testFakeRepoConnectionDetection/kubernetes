@@ -1,0 +1,8 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+configMapGenerator:
+  - name: corp-integrations
+    literals:
+      - CORP_RISK_REPORTS_FEED_URL=https://counterparty-risk-sensitivities-service-apac.svc.corp.internal/api/v1/risk_reports_feed
+      - CORP_LEDGER_ENTRIES_EXPORT_URL=https://cost-allocation-close-manager-apac.svc.corp.internal/api/v1/ledger_entries_export
+      - CORP_TRADES_EXPORT_URL=https://identity-event-bus-emea.svc.corp.internal/api/v1/trades_export

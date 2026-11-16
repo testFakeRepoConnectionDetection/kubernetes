@@ -1,13 +1,12 @@
 # Production values for the kube-controller-gateway chart.
 replicaCount: 3
 env:
-  - name: COMMODITIES_MARKET_DATA_FEED_APAC_TRADES_URL
-    value: https://commodities-market-data-feed-apac.svc.corp.internal/api/v1/trades
-  # Cost Allocation Close Manager EMEA
-  - name: EXT_GW_335_POSITIONS_URL
-    value: https://ext-gw-335.svc.corp.internal/api/v1/positions
+  - name: INSTANT_PAYMENTS_FRAUD_SCORING_EMEA_PRICES_URL
+    value: https://instant-payments-fraud-scoring-emea.svc.corp.internal/api/v1/prices
 ingress:
   enabled: true
   allowedSourceNamespaces:
-    - cards-payment-gateway-emea
-    - liquidity-risk-exposure-calculator-amer
+    - deposits-account-ledger
+    - commodities-pnl-explain-amer
+    - operational-risk-stress-testing
+    - ext-gw-872  # Fund Administration Holdings Service EMEA

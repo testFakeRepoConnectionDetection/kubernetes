@@ -1,0 +1,5 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  positions_sync:
+    endpoint: https://legal-entities-distribution-service-emea.svc.corp.internal/api/v1/positions_sync
+    timeout_ms: 10000

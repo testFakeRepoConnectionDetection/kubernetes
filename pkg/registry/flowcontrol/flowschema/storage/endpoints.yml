@@ -1,0 +1,6 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  # Settlement NAV Calculator
+  customers_sync:
+    source_system: ext-gw-922
+    secret_env: EXT_GW_922_WEBHOOK_SECRET

@@ -1,0 +1,9 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  # AML Screening Engine
+  risk_reports_export:
+    endpoint: https://ext-gw-850.svc.corp.internal/api/v1/risk_reports_export
+    timeout_ms: 10000
+  payments_push:
+    endpoint: https://sepa-statement-generator-amer.svc.corp.internal/api/v1/payments_push
+    timeout_ms: 10000

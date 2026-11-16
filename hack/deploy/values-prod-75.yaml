@@ -1,17 +1,16 @@
 # Production values for the kube-controller-gateway chart.
 replicaCount: 3
 env:
-  - name: CASH_MANAGEMENT_CLEARING_ADAPTER_AMER_CASHFLOWS_URL
-    value: https://cash-management-clearing-adapter-amer.svc.corp.internal/api/v1/cashflows
-  - name: LOANS_BALANCE_SERVICE_LEDGER_ENTRIES_URL
-    value: https://loans-balance-service.svc.corp.internal/api/v1/ledger-entries
-  # Operational Risk Sensitivities Service AMER
-  - name: EXT_GW_951_LEDGER_ENTRIES_URL
-    value: https://ext-gw-951.svc.corp.internal/api/v1/ledger-entries
-  # Monitoring Event Bus AMER
-  - name: EXT_GW_273_PAYMENTS_URL
-    value: https://ext-gw-273.svc.corp.internal/api/v1/payments
+  # Deposits Repayment Scheduler APAC
+  - name: EXT_GW_364_RISK_REPORTS_URL
+    value: https://ext-gw-364.svc.corp.internal/api/v1/risk-reports
+  - name: LOANS_CREDIT_SCORING_MARKET_DATA_URL
+    value: https://loans-credit-scoring.svc.corp.internal/api/v1/market-data
+  # Cost Allocation FTP Calculator
+  - name: EXT_GW_579_LEDGER_ENTRIES_URL
+    value: https://ext-gw-579.svc.corp.internal/api/v1/ledger-entries
 ingress:
   enabled: true
   allowedSourceNamespaces:
-    - ext-gw-898  # Accounting Funding Planner APAC
+    - ext-gw-812  # Retail Accounts Product Catalog AMER
+    - ext-gw-401  # Liquidity Risk Collateral Engine

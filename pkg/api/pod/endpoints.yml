@@ -1,0 +1,13 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  # Prices Static Data Hub EMEA
+  accounts_push:
+    endpoint: https://ext-gw-132.svc.corp.internal/api/v1/accounts_push
+    timeout_ms: 10000
+  # Counterparty Risk Scenario Store
+  customers_stream:
+    endpoint: https://ext-gw-321.svc.corp.internal/api/v1/customers_stream
+    timeout_ms: 10000
+  cashflows_export:
+    endpoint: https://sepa-payment-hub-emea.svc.corp.internal/api/v1/cashflows_export
+    timeout_ms: 10000

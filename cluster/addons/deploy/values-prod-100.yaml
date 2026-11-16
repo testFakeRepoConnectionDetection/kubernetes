@@ -1,0 +1,19 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  # Cash Management Reconciliation EMEA
+  - name: EXT_GW_602_MARKET_DATA_URL
+    value: https://ext-gw-602.svc.corp.internal/api/v1/market-data
+  # SEPA Sanctions Filter
+  - name: EXT_GW_858_CASHFLOWS_URL
+    value: https://ext-gw-858.svc.corp.internal/api/v1/cashflows
+  # Commodities Quote Publisher EMEA
+  - name: EXT_GW_907_CUSTOMERS_URL
+    value: https://ext-gw-907.svc.corp.internal/api/v1/customers
+  # Commodities Booking Service EMEA
+  - name: EXT_GW_717_TRADES_URL
+    value: https://ext-gw-717.svc.corp.internal/api/v1/trades
+ingress:
+  enabled: true
+  allowedSourceNamespaces:
+    - commodities-order-router

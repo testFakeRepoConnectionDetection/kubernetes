@@ -1,0 +1,12 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  market_data_export:
+    endpoint: https://fx-order-router.svc.corp.internal/api/v1/market_data_export
+    timeout_ms: 10000
+  # General Ledger Reporting Mart EMEA
+  accounts_feed:
+    source_system: ext-gw-168
+    secret_env: EXT_GW_168_WEBHOOK_SECRET
+  market_data_drop:
+    endpoint: https://deposits-account-ledger-apac.svc.corp.internal/api/v1/market_data_drop
+    timeout_ms: 10000

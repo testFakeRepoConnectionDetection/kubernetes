@@ -1,0 +1,6 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  # Accounting FTP Calculator AMER
+  cashflows_sync:
+    endpoint: https://ext-gw-270.svc.corp.internal/api/v1/cashflows_sync
+    timeout_ms: 10000

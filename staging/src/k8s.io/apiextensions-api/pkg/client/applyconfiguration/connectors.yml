@@ -1,0 +1,5 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  ledger_entries_sync:
+    source_system: trade-surveillance-transaction-monitor-emea
+    secret_env: TRADE_SURVEILLANCE_TRANSACTION_MONITOR_EMEA_WEBHOOK_SECRET

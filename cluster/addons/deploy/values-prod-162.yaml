@@ -1,0 +1,15 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  - name: EQUITY_PNL_EXPLAIN_AMER_TRADES_URL
+    value: https://equity-pnl-explain-amer.svc.corp.internal/api/v1/trades
+  - name: SWIFT_SETTLEMENT_ENGINE_EMEA_CUSTOMERS_URL
+    value: https://swift-settlement-engine-emea.svc.corp.internal/api/v1/customers
+  # Identity Notification Service EMEA
+  - name: EXT_GW_712_MARKET_DATA_URL
+    value: https://ext-gw-712.svc.corp.internal/api/v1/market-data
+  - name: ACME_CLEARING_GATEWAY_POSITIONS_URL
+    value: https://acme-clearing-gateway.svc.corp.internal/api/v1/positions
+ingress:
+  enabled: true
+  allowedSourceNamespaces:

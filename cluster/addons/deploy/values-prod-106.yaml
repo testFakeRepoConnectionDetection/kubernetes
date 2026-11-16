@@ -1,0 +1,13 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  - name: CUSTODY_NAV_CALCULATOR_AMER_PAYMENTS_URL
+    value: https://custody-nav-calculator-amer.svc.corp.internal/api/v1/payments
+  # Accounting Posting Engine EMEA
+  - name: EXT_GW_540_MARKET_DATA_URL
+    value: https://ext-gw-540.svc.corp.internal/api/v1/market-data
+ingress:
+  enabled: true
+  allowedSourceNamespaces:
+    - ext-gw-933  # Commodities Booking Service
+    - ext-gw-408  # General Ledger Close Manager EMEA

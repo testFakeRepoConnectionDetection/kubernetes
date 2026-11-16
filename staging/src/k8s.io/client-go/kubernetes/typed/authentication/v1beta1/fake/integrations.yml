@@ -1,0 +1,9 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  # Corporate Accounts Interest Engine
+  trades_feed:
+    endpoint: https://ext-gw-877.svc.corp.internal/api/v1/trades_feed
+    timeout_ms: 10000
+  accounts_stream:
+    source_system: sepa-payment-hub
+    secret_env: SEPA_PAYMENT_HUB_WEBHOOK_SECRET

@@ -1,0 +1,8 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  ledger_entries_pull:
+    endpoint: https://tax-forms-vendor.svc.corp.internal/api/v1/ledger_entries_pull
+    timeout_ms: 10000
+  customers_export:
+    endpoint: https://credit-trade-capture-emea.svc.corp.internal/api/v1/customers_export
+    timeout_ms: 10000

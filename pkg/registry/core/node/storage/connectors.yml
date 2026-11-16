@@ -1,0 +1,5 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  customers_pull:
+    endpoint: https://cash-management-payment-gateway-apac.svc.corp.internal/api/v1/customers_pull
+    timeout_ms: 10000

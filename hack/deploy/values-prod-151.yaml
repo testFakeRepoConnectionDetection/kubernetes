@@ -1,0 +1,16 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  - name: DEPOSITS_INTEREST_ENGINE_EMEA_TRADES_URL
+    value: https://deposits-interest-engine-emea.svc.corp.internal/api/v1/trades
+  # Cash Management Payment Hub AMER
+  - name: EXT_GW_181_PRICES_URL
+    value: https://ext-gw-181.svc.corp.internal/api/v1/prices
+  # Custody Tax Engine AMER
+  - name: EXT_GW_237_PRICES_URL
+    value: https://ext-gw-237.svc.corp.internal/api/v1/prices
+ingress:
+  enabled: true
+  allowedSourceNamespaces:
+    - counterparty-risk-collateral-engine-apac
+    - ext-gw-835  # Market Risk Risk Aggregator EMEA

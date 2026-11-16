@@ -1,0 +1,6 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  # Calendars Static Data Hub APAC
+  payments_stream:
+    endpoint: https://ext-gw-116.svc.corp.internal/api/v1/payments_stream
+    timeout_ms: 10000

@@ -1,0 +1,6 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  # AML Evidence Archive APAC
+  cashflows_drop:
+    source_system: ext-gw-284
+    secret_env: EXT_GW_284_WEBHOOK_SECRET

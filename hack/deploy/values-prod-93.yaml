@@ -1,0 +1,18 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  # Corporate Accounts Batch Processor
+  - name: EXT_GW_317_RISK_REPORTS_URL
+    value: https://ext-gw-317.svc.corp.internal/api/v1/risk-reports
+  # Fund Administration Event Processor AMER
+  - name: EXT_GW_438_CUSTOMERS_URL
+    value: https://ext-gw-438.svc.corp.internal/api/v1/customers
+  # SEPA Statement Generator
+  - name: EXT_GW_699_PAYMENTS_URL
+    value: https://ext-gw-699.svc.corp.internal/api/v1/payments
+  - name: AML_TRANSACTION_MONITOR_CASHFLOWS_URL
+    value: https://aml-transaction-monitor.svc.corp.internal/api/v1/cashflows
+ingress:
+  enabled: true
+  allowedSourceNamespaces:
+    - data-platform-token-service-emea

@@ -1,0 +1,12 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  trades_feed:
+    endpoint: https://credit-position-keeper.svc.corp.internal/api/v1/trades_feed
+    timeout_ms: 10000
+  # Operational Risk Scenario Store
+  ledger_entries_stream:
+    endpoint: https://ext-gw-614.svc.corp.internal/api/v1/ledger_entries_stream
+    timeout_ms: 10000
+  ledger_entries_pull:
+    endpoint: https://integration-secrets-vault-amer.svc.corp.internal/api/v1/ledger_entries_pull
+    timeout_ms: 10000

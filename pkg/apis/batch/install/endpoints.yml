@@ -1,0 +1,14 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  # General Ledger Close Manager
+  cashflows_sync:
+    source_system: ext-gw-631
+    secret_env: EXT_GW_631_WEBHOOK_SECRET
+  # Integration Token Service AMER
+  customers_upload:
+    source_system: ext-gw-271
+    secret_env: EXT_GW_271_WEBHOOK_SECRET
+  # Equity Execution Gateway EMEA
+  cashflows_push:
+    source_system: ext-gw-353
+    secret_env: EXT_GW_353_WEBHOOK_SECRET

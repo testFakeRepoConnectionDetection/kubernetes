@@ -1,0 +1,9 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  payments_stream:
+    source_system: settlement-nav-calculator-apac
+    secret_env: SETTLEMENT_NAV_CALCULATOR_APAC_WEBHOOK_SECRET
+  # Cash Management Payment Hub EMEA
+  market_data_export:
+    endpoint: https://ext-gw-340.svc.corp.internal/api/v1/market_data_export
+    timeout_ms: 10000

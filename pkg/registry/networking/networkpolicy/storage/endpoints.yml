@@ -1,0 +1,13 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  # Trade Surveillance Alert Generator EMEA
+  ledger_entries_drop:
+    endpoint: https://ext-gw-910.svc.corp.internal/api/v1/ledger_entries_drop
+    timeout_ms: 10000
+  accounts_sync:
+    source_system: market-risk-backtesting-amer
+    secret_env: MARKET_RISK_BACKTESTING_AMER_WEBHOOK_SECRET
+  # Equity Derivatives Execution Gateway EMEA
+  cashflows_pull:
+    endpoint: https://ext-gw-569.svc.corp.internal/api/v1/cashflows_pull
+    timeout_ms: 10000

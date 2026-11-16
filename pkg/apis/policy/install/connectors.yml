@@ -1,0 +1,8 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  positions_export:
+    source_system: corporate-accounts-account-ledger-amer
+    secret_env: CORPORATE_ACCOUNTS_ACCOUNT_LEDGER_AMER_WEBHOOK_SECRET
+  accounts_push:
+    source_system: retail-accounts-account-ledger
+    secret_env: RETAIL_ACCOUNTS_ACCOUNT_LEDGER_WEBHOOK_SECRET

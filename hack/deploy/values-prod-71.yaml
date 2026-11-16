@@ -1,0 +1,17 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  # SWIFT Fees Calculator AMER
+  - name: EXT_GW_745_MARKET_DATA_URL
+    value: https://ext-gw-745.svc.corp.internal/api/v1/market-data
+  # Credit Algo Engine AMER
+  - name: EXT_GW_125_CUSTOMERS_URL
+    value: https://ext-gw-125.svc.corp.internal/api/v1/customers
+  - name: LIQUIDITY_RISK_VAR_ENGINE_AMER_LEDGER_ENTRIES_URL
+    value: https://liquidity-risk-var-engine-amer.svc.corp.internal/api/v1/ledger-entries
+  # Operational Risk Collateral Engine APAC
+  - name: EXT_GW_422_PRICES_URL
+    value: https://ext-gw-422.svc.corp.internal/api/v1/prices
+ingress:
+  enabled: true
+  allowedSourceNamespaces:

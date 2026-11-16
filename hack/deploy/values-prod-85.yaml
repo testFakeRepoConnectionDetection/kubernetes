@@ -1,0 +1,12 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  - name: MORTGAGES_DOCUMENT_STORE_APAC_CASHFLOWS_URL
+    value: https://mortgages-document-store-apac.svc.corp.internal/api/v1/cashflows
+  - name: DATA_PLATFORM_SECRETS_VAULT_EMEA_TRADES_URL
+    value: https://data-platform-secrets-vault-emea.svc.corp.internal/api/v1/trades
+ingress:
+  enabled: true
+  allowedSourceNamespaces:
+    - ext-gw-378  # Commodities Market Data Feed EMEA
+    - news-sentiment-api

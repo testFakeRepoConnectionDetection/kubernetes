@@ -1,0 +1,13 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  # Credit Execution Gateway EMEA
+  customers_drop:
+    source_system: ext-gw-564
+    secret_env: EXT_GW_564_WEBHOOK_SECRET
+  accounts_export:
+    endpoint: https://monitoring-api-gateway-amer.svc.corp.internal/api/v1/accounts_export
+    timeout_ms: 10000
+  # KYC Case Manager EMEA
+  risk_reports_pull:
+    source_system: ext-gw-952
+    secret_env: EXT_GW_952_WEBHOOK_SECRET

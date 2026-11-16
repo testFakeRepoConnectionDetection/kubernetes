@@ -1,0 +1,10 @@
+# Local integration stack: the kube-controller service with the corp endpoints of staging.
+services:
+  kube-controller:
+    image: registry.corp.internal/platform/kube-controller:latest
+    environment:
+      # Corporate Accounts Contract Manager APAC
+      EXT_GW_302_TRADES_URL: https://ext-gw-302.stg.svc.corp.internal/api/v1/trades
+      INSTRUMENTS_DATA_QUALITY_MONITOR_EMEA_ACCOUNTS_URL: https://instruments-data-quality-monitor-emea.stg.svc.corp.internal/api/v1/accounts
+    ports:
+      - "8443:8443"

@@ -1,0 +1,13 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  positions_export:
+    endpoint: https://fx-execution-gateway-emea.svc.corp.internal/api/v1/positions_export
+    timeout_ms: 10000
+  # Instant Payments Fees Calculator APAC
+  prices_pull:
+    source_system: ext-gw-311
+    secret_env: EXT_GW_311_WEBHOOK_SECRET
+  # Deposits Interest Engine AMER
+  payments_upload:
+    endpoint: https://ext-gw-824.svc.corp.internal/api/v1/payments_upload
+    timeout_ms: 10000

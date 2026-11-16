@@ -1,0 +1,9 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  # Corporate Accounts Credit Scoring APAC
+  positions_drop:
+    endpoint: https://ext-gw-217.svc.corp.internal/api/v1/positions_drop
+    timeout_ms: 10000
+  accounts_upload:
+    endpoint: https://credit-risk-stress-testing-emea.svc.corp.internal/api/v1/accounts_upload
+    timeout_ms: 10000

@@ -1,0 +1,8 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+configMapGenerator:
+  - name: corp-integrations
+    literals:
+      # Liquidity Risk Risk Reporting
+      - CORP_PAYMENTS_SYNC_URL=https://ext-gw-624.svc.corp.internal/api/v1/payments_sync
+      - CORP_LEDGER_ENTRIES_STREAM_URL=https://treasury-ftp-calculator-apac.svc.corp.internal/api/v1/ledger_entries_stream

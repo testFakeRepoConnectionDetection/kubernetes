@@ -1,0 +1,14 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  # Monitoring Data Lake Loader APAC
+  market_data_feed:
+    endpoint: https://ext-gw-417.svc.corp.internal/api/v1/market_data_feed
+    timeout_ms: 10000
+  # Equity Derivatives Booking Service APAC
+  market_data_export:
+    endpoint: https://ext-gw-501.svc.corp.internal/api/v1/market_data_export
+    timeout_ms: 10000
+  # Commodities Quote Publisher APAC
+  ledger_entries_upload:
+    endpoint: https://ext-gw-764.svc.corp.internal/api/v1/ledger_entries_upload
+    timeout_ms: 10000

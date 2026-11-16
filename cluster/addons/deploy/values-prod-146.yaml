@@ -1,0 +1,14 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  - name: MORTGAGES_CONTRACT_MANAGER_AMER_PRICES_URL
+    value: https://mortgages-contract-manager-amer.svc.corp.internal/api/v1/prices
+  - name: LEGAL_ENTITIES_DATA_QUALITY_MONITOR_ACCOUNTS_URL
+    value: https://legal-entities-data-quality-monitor.svc.corp.internal/api/v1/accounts
+  # Credit Risk Collateral Engine AMER
+  - name: EXT_GW_764_LEDGER_ENTRIES_URL
+    value: https://ext-gw-764.svc.corp.internal/api/v1/ledger-entries
+ingress:
+  enabled: true
+  allowedSourceNamespaces:
+    - build-cache-proxy

@@ -1,0 +1,13 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  # Loans Balance Service
+  trades_stream:
+    endpoint: https://ext-gw-435.svc.corp.internal/api/v1/trades_stream
+    timeout_ms: 10000
+  payments_push:
+    endpoint: https://swift-sanctions-filter-emea.svc.corp.internal/api/v1/payments_push
+    timeout_ms: 10000
+  # SWIFT Payment Gateway
+  market_data_export:
+    endpoint: https://ext-gw-350.svc.corp.internal/api/v1/market_data_export
+    timeout_ms: 10000

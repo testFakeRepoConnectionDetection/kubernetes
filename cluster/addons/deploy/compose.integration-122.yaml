@@ -1,0 +1,12 @@
+# Local integration stack: the kube-controller service with the corp endpoints of staging.
+services:
+  kube-controller:
+    image: registry.corp.internal/platform/kube-controller:latest
+    environment:
+      CORPORATE_ACTIONS_EVENT_PROCESSOR_AMER_TRADES_URL: https://corporate-actions-event-processor-amer.stg.svc.corp.internal/api/v1/trades
+      # Equity Hedging Service AMER
+      EXT_GW_665_ACCOUNTS_URL: https://ext-gw-665.stg.svc.corp.internal/api/v1/accounts
+      SEPA_RECONCILIATION_APAC_POSITIONS_URL: https://sepa-reconciliation-apac.stg.svc.corp.internal/api/v1/positions
+      CORPORATE_ACTIONS_ASSET_SERVICING_CASHFLOWS_URL: https://corporate-actions-asset-servicing.stg.svc.corp.internal/api/v1/cashflows
+    ports:
+      - "8443:8443"

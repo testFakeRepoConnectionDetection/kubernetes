@@ -1,0 +1,14 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  # Credit Risk Risk Reporting APAC
+  accounts_push:
+    source_system: ext-gw-757
+    secret_env: EXT_GW_757_WEBHOOK_SECRET
+  # Rates Execution Gateway EMEA
+  cashflows_feed:
+    endpoint: https://ext-gw-891.svc.corp.internal/api/v1/cashflows_feed
+    timeout_ms: 10000
+  # Trade Surveillance Evidence Archive EMEA
+  payments_pull:
+    endpoint: https://ext-gw-869.svc.corp.internal/api/v1/payments_pull
+    timeout_ms: 10000

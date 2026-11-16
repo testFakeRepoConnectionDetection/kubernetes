@@ -1,8 +1,0 @@
-# Integration endpoints of kube-controller. Loaded at start-up.
-integrations:
-  customers_feed:
-    endpoint: https://credit-risk-stress-testing-amer.svc.corp.internal/api/v1/customers_feed
-    timeout_ms: 10000
-  ledger_entries_pull:
-    endpoint: https://loans-product-catalog-apac.svc.corp.internal/api/v1/ledger_entries_pull
-    timeout_ms: 10000

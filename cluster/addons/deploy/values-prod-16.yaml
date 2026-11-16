@@ -1,14 +1,17 @@
 # Production values for the kube-controller-gateway chart.
 replicaCount: 3
 env:
-  # Fund Administration Tax Engine EMEA
-  - name: EXT_GW_676_PAYMENTS_URL
-    value: https://ext-gw-676.svc.corp.internal/api/v1/payments
-  # KYC Transaction Monitor AMER
-  - name: EXT_GW_963_TRADES_URL
-    value: https://ext-gw-963.svc.corp.internal/api/v1/trades
+  - name: DEPOSITS_DOCUMENT_STORE_TRADES_URL
+    value: https://deposits-document-store.svc.corp.internal/api/v1/trades
+  # Integration Notification Service AMER
+  - name: EXT_GW_420_TRADES_URL
+    value: https://ext-gw-420.svc.corp.internal/api/v1/trades
+  # Operational Risk Scenario Store
+  - name: EXT_GW_614_LEDGER_ENTRIES_URL
+    value: https://ext-gw-614.svc.corp.internal/api/v1/ledger-entries
+  # Operational Risk Scenario Store EMEA
+  - name: EXT_GW_113_CUSTOMERS_URL
+    value: https://ext-gw-113.svc.corp.internal/api/v1/customers
 ingress:
   enabled: true
   allowedSourceNamespaces:
-    - ext-gw-286  # Custody Asset Servicing EMEA
-    - identity-data-lake-loader-emea

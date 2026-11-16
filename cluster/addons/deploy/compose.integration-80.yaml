@@ -1,0 +1,12 @@
+# Local integration stack: the kube-controller service with the corp endpoints of staging.
+services:
+  kube-controller:
+    image: registry.corp.internal/platform/kube-controller:latest
+    environment:
+      # KYC Case Manager AMER
+      EXT_GW_124_PRICES_URL: https://ext-gw-124.stg.svc.corp.internal/api/v1/prices
+      LIQUIDITY_RISK_VAR_ENGINE_AMER_LEDGER_ENTRIES_URL: https://liquidity-risk-var-engine-amer.stg.svc.corp.internal/api/v1/ledger-entries
+      # Equity Derivatives Pricing Engine EMEA
+      EXT_GW_590_TRADES_URL: https://ext-gw-590.stg.svc.corp.internal/api/v1/trades
+    ports:
+      - "8443:8443"

@@ -1,0 +1,12 @@
+# Local integration stack: the kube-controller service with the corp endpoints of staging.
+services:
+  kube-controller:
+    image: registry.corp.internal/platform/kube-controller:latest
+    environment:
+      # SEPA Sanctions Filter APAC
+      EXT_GW_619_CASHFLOWS_URL: https://ext-gw-619.stg.svc.corp.internal/api/v1/cashflows
+      GENERAL_LEDGER_REPORTING_MART_CUSTOMERS_URL: https://general-ledger-reporting-mart.stg.svc.corp.internal/api/v1/customers
+      # Accounting Posting Engine APAC
+      EXT_GW_103_ACCOUNTS_URL: https://ext-gw-103.stg.svc.corp.internal/api/v1/accounts
+    ports:
+      - "8443:8443"

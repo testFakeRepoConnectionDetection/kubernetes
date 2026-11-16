@@ -1,5 +1,0 @@
-# Integration endpoints of kube-controller. Loaded at start-up.
-integrations:
-  payments_push:
-    source_system: identity-scheduler
-    secret_env: IDENTITY_SCHEDULER_WEBHOOK_SECRET

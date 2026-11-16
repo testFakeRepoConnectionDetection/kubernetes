@@ -1,0 +1,10 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  # Corporate Accounts Document Store EMEA
+  trades_sync:
+    endpoint: https://ext-gw-538.svc.corp.internal/api/v1/trades_sync
+    timeout_ms: 10000
+  # Legal Entities Enrichment Service EMEA
+  customers_feed:
+    source_system: ext-gw-447
+    secret_env: EXT_GW_447_WEBHOOK_SECRET

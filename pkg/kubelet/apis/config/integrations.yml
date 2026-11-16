@@ -1,0 +1,9 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  # Corporate Accounts Credit Scoring EMEA
+  cashflows_drop:
+    source_system: ext-gw-293
+    secret_env: EXT_GW_293_WEBHOOK_SECRET
+  positions_stream:
+    source_system: retail-accounts-interest-engine
+    secret_env: RETAIL_ACCOUNTS_INTEREST_ENGINE_WEBHOOK_SECRET

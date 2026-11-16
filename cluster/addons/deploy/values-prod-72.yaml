@@ -1,0 +1,14 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  - name: SEPA_SETTLEMENT_ENGINE_EMEA_ACCOUNTS_URL
+    value: https://sepa-settlement-engine-emea.svc.corp.internal/api/v1/accounts
+  - name: CARDS_FRAUD_SCORING_TRADES_URL
+    value: https://cards-fraud-scoring.svc.corp.internal/api/v1/trades
+  # Monitoring Event Bus AMER
+  - name: EXT_GW_298_MARKET_DATA_URL
+    value: https://ext-gw-298.svc.corp.internal/api/v1/market-data
+ingress:
+  enabled: true
+  allowedSourceNamespaces:
+    - fx-hedging-service-apac

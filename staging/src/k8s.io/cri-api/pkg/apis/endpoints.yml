@@ -1,0 +1,5 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  ledger_entries_drop:
+    source_system: messaging-directory-service-emea
+    secret_env: MESSAGING_DIRECTORY_SERVICE_EMEA_WEBHOOK_SECRET

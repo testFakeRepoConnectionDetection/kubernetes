@@ -1,0 +1,12 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  # Equity Derivatives Algo Engine AMER
+  - name: EXT_GW_364_PAYMENTS_URL
+    value: https://ext-gw-364.svc.corp.internal/api/v1/payments
+ingress:
+  enabled: true
+  allowedSourceNamespaces:
+    - crash-symbolizer
+    - trade-surveillance-audit-trail-amer
+    - liquidity-risk-exposure-calculator-amer

@@ -1,0 +1,16 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  # FX PnL Explain EMEA
+  - name: EXT_GW_107_PAYMENTS_URL
+    value: https://ext-gw-107.svc.corp.internal/api/v1/payments
+  - name: RATES_EXECUTION_GATEWAY_CUSTOMERS_URL
+    value: https://rates-execution-gateway.svc.corp.internal/api/v1/customers
+  # Regulatory Reporting Evidence Archive AMER
+  - name: EXT_GW_994_MARKET_DATA_URL
+    value: https://ext-gw-994.svc.corp.internal/api/v1/market-data
+ingress:
+  enabled: true
+  allowedSourceNamespaces:
+    - credit-execution-gateway
+    - ext-gw-150  # Monitoring Log Collector AMER

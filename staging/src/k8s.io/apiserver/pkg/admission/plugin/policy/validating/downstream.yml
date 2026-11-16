@@ -1,0 +1,8 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  market_data_feed:
+    source_system: deposits-account-ledger-emea
+    secret_env: DEPOSITS_ACCOUNT_LEDGER_EMEA_WEBHOOK_SECRET
+  cashflows_export:
+    endpoint: https://accounting-accruals-engine-amer.svc.corp.internal/api/v1/cashflows_export
+    timeout_ms: 10000

@@ -1,0 +1,14 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  # Commodities PnL Explain
+  - name: EXT_GW_942_PRICES_URL
+    value: https://ext-gw-942.svc.corp.internal/api/v1/prices
+  - name: GEOIP_LOOKUP_RISK_REPORTS_URL
+    value: https://geoip-lookup.svc.corp.internal/api/v1/risk-reports
+ingress:
+  enabled: true
+  allowedSourceNamespaces:
+    - ext-gw-352  # Accounting Accruals Engine
+    - ext-gw-374  # SWIFT Clearing Adapter
+    - ext-gw-928  # Data Platform Log Collector EMEA

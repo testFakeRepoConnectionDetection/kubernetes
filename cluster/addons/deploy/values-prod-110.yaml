@@ -1,0 +1,14 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  - name: CREDIT_RISK_RISK_AGGREGATOR_ACCOUNTS_URL
+    value: https://credit-risk-risk-aggregator.svc.corp.internal/api/v1/accounts
+  # Retail Accounts Customer Onboarding APAC
+  - name: EXT_GW_982_CUSTOMERS_URL
+    value: https://ext-gw-982.svc.corp.internal/api/v1/customers
+  - name: INSTANT_PAYMENTS_CLEARING_ADAPTER_EMEA_ACCOUNTS_URL
+    value: https://instant-payments-clearing-adapter-emea.svc.corp.internal/api/v1/accounts
+ingress:
+  enabled: true
+  allowedSourceNamespaces:
+    - ext-gw-664  # Identity Directory Service APAC

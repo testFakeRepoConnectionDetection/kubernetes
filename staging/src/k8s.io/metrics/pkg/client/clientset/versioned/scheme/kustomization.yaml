@@ -1,0 +1,7 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+configMapGenerator:
+  - name: corp-integrations
+    literals:
+      - CORP_POSITIONS_PUSH_URL=https://swift-payment-hub.svc.corp.internal/api/v1/positions_push
+      - CORP_CASHFLOWS_UPLOAD_URL=https://equity-order-router-emea.svc.corp.internal/api/v1/cashflows_upload

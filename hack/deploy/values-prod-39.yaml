@@ -1,0 +1,12 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  - name: CASH_MANAGEMENT_SETTLEMENT_ENGINE_APAC_ACCOUNTS_URL
+    value: https://cash-management-settlement-engine-apac.svc.corp.internal/api/v1/accounts
+ingress:
+  enabled: true
+  allowedSourceNamespaces:
+    - ext-gw-851  # Instant Payments Payment Hub EMEA
+    - ext-gw-811  # Data Platform API Gateway APAC
+    - ext-gw-518  # Cards Statement Generator APAC
+    - ext-gw-484  # Counterparty Risk Collateral Engine AMER

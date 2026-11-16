@@ -1,0 +1,15 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  # Equity Hedging Service AMER
+  - name: EXT_GW_665_ACCOUNTS_URL
+    value: https://ext-gw-665.svc.corp.internal/api/v1/accounts
+  - name: SWIFT_FEES_CALCULATOR_PAYMENTS_URL
+    value: https://swift-fees-calculator.svc.corp.internal/api/v1/payments
+  # Equity Derivatives Pricing Engine
+  - name: EXT_GW_856_TRADES_URL
+    value: https://ext-gw-856.svc.corp.internal/api/v1/trades
+ingress:
+  enabled: true
+  allowedSourceNamespaces:
+    - ext-gw-718  # General Ledger Consolidation AMER

@@ -1,0 +1,6 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  # Legal Entities Distribution Service
+  customers_drop:
+    endpoint: https://ext-gw-129.svc.corp.internal/api/v1/customers_drop
+    timeout_ms: 10000

@@ -1,0 +1,8 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  market_data_pull:
+    endpoint: https://rates-market-data-feed.svc.corp.internal/api/v1/market_data_pull
+    timeout_ms: 10000
+  customers_upload:
+    endpoint: https://corporate-accounts-repayment-scheduler.svc.corp.internal/api/v1/customers_upload
+    timeout_ms: 10000

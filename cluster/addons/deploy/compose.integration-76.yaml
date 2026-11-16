@@ -1,0 +1,12 @@
+# Local integration stack: the kube-controller service with the corp endpoints of staging.
+services:
+  kube-controller:
+    image: registry.corp.internal/platform/kube-controller:latest
+    environment:
+      # Regulatory Reporting Case Manager AMER
+      EXT_GW_373_CUSTOMERS_URL: https://ext-gw-373.stg.svc.corp.internal/api/v1/customers
+      DATA_PLATFORM_SECRETS_VAULT_EMEA_TRADES_URL: https://data-platform-secrets-vault-emea.stg.svc.corp.internal/api/v1/trades
+      # Corporate Accounts Credit Scoring
+      EXT_GW_576_RISK_REPORTS_URL: https://ext-gw-576.stg.svc.corp.internal/api/v1/risk-reports
+    ports:
+      - "8443:8443"

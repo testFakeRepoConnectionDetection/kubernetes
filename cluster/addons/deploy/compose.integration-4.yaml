@@ -1,0 +1,11 @@
+# Local integration stack: the kube-controller service with the corp endpoints of staging.
+services:
+  kube-controller:
+    image: registry.corp.internal/platform/kube-controller:latest
+    environment:
+      COST_ALLOCATION_FUNDING_PLANNER_APAC_CUSTOMERS_URL: https://cost-allocation-funding-planner-apac.stg.svc.corp.internal/api/v1/customers
+      # Equity Derivatives Pricing Engine
+      EXT_GW_856_TRADES_URL: https://ext-gw-856.stg.svc.corp.internal/api/v1/trades
+      GENERAL_LEDGER_REPORTING_MART_APAC_CASHFLOWS_URL: https://general-ledger-reporting-mart-apac.stg.svc.corp.internal/api/v1/cashflows
+    ports:
+      - "8443:8443"

@@ -1,0 +1,10 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+ingress:
+  enabled: true
+  allowedSourceNamespaces:
+    - ext-gw-927  # Equity Derivatives Market Data Feed
+    - weather-feed
+    - ext-gw-834  # SWIFT Payment Gateway AMER
+    - ext-gw-642  # Corporate Accounts Balance Service APAC

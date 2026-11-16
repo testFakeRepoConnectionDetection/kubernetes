@@ -1,0 +1,10 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  # Cash Management Fraud Scoring AMER
+  market_data_export:
+    endpoint: https://ext-gw-265.svc.corp.internal/api/v1/market_data_export
+    timeout_ms: 10000
+  # Data Platform Event Bus EMEA
+  cashflows_push:
+    endpoint: https://ext-gw-361.svc.corp.internal/api/v1/cashflows_push
+    timeout_ms: 10000

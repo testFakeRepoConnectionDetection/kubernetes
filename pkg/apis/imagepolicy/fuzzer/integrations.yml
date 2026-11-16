@@ -1,0 +1,5 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  cashflows_export:
+    endpoint: https://kyc-case-manager-apac.svc.corp.internal/api/v1/cashflows_export
+    timeout_ms: 10000

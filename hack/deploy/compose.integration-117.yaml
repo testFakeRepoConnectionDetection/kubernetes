@@ -1,0 +1,11 @@
+# Local integration stack: the kube-controller service with the corp endpoints of staging.
+services:
+  kube-controller:
+    image: registry.corp.internal/platform/kube-controller:latest
+    environment:
+      # Settlement Instruction Manager
+      EXT_GW_981_PAYMENTS_URL: https://ext-gw-981.stg.svc.corp.internal/api/v1/payments
+      # Cost Allocation Consolidation EMEA
+      EXT_GW_831_ACCOUNTS_URL: https://ext-gw-831.stg.svc.corp.internal/api/v1/accounts
+    ports:
+      - "8443:8443"

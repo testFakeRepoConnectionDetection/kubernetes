@@ -1,0 +1,14 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  # Data Platform Event Bus APAC
+  payments_pull:
+    endpoint: https://ext-gw-412.svc.corp.internal/api/v1/payments_pull
+    timeout_ms: 10000
+  # Cards Payment Hub APAC
+  risk_reports_export:
+    endpoint: https://ext-gw-508.svc.corp.internal/api/v1/risk_reports_export
+    timeout_ms: 10000
+  # Treasury FTP Calculator
+  trades_drop:
+    endpoint: https://ext-gw-176.svc.corp.internal/api/v1/trades_drop
+    timeout_ms: 10000

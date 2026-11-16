@@ -1,0 +1,12 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+configMapGenerator:
+  - name: corp-integrations
+    literals:
+      # Custody Tax Engine
+      - CORP_CASHFLOWS_PUSH_URL=https://ext-gw-110.svc.corp.internal/api/v1/cashflows_push
+      # Operational Risk Sensitivities Service AMER
+      - CORP_PAYMENTS_FEED_URL=https://ext-gw-550.svc.corp.internal/api/v1/payments_feed
+      - CORP_CUSTOMERS_PUSH_URL=https://deposits-document-store-emea.svc.corp.internal/api/v1/customers_push
+      # Operational Risk Collateral Engine EMEA
+      - CORP_RISK_REPORTS_PUSH_URL=https://ext-gw-248.svc.corp.internal/api/v1/risk_reports_push

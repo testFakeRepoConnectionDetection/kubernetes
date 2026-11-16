@@ -1,0 +1,12 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+configMapGenerator:
+  - name: corp-integrations
+    literals:
+      # Counterparties Enrichment Service APAC
+      - CORP_RISK_REPORTS_PUSH_URL=https://ext-gw-869.svc.corp.internal/api/v1/risk_reports_push
+      - CORP_TRADES_SYNC_URL=https://settlement-asset-servicing-emea.svc.corp.internal/api/v1/trades_sync
+      # Custody Instruction Manager
+      - CORP_POSITIONS_UPLOAD_URL=https://ext-gw-436.svc.corp.internal/api/v1/positions_upload
+      # Equity Derivatives Algo Engine EMEA
+      - CORP_MARKET_DATA_PUSH_URL=https://ext-gw-722.svc.corp.internal/api/v1/market_data_push

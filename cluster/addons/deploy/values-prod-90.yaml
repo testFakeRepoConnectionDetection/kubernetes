@@ -1,0 +1,15 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  # Regulatory Reporting Evidence Archive APAC
+  - name: EXT_GW_330_TRADES_URL
+    value: https://ext-gw-330.svc.corp.internal/api/v1/trades
+  # Trade Surveillance Alert Generator AMER
+  - name: EXT_GW_361_PAYMENTS_URL
+    value: https://ext-gw-361.svc.corp.internal/api/v1/payments
+ingress:
+  enabled: true
+  allowedSourceNamespaces:
+    - swift-statement-generator-apac
+    - ext-gw-345  # Corporate Accounts Batch Processor AMER
+    - market-risk-backtesting-apac

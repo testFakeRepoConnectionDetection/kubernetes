@@ -1,0 +1,17 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  # Corporate Accounts Product Catalog EMEA
+  - name: EXT_GW_622_RISK_REPORTS_URL
+    value: https://ext-gw-622.svc.corp.internal/api/v1/risk-reports
+  # Corporate Actions Holdings Service EMEA
+  - name: EXT_GW_606_TRADES_URL
+    value: https://ext-gw-606.svc.corp.internal/api/v1/trades
+  # Cost Allocation Consolidation EMEA
+  - name: EXT_GW_831_ACCOUNTS_URL
+    value: https://ext-gw-831.svc.corp.internal/api/v1/accounts
+ingress:
+  enabled: true
+  allowedSourceNamespaces:
+    - license-server
+    - loans-product-catalog-apac

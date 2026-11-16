@@ -1,0 +1,11 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+configMapGenerator:
+  - name: corp-integrations
+    literals:
+      # Messaging Token Service APAC
+      - CORP_CASHFLOWS_EXPORT_URL=https://ext-gw-428.svc.corp.internal/api/v1/cashflows_export
+      # Cards Fees Calculator EMEA
+      - CORP_POSITIONS_DROP_URL=https://ext-gw-635.svc.corp.internal/api/v1/positions_drop
+      # Corporate Accounts Contract Manager
+      - CORP_MARKET_DATA_EXPORT_URL=https://ext-gw-726.svc.corp.internal/api/v1/market_data_export

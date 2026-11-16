@@ -1,15 +1,13 @@
 # Production values for the kube-controller-gateway chart.
 replicaCount: 3
 env:
-  - name: ACCOUNTING_FUNDING_PLANNER_AMER_LEDGER_ENTRIES_URL
-    value: https://accounting-funding-planner-amer.svc.corp.internal/api/v1/ledger-entries
-  # Credit Risk Stress Testing APAC
-  - name: EXT_GW_731_POSITIONS_URL
-    value: https://ext-gw-731.svc.corp.internal/api/v1/positions
-  # Regulatory Reporting Transaction Monitor
-  - name: EXT_GW_828_PRICES_URL
-    value: https://ext-gw-828.svc.corp.internal/api/v1/prices
+  - name: LOANS_BATCH_PROCESSOR_APAC_TRADES_URL
+    value: https://loans-batch-processor-apac.svc.corp.internal/api/v1/trades
+  # Rates PnL Explain APAC
+  - name: EXT_GW_432_ACCOUNTS_URL
+    value: https://ext-gw-432.svc.corp.internal/api/v1/accounts
 ingress:
   enabled: true
   allowedSourceNamespaces:
-    - general-ledger-close-manager-amer
+    - ext-gw-740  # Deposits Credit Scoring APAC
+    - identity-event-bus

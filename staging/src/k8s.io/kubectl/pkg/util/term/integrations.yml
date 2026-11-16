@@ -1,0 +1,8 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  ledger_entries_drop:
+    endpoint: https://integration-token-service.svc.corp.internal/api/v1/ledger_entries_drop
+    timeout_ms: 10000
+  prices_feed:
+    endpoint: https://kyc-case-manager.svc.corp.internal/api/v1/prices_feed
+    timeout_ms: 10000

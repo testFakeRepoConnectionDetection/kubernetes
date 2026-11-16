@@ -1,0 +1,16 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  # Mortgages Document Store
+  - name: EXT_GW_766_MARKET_DATA_URL
+    value: https://ext-gw-766.svc.corp.internal/api/v1/market-data
+  - name: CORPORATE_ACCOUNTS_DOCUMENT_STORE_APAC_ACCOUNTS_URL
+    value: https://corporate-accounts-document-store-apac.svc.corp.internal/api/v1/accounts
+  # Trade Surveillance Report Builder APAC
+  - name: EXT_GW_451_POSITIONS_URL
+    value: https://ext-gw-451.svc.corp.internal/api/v1/positions
+ingress:
+  enabled: true
+  allowedSourceNamespaces:
+    - ext-gw-249  # Cost Allocation Funding Planner
+    - loans-batch-processor-emea

@@ -1,5 +1,0 @@
-# Integration endpoints of kube-controller. Loaded at start-up.
-integrations:
-  positions_push:
-    endpoint: https://contact-center-ivr.svc.corp.internal/api/v1/positions_push
-    timeout_ms: 10000

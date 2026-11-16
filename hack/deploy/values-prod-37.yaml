@@ -1,15 +1,12 @@
 # Production values for the kube-controller-gateway chart.
 replicaCount: 3
 env:
-  # SWIFT Payment Gateway APAC
-  - name: EXT_GW_438_PRICES_URL
-    value: https://ext-gw-438.svc.corp.internal/api/v1/prices
-  - name: COUNTERPARTIES_GOLDEN_SOURCE_APAC_CUSTOMERS_URL
-    value: https://counterparties-golden-source-apac.svc.corp.internal/api/v1/customers
-  - name: EQUITY_TRADE_CAPTURE_APAC_ACCOUNTS_URL
-    value: https://equity-trade-capture-apac.svc.corp.internal/api/v1/accounts
+  - name: MESSAGING_DATA_LAKE_LOADER_EMEA_LEDGER_ENTRIES_URL
+    value: https://messaging-data-lake-loader-emea.svc.corp.internal/api/v1/ledger-entries
+  - name: MORTGAGES_BALANCE_SERVICE_EMEA_PAYMENTS_URL
+    value: https://mortgages-balance-service-emea.svc.corp.internal/api/v1/payments
 ingress:
   enabled: true
   allowedSourceNamespaces:
-    - aml-alert-generator-apac
-    - corporate-actions-tax-engine
+    - credit-risk-limit-monitor-apac
+    - corporate-actions-nav-calculator-apac

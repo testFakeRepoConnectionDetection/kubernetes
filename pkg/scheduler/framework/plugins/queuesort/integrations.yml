@@ -1,0 +1,13 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  risk_reports_sync:
+    endpoint: https://swift-message-router-emea.svc.corp.internal/api/v1/risk_reports_sync
+    timeout_ms: 10000
+  # Corporate Actions Instruction Manager APAC
+  risk_reports_export:
+    endpoint: https://ext-gw-706.svc.corp.internal/api/v1/risk_reports_export
+    timeout_ms: 10000
+  # Custody Instruction Manager EMEA
+  prices_pull:
+    source_system: ext-gw-174
+    secret_env: EXT_GW_174_WEBHOOK_SECRET

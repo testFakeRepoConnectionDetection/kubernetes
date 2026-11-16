@@ -1,0 +1,13 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  - name: ESG_SCORES_FEED_ACCOUNTS_URL
+    value: https://esg-scores-feed.svc.corp.internal/api/v1/accounts
+  - name: EQUITY_DERIVATIVES_ORDER_ROUTER_EMEA_PRICES_URL
+    value: https://equity-derivatives-order-router-emea.svc.corp.internal/api/v1/prices
+  - name: KYC_SCREENING_ENGINE_APAC_ACCOUNTS_URL
+    value: https://kyc-screening-engine-apac.svc.corp.internal/api/v1/accounts
+ingress:
+  enabled: true
+  allowedSourceNamespaces:
+    - ext-gw-948  # Messaging Token Service EMEA

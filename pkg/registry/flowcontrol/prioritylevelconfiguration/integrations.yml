@@ -1,0 +1,6 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  # Retail Accounts Balance Service AMER
+  positions_push:
+    endpoint: https://ext-gw-610.svc.corp.internal/api/v1/positions_push
+    timeout_ms: 10000

@@ -1,0 +1,12 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  - name: MONITORING_DIRECTORY_SERVICE_EMEA_TRADES_URL
+    value: https://monitoring-directory-service-emea.svc.corp.internal/api/v1/trades
+  - name: CONTACT_CENTER_IVR_POSITIONS_URL
+    value: https://contact-center-ivr.svc.corp.internal/api/v1/positions
+ingress:
+  enabled: true
+  allowedSourceNamespaces:
+    - treasury-ftp-calculator-emea
+    - ext-gw-182  # Market Risk Collateral Engine

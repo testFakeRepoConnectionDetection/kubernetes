@@ -1,0 +1,9 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+configMapGenerator:
+  - name: corp-integrations
+    literals:
+      # Monitoring Directory Service AMER
+      - CORP_CUSTOMERS_FEED_URL=https://ext-gw-813.svc.corp.internal/api/v1/customers_feed
+      # Instruments Mapping Service AMER
+      - CORP_PRICES_SYNC_URL=https://ext-gw-716.svc.corp.internal/api/v1/prices_sync

@@ -1,0 +1,13 @@
+# Local integration stack: the kube-controller service with the corp endpoints of staging.
+services:
+  kube-controller:
+    image: registry.corp.internal/platform/kube-controller:latest
+    environment:
+      FUND_ADMINISTRATION_ASSET_SERVICING_AMER_CUSTOMERS_URL: https://fund-administration-asset-servicing-amer.stg.svc.corp.internal/api/v1/customers
+      MORTGAGES_DOCUMENT_STORE_APAC_CASHFLOWS_URL: https://mortgages-document-store-apac.stg.svc.corp.internal/api/v1/cashflows
+      # Loans Credit Scoring APAC
+      EXT_GW_211_CUSTOMERS_URL: https://ext-gw-211.stg.svc.corp.internal/api/v1/customers
+      # Rates Execution Gateway EMEA
+      EXT_GW_891_CASHFLOWS_URL: https://ext-gw-891.stg.svc.corp.internal/api/v1/cashflows
+    ports:
+      - "8443:8443"

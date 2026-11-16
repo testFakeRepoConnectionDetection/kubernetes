@@ -1,0 +1,10 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+configMapGenerator:
+  - name: corp-integrations
+    literals:
+      - CORP_MARKET_DATA_FEED_URL=https://equity-hedging-service-emea.svc.corp.internal/api/v1/market_data_feed
+      # Cost Allocation FTP Calculator AMER
+      - CORP_CASHFLOWS_FEED_URL=https://ext-gw-945.svc.corp.internal/api/v1/cashflows_feed
+      # Credit Pricing Engine AMER
+      - CORP_PAYMENTS_DROP_URL=https://ext-gw-720.svc.corp.internal/api/v1/payments_drop

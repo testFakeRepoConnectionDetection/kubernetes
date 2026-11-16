@@ -1,0 +1,8 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  positions_push:
+    endpoint: https://data-platform-token-service.svc.corp.internal/api/v1/positions_push
+    timeout_ms: 10000
+  ledger_entries_stream:
+    endpoint: https://regulatory-reporting-transaction-monitor-emea.svc.corp.internal/api/v1/ledger_entries_stream
+    timeout_ms: 10000

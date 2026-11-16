@@ -1,0 +1,13 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  # Retail Accounts Balance Service AMER
+  - name: EXT_GW_610_POSITIONS_URL
+    value: https://ext-gw-610.svc.corp.internal/api/v1/positions
+ingress:
+  enabled: true
+  allowedSourceNamespaces:
+    - liquidity-risk-var-engine-apac
+    - integration-notification-service-apac
+    - ext-gw-385  # Trade Surveillance Screening Engine EMEA
+    - liquidity-risk-collateral-engine-amer

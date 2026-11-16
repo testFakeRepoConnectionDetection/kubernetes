@@ -1,0 +1,11 @@
+# Local integration stack: the kube-controller service with the corp endpoints of staging.
+services:
+  kube-controller:
+    image: registry.corp.internal/platform/kube-controller:latest
+    environment:
+      RATES_QUOTE_PUBLISHER_APAC_LEDGER_ENTRIES_URL: https://rates-quote-publisher-apac.stg.svc.corp.internal/api/v1/ledger-entries
+      # Identity Directory Service
+      EXT_GW_719_LEDGER_ENTRIES_URL: https://ext-gw-719.stg.svc.corp.internal/api/v1/ledger-entries
+      LIQUIDITY_RISK_STRESS_TESTING_APAC_CUSTOMERS_URL: https://liquidity-risk-stress-testing-apac.stg.svc.corp.internal/api/v1/customers
+    ports:
+      - "8443:8443"

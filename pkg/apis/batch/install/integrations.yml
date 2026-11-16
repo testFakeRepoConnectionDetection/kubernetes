@@ -1,0 +1,13 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  # FX Quote Publisher AMER
+  risk_reports_feed:
+    endpoint: https://ext-gw-810.svc.corp.internal/api/v1/risk_reports_feed
+    timeout_ms: 10000
+  # Trade Surveillance Case Manager AMER
+  market_data_sync:
+    endpoint: https://ext-gw-907.svc.corp.internal/api/v1/market_data_sync
+    timeout_ms: 10000
+  market_data_push:
+    endpoint: https://equity-trade-capture-emea.svc.corp.internal/api/v1/market_data_push
+    timeout_ms: 10000

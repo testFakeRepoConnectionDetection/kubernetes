@@ -1,0 +1,13 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  # Credit Risk Exposure Calculator EMEA
+  payments_upload:
+    endpoint: https://ext-gw-901.svc.corp.internal/api/v1/payments_upload
+    timeout_ms: 10000
+  # Integration Token Service EMEA
+  customers_export:
+    source_system: ext-gw-224
+    secret_env: EXT_GW_224_WEBHOOK_SECRET
+  customers_feed:
+    endpoint: https://identity-scheduler.svc.corp.internal/api/v1/customers_feed
+    timeout_ms: 10000

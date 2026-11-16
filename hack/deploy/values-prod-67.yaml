@@ -1,13 +1,14 @@
 # Production values for the kube-controller-gateway chart.
 replicaCount: 3
 env:
-  - name: RETAIL_ACCOUNTS_INTEREST_ENGINE_AMER_LEDGER_ENTRIES_URL
-    value: https://retail-accounts-interest-engine-amer.svc.corp.internal/api/v1/ledger-entries
-  # Corporate Actions NAV Calculator EMEA
-  - name: EXT_GW_474_LEDGER_ENTRIES_URL
-    value: https://ext-gw-474.svc.corp.internal/api/v1/ledger-entries
+  - name: CORPORATE_ACCOUNTS_CONTRACT_MANAGER_EMEA_MARKET_DATA_URL
+    value: https://corporate-accounts-contract-manager-emea.svc.corp.internal/api/v1/market-data
+  - name: MONITORING_TOKEN_SERVICE_AMER_PRICES_URL
+    value: https://monitoring-token-service-amer.svc.corp.internal/api/v1/prices
+  - name: COMMODITIES_MARKET_DATA_FEED_APAC_CASHFLOWS_URL
+    value: https://commodities-market-data-feed-apac.svc.corp.internal/api/v1/cashflows
 ingress:
   enabled: true
   allowedSourceNamespaces:
-    - integration-scheduler-apac
-    - accounting-accruals-engine-amer
+    - accounting-ftp-calculator
+    - retail-accounts-batch-processor-apac

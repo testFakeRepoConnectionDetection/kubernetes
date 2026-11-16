@@ -1,0 +1,8 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+configMapGenerator:
+  - name: corp-integrations
+    literals:
+      # Counterparty Risk Limit Monitor APAC
+      - CORP_MARKET_DATA_STREAM_URL=https://ext-gw-997.svc.corp.internal/api/v1/market_data_stream
+      - CORP_RISK_REPORTS_EXPORT_URL=https://general-ledger-reporting-mart-amer.svc.corp.internal/api/v1/risk_reports_export

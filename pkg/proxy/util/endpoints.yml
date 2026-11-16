@@ -1,0 +1,10 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  # Cards Fees Calculator
+  ledger_entries_feed:
+    endpoint: https://ext-gw-264.svc.corp.internal/api/v1/ledger_entries_feed
+    timeout_ms: 10000
+  # Counterparties Golden Source APAC
+  risk_reports_export:
+    source_system: ext-gw-179
+    secret_env: EXT_GW_179_WEBHOOK_SECRET

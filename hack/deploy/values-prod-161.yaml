@@ -1,0 +1,13 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  - name: REGULATORY_REPORTING_ALERT_GENERATOR_EMEA_MARKET_DATA_URL
+    value: https://regulatory-reporting-alert-generator-emea.svc.corp.internal/api/v1/market-data
+  - name: ACCOUNTING_CONSOLIDATION_APAC_RISK_REPORTS_URL
+    value: https://accounting-consolidation-apac.svc.corp.internal/api/v1/risk-reports
+ingress:
+  enabled: true
+  allowedSourceNamespaces:
+    - ext-gw-520  # Custody Holdings Service APAC
+    - calendars-data-quality-monitor-emea
+    - ext-gw-708  # Equity Algo Engine

@@ -1,0 +1,6 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  # Retail Accounts Batch Processor EMEA
+  risk_reports_export:
+    source_system: ext-gw-490
+    secret_env: EXT_GW_490_WEBHOOK_SECRET

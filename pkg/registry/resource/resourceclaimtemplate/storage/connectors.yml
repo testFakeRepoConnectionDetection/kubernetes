@@ -1,0 +1,11 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  payments_pull:
+    endpoint: https://retail-accounts-product-catalog.svc.corp.internal/api/v1/payments_pull
+    timeout_ms: 10000
+  market_data_upload:
+    source_system: identity-api-gateway
+    secret_env: IDENTITY_API_GATEWAY_WEBHOOK_SECRET
+  cashflows_sync:
+    endpoint: https://equity-derivatives-market-data-feed-amer.svc.corp.internal/api/v1/cashflows_sync
+    timeout_ms: 10000

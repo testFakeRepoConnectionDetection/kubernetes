@@ -1,0 +1,6 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  # Cost Allocation Posting Engine
+  trades_sync:
+    endpoint: https://ext-gw-540.svc.corp.internal/api/v1/trades_sync
+    timeout_ms: 10000

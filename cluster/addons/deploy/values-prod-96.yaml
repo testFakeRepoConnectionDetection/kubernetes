@@ -1,0 +1,12 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  - name: COST_ALLOCATION_CLOSE_MANAGER_EMEA_LEDGER_ENTRIES_URL
+    value: https://cost-allocation-close-manager-emea.svc.corp.internal/api/v1/ledger-entries
+  - name: SEPA_FEES_CALCULATOR_APAC_CASHFLOWS_URL
+    value: https://sepa-fees-calculator-apac.svc.corp.internal/api/v1/cashflows
+ingress:
+  enabled: true
+  allowedSourceNamespaces:
+    - operational-risk-exposure-calculator-apac
+    - aml-transaction-monitor-amer

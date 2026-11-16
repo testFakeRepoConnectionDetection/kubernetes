@@ -1,0 +1,13 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  accounts_pull:
+    source_system: fund-administration-holdings-service-amer
+    secret_env: FUND_ADMINISTRATION_HOLDINGS_SERVICE_AMER_WEBHOOK_SECRET
+  # Deposits Credit Scoring AMER
+  ledger_entries_upload:
+    endpoint: https://ext-gw-673.svc.corp.internal/api/v1/ledger_entries_upload
+    timeout_ms: 10000
+  # SEPA Statement Generator APAC
+  market_data_stream:
+    source_system: ext-gw-111
+    secret_env: EXT_GW_111_WEBHOOK_SECRET

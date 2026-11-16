@@ -1,0 +1,13 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  risk_reports_feed:
+    endpoint: https://general-ledger-posting-engine-amer.svc.corp.internal/api/v1/risk_reports_feed
+    timeout_ms: 10000
+  # Fund Administration Instruction Manager APAC
+  trades_drop:
+    endpoint: https://ext-gw-909.svc.corp.internal/api/v1/trades_drop
+    timeout_ms: 10000
+  # Rates Quote Publisher
+  customers_upload:
+    source_system: ext-gw-739
+    secret_env: EXT_GW_739_WEBHOOK_SECRET

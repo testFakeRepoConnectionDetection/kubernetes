@@ -1,0 +1,19 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  # FX Execution Gateway AMER
+  - name: EXT_GW_529_MARKET_DATA_URL
+    value: https://ext-gw-529.svc.corp.internal/api/v1/market-data
+  # Operational Risk VaR Engine AMER
+  - name: EXT_GW_592_POSITIONS_URL
+    value: https://ext-gw-592.svc.corp.internal/api/v1/positions
+  # Corporate Accounts Product Catalog EMEA
+  - name: EXT_GW_622_RISK_REPORTS_URL
+    value: https://ext-gw-622.svc.corp.internal/api/v1/risk-reports
+  # Prices Data Quality Monitor APAC
+  - name: EXT_GW_434_PAYMENTS_URL
+    value: https://ext-gw-434.svc.corp.internal/api/v1/payments
+ingress:
+  enabled: true
+  allowedSourceNamespaces:
+    - ext-gw-607  # Liquidity Risk Limit Monitor AMER

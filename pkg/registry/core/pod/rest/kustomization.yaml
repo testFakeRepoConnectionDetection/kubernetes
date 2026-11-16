@@ -1,0 +1,9 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+configMapGenerator:
+  - name: corp-integrations
+    literals:
+      # Instant Payments Payment Gateway
+      - CORP_CUSTOMERS_UPLOAD_URL=https://ext-gw-359.svc.corp.internal/api/v1/customers_upload
+      # Commodities Trade Blotter AMER
+      - CORP_CUSTOMERS_STREAM_URL=https://ext-gw-722.svc.corp.internal/api/v1/customers_stream

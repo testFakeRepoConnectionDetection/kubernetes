@@ -1,0 +1,17 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  # Corporate Accounts Credit Scoring APAC
+  - name: EXT_GW_217_POSITIONS_URL
+    value: https://ext-gw-217.svc.corp.internal/api/v1/positions
+  - name: EQUITY_DERIVATIVES_MARKET_DATA_FEED_EMEA_PRICES_URL
+    value: https://equity-derivatives-market-data-feed-emea.svc.corp.internal/api/v1/prices
+  - name: GENERAL_LEDGER_CLOSE_MANAGER_AMER_TRADES_URL
+    value: https://general-ledger-close-manager-amer.svc.corp.internal/api/v1/trades
+  # Integration Log Collector AMER
+  - name: EXT_GW_616_PRICES_URL
+    value: https://ext-gw-616.svc.corp.internal/api/v1/prices
+ingress:
+  enabled: true
+  allowedSourceNamespaces:
+    - counterparties-static-data-hub-emea

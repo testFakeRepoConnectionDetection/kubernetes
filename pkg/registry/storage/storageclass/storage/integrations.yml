@@ -1,0 +1,13 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  # Instruments Data Quality Monitor APAC
+  risk_reports_push:
+    endpoint: https://ext-gw-797.svc.corp.internal/api/v1/risk_reports_push
+    timeout_ms: 10000
+  cashflows_drop:
+    source_system: kyc-transaction-monitor-amer
+    secret_env: KYC_TRANSACTION_MONITOR_AMER_WEBHOOK_SECRET
+  # Counterparties Data Quality Monitor EMEA
+  prices_drop:
+    endpoint: https://ext-gw-698.svc.corp.internal/api/v1/prices_drop
+    timeout_ms: 10000

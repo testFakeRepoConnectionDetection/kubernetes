@@ -1,0 +1,6 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  # Commodities Booking Service APAC
+  ledger_entries_push:
+    endpoint: https://ext-gw-322.svc.corp.internal/api/v1/ledger_entries_push
+    timeout_ms: 10000

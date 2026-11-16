@@ -1,22 +1,20 @@
 # Network access of the kube-controller deployment (corp landing zone).
 
-# Counterparty Risk Stress Testing EMEA
 module "egress_01" {
   source           = "../modules/private-link-consumer"
-  endpoint_service = "com.corp.privatelink.ext-gw-146"
+  endpoint_service = "com.corp.privatelink.kyc-case-manager-apac"
   port             = 443
 }
 
-# Identity Event Bus EMEA
 module "egress_02" {
   source           = "../modules/private-link-consumer"
-  endpoint_service = "com.corp.privatelink.ext-gw-576"
+  endpoint_service = "com.corp.privatelink.monitoring-event-bus"
   port             = 443
 }
 
 data "aws_security_group" "peer_03" {
   tags = {
-    Application = "Equity Derivatives Market Data Feed"
+    app = "legal-entities-distribution-service-amer"
   }
 }
 
@@ -27,4 +25,11 @@ resource "aws_security_group_rule" "ingress_03" {
   protocol                 = "tcp"
   security_group_id        = var.service_sg_id
   source_security_group_id = data.aws_security_group.peer_03.id
+}
+
+# Loans Credit Scoring APAC
+module "egress_04" {
+  source           = "../modules/private-link-consumer"
+  endpoint_service = "com.corp.privatelink.ext-gw-211"
+  port             = 443
 }

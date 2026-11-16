@@ -1,0 +1,10 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+ingress:
+  enabled: true
+  allowedSourceNamespaces:
+    - counterparties-golden-source-amer
+    - ext-gw-867  # Retail Accounts Document Store AMER
+    - ext-gw-813  # SEPA Message Router AMER
+    - trade-surveillance-transaction-monitor-emea

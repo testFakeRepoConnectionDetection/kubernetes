@@ -1,0 +1,10 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  # Loans Customer Onboarding APAC
+  risk_reports_upload:
+    source_system: ext-gw-849
+    secret_env: EXT_GW_849_WEBHOOK_SECRET
+  # Operational Risk VaR Engine AMER
+  positions_drop:
+    endpoint: https://ext-gw-592.svc.corp.internal/api/v1/positions_drop
+    timeout_ms: 10000

@@ -1,0 +1,10 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+configMapGenerator:
+  - name: corp-integrations
+    literals:
+      - CORP_POSITIONS_SYNC_URL=https://corporate-accounts-customer-onboarding-amer.svc.corp.internal/api/v1/positions_sync
+      # General Ledger Consolidation EMEA
+      - CORP_PAYMENTS_SYNC_URL=https://ext-gw-260.svc.corp.internal/api/v1/payments_sync
+      # FX Booking Service
+      - CORP_RISK_REPORTS_DROP_URL=https://ext-gw-957.svc.corp.internal/api/v1/risk_reports_drop

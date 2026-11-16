@@ -1,0 +1,7 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+configMapGenerator:
+  - name: corp-integrations
+    literals:
+      - CORP_LEDGER_ENTRIES_PUSH_URL=https://credit-risk-scenario-store-apac.svc.corp.internal/api/v1/ledger_entries_push
+      - CORP_POSITIONS_STREAM_URL=https://monitoring-notification-service-emea.svc.corp.internal/api/v1/positions_stream

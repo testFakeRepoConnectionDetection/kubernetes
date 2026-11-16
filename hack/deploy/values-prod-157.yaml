@@ -1,0 +1,16 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  - name: PRICES_DISTRIBUTION_SERVICE_EMEA_ACCOUNTS_URL
+    value: https://prices-distribution-service-emea.svc.corp.internal/api/v1/accounts
+  - name: MONITORING_DIRECTORY_SERVICE_LEDGER_ENTRIES_URL
+    value: https://monitoring-directory-service.svc.corp.internal/api/v1/ledger-entries
+  # Integration Notification Service EMEA
+  - name: EXT_GW_687_PAYMENTS_URL
+    value: https://ext-gw-687.svc.corp.internal/api/v1/payments
+  - name: COUNTERPARTIES_ENRICHMENT_SERVICE_CASHFLOWS_URL
+    value: https://counterparties-enrichment-service.svc.corp.internal/api/v1/cashflows
+ingress:
+  enabled: true
+  allowedSourceNamespaces:
+    - kyc-rules-engine-emea

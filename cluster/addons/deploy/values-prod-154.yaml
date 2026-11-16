@@ -1,0 +1,15 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  # General Ledger Funding Planner
+  - name: EXT_GW_784_TRADES_URL
+    value: https://ext-gw-784.svc.corp.internal/api/v1/trades
+  # Integration Notification Service EMEA
+  - name: EXT_GW_687_PAYMENTS_URL
+    value: https://ext-gw-687.svc.corp.internal/api/v1/payments
+  - name: SETTLEMENT_EVENT_PROCESSOR_APAC_TRADES_URL
+    value: https://settlement-event-processor-apac.svc.corp.internal/api/v1/trades
+ingress:
+  enabled: true
+  allowedSourceNamespaces:
+    - regulatory-reporting-rules-engine

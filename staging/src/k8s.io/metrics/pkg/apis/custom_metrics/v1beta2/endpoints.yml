@@ -1,0 +1,8 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  payments_pull:
+    endpoint: https://mortgages-balance-service-emea.svc.corp.internal/api/v1/payments_pull
+    timeout_ms: 10000
+  cashflows_stream:
+    endpoint: https://sepa-payment-gateway-emea.svc.corp.internal/api/v1/cashflows_stream
+    timeout_ms: 10000

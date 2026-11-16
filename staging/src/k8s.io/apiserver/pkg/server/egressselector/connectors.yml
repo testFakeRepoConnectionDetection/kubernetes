@@ -1,0 +1,14 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  # Equity Derivatives Pricing Engine AMER
+  market_data_sync:
+    source_system: ext-gw-823
+    secret_env: EXT_GW_823_WEBHOOK_SECRET
+  # Equity Trade Capture AMER
+  positions_stream:
+    endpoint: https://ext-gw-949.svc.corp.internal/api/v1/positions_stream
+    timeout_ms: 10000
+  # Equity Booking Service
+  payments_export:
+    source_system: ext-gw-211
+    secret_env: EXT_GW_211_WEBHOOK_SECRET

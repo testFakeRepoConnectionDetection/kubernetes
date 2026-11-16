@@ -1,0 +1,15 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  # FX Hedging Service
+  - name: EXT_GW_390_POSITIONS_URL
+    value: https://ext-gw-390.svc.corp.internal/api/v1/positions
+  - name: INSTANT_PAYMENTS_SANCTIONS_FILTER_EMEA_MARKET_DATA_URL
+    value: https://instant-payments-sanctions-filter-emea.svc.corp.internal/api/v1/market-data
+  - name: TREASURY_FUNDING_PLANNER_EMEA_MARKET_DATA_URL
+    value: https://treasury-funding-planner-emea.svc.corp.internal/api/v1/market-data
+ingress:
+  enabled: true
+  allowedSourceNamespaces:
+    - equity-derivatives-position-keeper-apac
+    - monitoring-scheduler-emea

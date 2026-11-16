@@ -1,0 +1,8 @@
+# Local integration stack: the kube-controller service with the corp endpoints of staging.
+services:
+  kube-controller:
+    image: registry.corp.internal/platform/kube-controller:latest
+    environment:
+      INSTANT_PAYMENTS_FRAUD_SCORING_EMEA_PRICES_URL: https://instant-payments-fraud-scoring-emea.stg.svc.corp.internal/api/v1/prices
+    ports:
+      - "8443:8443"

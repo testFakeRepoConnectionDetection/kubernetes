@@ -1,0 +1,13 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  # Deposits Credit Scoring
+  customers_sync:
+    endpoint: https://ext-gw-785.svc.corp.internal/api/v1/customers_sync
+    timeout_ms: 10000
+  # Deposits Product Catalog
+  prices_drop:
+    source_system: ext-gw-883
+    secret_env: EXT_GW_883_WEBHOOK_SECRET
+  customers_drop:
+    endpoint: https://retail-accounts-interest-engine-apac.svc.corp.internal/api/v1/customers_drop
+    timeout_ms: 10000

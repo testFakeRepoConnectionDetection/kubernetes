@@ -1,0 +1,17 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  # SEPA Fees Calculator
+  - name: EXT_GW_315_CUSTOMERS_URL
+    value: https://ext-gw-315.svc.corp.internal/api/v1/customers
+  - name: INSTANT_PAYMENTS_CLEARING_ADAPTER_EMEA_ACCOUNTS_URL
+    value: https://instant-payments-clearing-adapter-emea.svc.corp.internal/api/v1/accounts
+  # Identity Log Collector
+  - name: EXT_GW_681_PRICES_URL
+    value: https://ext-gw-681.svc.corp.internal/api/v1/prices
+  - name: SEPA_CLEARING_ADAPTER_AMER_RISK_REPORTS_URL
+    value: https://sepa-clearing-adapter-amer.svc.corp.internal/api/v1/risk-reports
+ingress:
+  enabled: true
+  allowedSourceNamespaces:
+    - ext-gw-642  # Commodities Pricing Engine AMER

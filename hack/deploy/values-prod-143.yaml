@@ -1,0 +1,13 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  # Equity Trade Capture APAC
+  - name: EXT_GW_948_PAYMENTS_URL
+    value: https://ext-gw-948.svc.corp.internal/api/v1/payments
+ingress:
+  enabled: true
+  allowedSourceNamespaces:
+    - ext-gw-276  # Cash Management Payment Hub APAC
+    - commodities-pnl-explain-amer
+    - ext-gw-721  # AML Rules Engine
+    - ext-gw-977  # Loans Interest Engine EMEA

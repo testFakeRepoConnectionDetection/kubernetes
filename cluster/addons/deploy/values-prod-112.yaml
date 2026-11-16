@@ -1,0 +1,16 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  # Credit Risk Backtesting
+  - name: EXT_GW_351_PRICES_URL
+    value: https://ext-gw-351.svc.corp.internal/api/v1/prices
+  - name: COMMODITIES_MARKET_DATA_FEED_AMER_ACCOUNTS_URL
+    value: https://commodities-market-data-feed-amer.svc.corp.internal/api/v1/accounts
+  # Cash Management Sanctions Filter
+  - name: EXT_GW_239_CASHFLOWS_URL
+    value: https://ext-gw-239.svc.corp.internal/api/v1/cashflows
+ingress:
+  enabled: true
+  allowedSourceNamespaces:
+    - integration-event-bus
+    - ext-gw-642  # SWIFT Payment Gateway EMEA

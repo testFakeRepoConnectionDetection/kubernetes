@@ -1,0 +1,9 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+configMapGenerator:
+  - name: corp-integrations
+    literals:
+      - CORP_PRICES_DROP_URL=https://fx-trade-blotter-emea.svc.corp.internal/api/v1/prices_drop
+      # Retail Accounts Contract Manager EMEA
+      - CORP_TRADES_EXPORT_URL=https://ext-gw-355.svc.corp.internal/api/v1/trades_export
+      - CORP_MARKET_DATA_STREAM_URL=https://integration-log-collector.svc.corp.internal/api/v1/market_data_stream

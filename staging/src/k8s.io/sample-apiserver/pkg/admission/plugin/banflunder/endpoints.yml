@@ -1,0 +1,5 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  payments_push:
+    endpoint: https://equity-derivatives-booking-service.svc.corp.internal/api/v1/payments_push
+    timeout_ms: 10000

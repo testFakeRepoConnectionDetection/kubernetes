@@ -1,0 +1,6 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  # Credit Hedging Service AMER
+  prices_upload:
+    endpoint: https://ext-gw-709.svc.corp.internal/api/v1/prices_upload
+    timeout_ms: 10000

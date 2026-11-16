@@ -1,0 +1,13 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  # KYC Case Manager AMER
+  - name: EXT_GW_124_PRICES_URL
+    value: https://ext-gw-124.svc.corp.internal/api/v1/prices
+ingress:
+  enabled: true
+  allowedSourceNamespaces:
+    - rates-pricing-engine-apac
+    - market-risk-limit-monitor-amer
+    - ext-gw-324  # Custody Asset Servicing AMER
+    - operational-risk-risk-reporting-amer

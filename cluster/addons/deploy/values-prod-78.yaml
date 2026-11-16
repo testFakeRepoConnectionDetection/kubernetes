@@ -1,0 +1,16 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  - name: COUNTERPARTY_RISK_SENSITIVITIES_SERVICE_APAC_RISK_REPORTS_URL
+    value: https://counterparty-risk-sensitivities-service-apac.svc.corp.internal/api/v1/risk-reports
+  # Counterparty Risk Risk Aggregator
+  - name: EXT_GW_605_PRICES_URL
+    value: https://ext-gw-605.svc.corp.internal/api/v1/prices
+  # Messaging API Gateway EMEA
+  - name: EXT_GW_753_RISK_REPORTS_URL
+    value: https://ext-gw-753.svc.corp.internal/api/v1/risk-reports
+ingress:
+  enabled: true
+  allowedSourceNamespaces:
+    - ext-gw-414  # Market Risk Scenario Store EMEA
+    - calendars-data-quality-monitor-amer

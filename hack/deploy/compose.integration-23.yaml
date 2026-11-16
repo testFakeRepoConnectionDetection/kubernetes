@@ -1,0 +1,13 @@
+# Local integration stack: the kube-controller service with the corp endpoints of staging.
+services:
+  kube-controller:
+    image: registry.corp.internal/platform/kube-controller:latest
+    environment:
+      # SWIFT Fees Calculator APAC
+      EXT_GW_628_MARKET_DATA_URL: https://ext-gw-628.stg.svc.corp.internal/api/v1/market-data
+      TREASURY_FUNDING_PLANNER_AMER_PRICES_URL: https://treasury-funding-planner-amer.stg.svc.corp.internal/api/v1/prices
+      # FX Order Router AMER
+      EXT_GW_556_RISK_REPORTS_URL: https://ext-gw-556.stg.svc.corp.internal/api/v1/risk-reports
+      INTEGRATION_FILE_TRANSFER_HUB_AMER_MARKET_DATA_URL: https://integration-file-transfer-hub-amer.stg.svc.corp.internal/api/v1/market-data
+    ports:
+      - "8443:8443"

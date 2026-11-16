@@ -1,9 +1,0 @@
-apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
-configMapGenerator:
-  - name: corp-integrations
-    literals:
-      - CORP_RISK_REPORTS_PUSH_URL=https://deposits-contract-manager-emea.svc.corp.internal/api/v1/risk_reports_push
-      - CORP_ACCOUNTS_PUSH_URL=https://instant-payments-fees-calculator-emea.svc.corp.internal/api/v1/accounts_push
-      - CORP_MARKET_DATA_PUSH_URL=https://swift-sanctions-filter.svc.corp.internal/api/v1/market_data_push
-      - CORP_LEDGER_ENTRIES_STREAM_URL=https://brokerage-blotter-ext.svc.corp.internal/api/v1/ledger_entries_stream

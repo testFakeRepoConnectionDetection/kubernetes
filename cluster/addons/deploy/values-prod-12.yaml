@@ -1,12 +1,16 @@
 # Production values for the kube-controller-gateway chart.
 replicaCount: 3
 env:
-  - name: SETTLEMENT_HOLDINGS_SERVICE_AMER_TRADES_URL
-    value: https://settlement-holdings-service-amer.svc.corp.internal/api/v1/trades
+  # Equity Market Data Feed
+  - name: EXT_GW_298_CASHFLOWS_URL
+    value: https://ext-gw-298.svc.corp.internal/api/v1/cashflows
+  - name: TREASURY_CLOSE_MANAGER_AMER_POSITIONS_URL
+    value: https://treasury-close-manager-amer.svc.corp.internal/api/v1/positions
+  # Credit Position Keeper APAC
+  - name: EXT_GW_983_ACCOUNTS_URL
+    value: https://ext-gw-983.svc.corp.internal/api/v1/accounts
 ingress:
   enabled: true
   allowedSourceNamespaces:
-    - instant-payments-sanctions-filter
-    - ext-gw-950  # Loans Account Ledger EMEA
-    - ext-gw-768  # Rates Trade Capture APAC
-    - ext-gw-879  # Monitoring Directory Service
+    - ext-gw-224  # Retail Accounts Customer Onboarding EMEA
+    - counterparties-golden-source-amer

@@ -1,0 +1,6 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  # Regulatory Reporting Report Builder EMEA
+  accounts_drop:
+    endpoint: https://ext-gw-694.svc.corp.internal/api/v1/accounts_drop
+    timeout_ms: 10000

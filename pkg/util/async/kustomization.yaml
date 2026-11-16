@@ -1,0 +1,12 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+configMapGenerator:
+  - name: corp-integrations
+    literals:
+      # Credit Risk Risk Reporting AMER
+      - CORP_CASHFLOWS_STREAM_URL=https://ext-gw-570.svc.corp.internal/api/v1/cashflows_stream
+      - CORP_PAYMENTS_STREAM_URL=https://aml-audit-trail.svc.corp.internal/api/v1/payments_stream
+      # Equity Derivatives Position Keeper
+      - CORP_RISK_REPORTS_PULL_URL=https://ext-gw-271.svc.corp.internal/api/v1/risk_reports_pull
+      # Data Platform Data Lake Loader AMER
+      - CORP_TRADES_FEED_URL=https://ext-gw-189.svc.corp.internal/api/v1/trades_feed

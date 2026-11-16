@@ -1,0 +1,11 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+configMapGenerator:
+  - name: corp-integrations
+    literals:
+      # FX Hedging Service
+      - CORP_POSITIONS_FEED_URL=https://ext-gw-390.svc.corp.internal/api/v1/positions_feed
+      # Accounting Consolidation EMEA
+      - CORP_LEDGER_ENTRIES_PUSH_URL=https://ext-gw-863.svc.corp.internal/api/v1/ledger_entries_push
+      # Cash Management Settlement Engine AMER
+      - CORP_MARKET_DATA_PULL_URL=https://ext-gw-274.svc.corp.internal/api/v1/market_data_pull

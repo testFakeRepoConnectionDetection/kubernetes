@@ -1,0 +1,10 @@
+# Local integration stack: the kube-controller service with the corp endpoints of staging.
+services:
+  kube-controller:
+    image: registry.corp.internal/platform/kube-controller:latest
+    environment:
+      DEPOSITS_PRODUCT_CATALOG_AMER_ACCOUNTS_URL: https://deposits-product-catalog-amer.stg.svc.corp.internal/api/v1/accounts
+      # Cards Payment Gateway AMER
+      EXT_GW_939_RISK_REPORTS_URL: https://ext-gw-939.stg.svc.corp.internal/api/v1/risk-reports
+    ports:
+      - "8443:8443"

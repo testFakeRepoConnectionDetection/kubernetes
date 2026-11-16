@@ -1,6 +1,0 @@
-# Integration endpoints of kube-controller. Loaded at start-up.
-integrations:
-  # Loans Document Store
-  trades_drop:
-    endpoint: https://ext-gw-153.svc.corp.internal/api/v1/trades_drop
-    timeout_ms: 10000

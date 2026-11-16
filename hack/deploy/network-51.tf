@@ -1,20 +1,38 @@
 # Network access of the kube-controller deployment (corp landing zone).
 
-module "egress_01" {
-  source           = "../modules/private-link-consumer"
-  endpoint_service = "com.corp.privatelink.data-platform-event-bus-emea"
-  port             = 443
+data "aws_security_group" "peer_01" {
+  tags = {
+    Application = "Instruments Data Quality Monitor AMER"
+  }
 }
 
-module "egress_02" {
-  source           = "../modules/private-link-consumer"
-  endpoint_service = "com.corp.privatelink.messaging-token-service-apac"
-  port             = 443
+resource "aws_security_group_rule" "ingress_01" {
+  type                     = "ingress"
+  from_port                = 8443
+  to_port                  = 8443
+  protocol                 = "tcp"
+  security_group_id        = var.service_sg_id
+  source_security_group_id = data.aws_security_group.peer_01.id
+}
+
+data "aws_security_group" "peer_02" {
+  tags = {
+    app = "legal-entities-mapping-service"
+  }
+}
+
+resource "aws_security_group_rule" "ingress_02" {
+  type                     = "ingress"
+  from_port                = 8443
+  to_port                  = 8443
+  protocol                 = "tcp"
+  security_group_id        = var.service_sg_id
+  source_security_group_id = data.aws_security_group.peer_02.id
 }
 
 data "aws_security_group" "peer_03" {
   tags = {
-    app = "monitoring-directory-service-emea"
+    app = "deposits-batch-processor-amer"
   }
 }
 
@@ -27,17 +45,9 @@ resource "aws_security_group_rule" "ingress_03" {
   source_security_group_id = data.aws_security_group.peer_03.id
 }
 
-data "aws_security_group" "peer_04" {
-  tags = {
-    app = "messaging-token-service"
-  }
-}
-
-resource "aws_security_group_rule" "ingress_04" {
-  type                     = "ingress"
-  from_port                = 8443
-  to_port                  = 8443
-  protocol                 = "tcp"
-  security_group_id        = var.service_sg_id
-  source_security_group_id = data.aws_security_group.peer_04.id
+# Corporate Accounts Balance Service AMER
+module "egress_04" {
+  source           = "../modules/private-link-consumer"
+  endpoint_service = "com.corp.privatelink.ext-gw-500"
+  port             = 443
 }

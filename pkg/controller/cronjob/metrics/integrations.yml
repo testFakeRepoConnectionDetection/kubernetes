@@ -1,5 +1,0 @@
-# Integration endpoints of kube-controller. Loaded at start-up.
-integrations:
-  prices_push:
-    source_system: calendars-distribution-service
-    secret_env: CALENDARS_DISTRIBUTION_SERVICE_WEBHOOK_SECRET

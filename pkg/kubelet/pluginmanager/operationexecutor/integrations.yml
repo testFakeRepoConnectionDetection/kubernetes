@@ -1,0 +1,13 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  positions_pull:
+    endpoint: https://regulatory-reporting-rules-engine-apac.svc.corp.internal/api/v1/positions_pull
+    timeout_ms: 10000
+  # Loans Account Ledger EMEA
+  prices_feed:
+    endpoint: https://ext-gw-957.svc.corp.internal/api/v1/prices_feed
+    timeout_ms: 10000
+  # Mortgages Contract Manager
+  payments_push:
+    endpoint: https://ext-gw-791.svc.corp.internal/api/v1/payments_push
+    timeout_ms: 10000
