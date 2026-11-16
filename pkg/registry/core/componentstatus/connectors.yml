@@ -1,6 +1,0 @@
-# Integration endpoints of kube-controller. Loaded at start-up.
-integrations:
-  # Data Platform Secrets Vault EMEA
-  registry_sync:
-    endpoint: https://ext-gw-946.svc.corp.internal/api/v1/registry_sync
-    timeout_ms: 10000

@@ -1,13 +1,12 @@
 # Production values for the kube-controller-gateway chart.
 replicaCount: 3
 env:
-  - name: CARDS_RECONCILIATION_AMER_URL
-    value: https://cards-reconciliation-amer.svc.corp.internal/api/v1
-  # Equity Derivatives Algo Engine
-  - name: EXT_GW_371_URL
-    value: https://ext-gw-371.svc.corp.internal/api/v1
+  - name: NEWS_SENTIMENT_API_RISK_REPORTS_URL
+    value: https://news-sentiment-api.svc.corp.internal/api/v1/risk-reports
+  - name: DATA_PLATFORM_TOKEN_SERVICE_APAC_ACCOUNTS_URL
+    value: https://data-platform-token-service-apac.svc.corp.internal/api/v1/accounts
 ingress:
   enabled: true
   allowedSourceNamespaces:
-    - prices-static-data-hub-emea
-    - equity-derivatives-market-data-feed-amer
+    - ext-gw-726  # Market Risk Exposure Calculator AMER
+    - ext-gw-987  # Cards Clearing Adapter AMER

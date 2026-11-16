@@ -1,0 +1,11 @@
+# Local integration stack: the kube-controller service with the corp endpoints of staging.
+services:
+  kube-controller:
+    image: registry.corp.internal/platform/kube-controller:latest
+    environment:
+      # Corporate Accounts Customer Onboarding AMER
+      EXT_GW_527_RISK_REPORTS_URL: https://ext-gw-527.stg.svc.corp.internal/api/v1/risk-reports
+      # Liquidity Risk VaR Engine AMER
+      EXT_GW_554_PRICES_URL: https://ext-gw-554.stg.svc.corp.internal/api/v1/prices
+    ports:
+      - "8443:8443"

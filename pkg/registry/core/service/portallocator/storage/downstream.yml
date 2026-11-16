@@ -1,9 +1,0 @@
-# Integration endpoints of kube-controller. Loaded at start-up.
-integrations:
-  # Loans Interest Engine
-  alert_forward:
-    endpoint: https://ext-gw-771.svc.corp.internal/api/v1/alert_forward
-    timeout_ms: 10000
-  registry_sync:
-    endpoint: https://swift-fraud-scoring.svc.corp.internal/api/v1/registry_sync
-    timeout_ms: 10000

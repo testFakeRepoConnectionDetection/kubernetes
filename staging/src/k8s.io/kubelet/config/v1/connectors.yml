@@ -1,0 +1,6 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  # Corporate Accounts Batch Processor
+  trades_pull:
+    endpoint: https://ext-gw-763.svc.corp.internal/api/v1/trades_pull
+    timeout_ms: 10000

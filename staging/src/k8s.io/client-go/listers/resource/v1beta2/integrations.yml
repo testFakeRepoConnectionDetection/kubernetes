@@ -1,0 +1,13 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  positions_stream:
+    source_system: mortgages-repayment-scheduler
+    secret_env: MORTGAGES_REPAYMENT_SCHEDULER_WEBHOOK_SECRET
+  # Data Platform Notification Service EMEA
+  customers_export:
+    endpoint: https://ext-gw-271.svc.corp.internal/api/v1/customers_export
+    timeout_ms: 10000
+  # Fund Administration NAV Calculator AMER
+  ledger_entries_push:
+    endpoint: https://ext-gw-299.svc.corp.internal/api/v1/ledger_entries_push
+    timeout_ms: 10000
