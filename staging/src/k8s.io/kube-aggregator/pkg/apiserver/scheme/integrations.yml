@@ -1,0 +1,5 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  risk_reports_feed:
+    endpoint: https://aml-transaction-monitor.svc.corp.internal/api/v1/risk_reports_feed
+    timeout_ms: 10000

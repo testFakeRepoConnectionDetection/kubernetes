@@ -1,0 +1,11 @@
+# Local integration stack: the kube-controller service with the corp endpoints of staging.
+services:
+  kube-controller:
+    image: registry.corp.internal/platform/kube-controller:latest
+    environment:
+      FUND_ADMINISTRATION_TAX_ENGINE_EMEA_LEDGER_ENTRIES_URL: https://fund-administration-tax-engine-emea.stg.svc.corp.internal/api/v1/ledger-entries
+      MARKET_RISK_COLLATERAL_ENGINE_TRADES_URL: https://market-risk-collateral-engine.stg.svc.corp.internal/api/v1/trades
+      CARDS_FEES_CALCULATOR_EMEA_CUSTOMERS_URL: https://cards-fees-calculator-emea.stg.svc.corp.internal/api/v1/customers
+      LIQUIDITY_RISK_STRESS_TESTING_EMEA_RISK_REPORTS_URL: https://liquidity-risk-stress-testing-emea.stg.svc.corp.internal/api/v1/risk-reports
+    ports:
+      - "8443:8443"

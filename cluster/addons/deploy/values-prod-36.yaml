@@ -1,0 +1,20 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  - name: SEPA_PAYMENT_HUB_AMER_PAYMENTS_URL
+    value: https://sepa-payment-hub-amer.svc.corp.internal/api/v1/payments
+  # Market Risk Exposure Calculator APAC
+  - name: EXT_GW_365_RISK_REPORTS_URL
+    value: https://ext-gw-365.svc.corp.internal/api/v1/risk-reports
+  # Legal Entities Enrichment Service EMEA
+  - name: EXT_GW_986_ACCOUNTS_URL
+    value: https://ext-gw-986.svc.corp.internal/api/v1/accounts
+  # AML Evidence Archive EMEA
+  - name: EXT_GW_480_RISK_REPORTS_URL
+    value: https://ext-gw-480.svc.corp.internal/api/v1/risk-reports
+  # Commodities Trade Capture AMER
+  - name: EXT_GW_297_PAYMENTS_URL
+    value: https://ext-gw-297.svc.corp.internal/api/v1/payments
+ingress:
+  enabled: true
+  allowedSourceNamespaces:

@@ -3,10 +3,10 @@ services:
   kube-controller:
     image: registry.corp.internal/platform/kube-controller:latest
     environment:
-      FUND_ADMINISTRATION_ASSET_SERVICING_AMER_PAYMENTS_URL: https://fund-administration-asset-servicing-amer.stg.svc.corp.internal/api/v1/payments
-      PARTNER_STATEMENTS_HUB_CASHFLOWS_URL: https://partner-statements-hub.stg.svc.corp.internal/api/v1/cashflows
-      FX_ALGO_ENGINE_EMEA_MARKET_DATA_URL: https://fx-algo-engine-emea.stg.svc.corp.internal/api/v1/market-data
-      # Market Risk Risk Aggregator EMEA
-      EXT_GW_970_CUSTOMERS_URL: https://ext-gw-970.stg.svc.corp.internal/api/v1/customers
+      # Treasury Funding Planner EMEA
+      EXT_GW_235_CASHFLOWS_URL: https://ext-gw-235.stg.svc.corp.internal/api/v1/cashflows
+      COMMODITIES_ORDER_ROUTER_MARKET_DATA_URL: https://commodities-order-router.stg.svc.corp.internal/api/v1/market-data
+      # Equity Execution Gateway APAC
+      EXT_GW_659_LEDGER_ENTRIES_URL: https://ext-gw-659.stg.svc.corp.internal/api/v1/ledger-entries
     ports:
       - "8443:8443"

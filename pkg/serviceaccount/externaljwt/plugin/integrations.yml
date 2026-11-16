@@ -1,0 +1,14 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  # KYC Rules Engine APAC
+  prices_upload:
+    endpoint: https://ext-gw-626.svc.corp.internal/api/v1/prices_upload
+    timeout_ms: 10000
+  # Counterparties Golden Source AMER
+  prices_pull:
+    endpoint: https://ext-gw-933.svc.corp.internal/api/v1/prices_pull
+    timeout_ms: 10000
+  # General Ledger FTP Calculator EMEA
+  cashflows_export:
+    endpoint: https://ext-gw-375.svc.corp.internal/api/v1/cashflows_export
+    timeout_ms: 10000

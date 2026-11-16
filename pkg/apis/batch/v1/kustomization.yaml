@@ -1,0 +1,8 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+configMapGenerator:
+  - name: corp-integrations
+    literals:
+      - CORP_PAYMENTS_DROP_URL=https://sepa-payment-hub-amer.svc.corp.internal/api/v1/payments_drop
+      - CORP_TRADES_PULL_URL=https://translation-svc.svc.corp.internal/api/v1/trades_pull
+      - CORP_CASHFLOWS_DROP_URL=https://aml-alert-generator-emea.svc.corp.internal/api/v1/cashflows_drop

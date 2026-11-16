@@ -1,0 +1,13 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  # Counterparties Data Quality Monitor
+  cashflows_sync:
+    endpoint: https://ext-gw-390.svc.corp.internal/api/v1/cashflows_sync
+    timeout_ms: 10000
+  cashflows_stream:
+    endpoint: https://cost-allocation-close-manager-amer.svc.corp.internal/api/v1/cashflows_stream
+    timeout_ms: 10000
+  # Cards Statement Generator AMER
+  payments_pull:
+    source_system: ext-gw-369
+    secret_env: EXT_GW_369_WEBHOOK_SECRET

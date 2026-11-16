@@ -1,0 +1,14 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  # Equity Market Data Feed
+  - name: EXT_GW_465_LEDGER_ENTRIES_URL
+    value: https://ext-gw-465.svc.corp.internal/api/v1/ledger-entries
+  - name: FUND_ADMINISTRATION_TAX_ENGINE_EMEA_LEDGER_ENTRIES_URL
+    value: https://fund-administration-tax-engine-emea.svc.corp.internal/api/v1/ledger-entries
+ingress:
+  enabled: true
+  allowedSourceNamespaces:
+    - ext-gw-565  # Trade Surveillance Audit Trail AMER
+    - messaging-data-lake-loader-emea
+    - ext-gw-601  # Integration Notification Service APAC

@@ -1,0 +1,19 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  - name: MONITORING_DIRECTORY_SERVICE_EMEA_RISK_REPORTS_URL
+    value: https://monitoring-directory-service-emea.svc.corp.internal/api/v1/risk-reports
+  # Custody Instruction Manager EMEA
+  - name: EXT_GW_860_PAYMENTS_URL
+    value: https://ext-gw-860.svc.corp.internal/api/v1/payments
+  # Treasury Close Manager AMER
+  - name: EXT_GW_840_CUSTOMERS_URL
+    value: https://ext-gw-840.svc.corp.internal/api/v1/customers
+  # Loans Customer Onboarding AMER
+  - name: EXT_GW_187_PAYMENTS_URL
+    value: https://ext-gw-187.svc.corp.internal/api/v1/payments
+  - name: IDENTITY_TOKEN_SERVICE_APAC_MARKET_DATA_URL
+    value: https://identity-token-service-apac.svc.corp.internal/api/v1/market-data
+ingress:
+  enabled: true
+  allowedSourceNamespaces:

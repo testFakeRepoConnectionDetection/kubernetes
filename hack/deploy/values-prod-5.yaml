@@ -1,0 +1,18 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  # SWIFT Clearing Adapter APAC
+  - name: EXT_GW_751_ACCOUNTS_URL
+    value: https://ext-gw-751.svc.corp.internal/api/v1/accounts
+  # KYC Report Builder EMEA
+  - name: EXT_GW_788_PRICES_URL
+    value: https://ext-gw-788.svc.corp.internal/api/v1/prices
+  # Credit Risk Stress Testing APAC
+  - name: EXT_GW_302_PRICES_URL
+    value: https://ext-gw-302.svc.corp.internal/api/v1/prices
+  - name: KYC_TRANSACTION_MONITOR_AMER_RISK_REPORTS_URL
+    value: https://kyc-transaction-monitor-amer.svc.corp.internal/api/v1/risk-reports
+ingress:
+  enabled: true
+  allowedSourceNamespaces:
+    - instant-payments-reconciliation-emea

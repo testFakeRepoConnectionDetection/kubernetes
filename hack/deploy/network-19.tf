@@ -1,28 +1,27 @@
 # Network access of the kube-controller deployment (corp landing zone).
 
-# Retail Accounts Credit Scoring APAC
+# Treasury Funding Planner EMEA
 module "egress_01" {
   source           = "../modules/private-link-consumer"
-  endpoint_service = "com.corp.privatelink.ext-gw-351"
+  endpoint_service = "com.corp.privatelink.ext-gw-235"
   port             = 443
 }
 
-# General Ledger Close Manager EMEA
 module "egress_02" {
   source           = "../modules/private-link-consumer"
-  endpoint_service = "com.corp.privatelink.ext-gw-745"
+  endpoint_service = "com.corp.privatelink.identity-token-service-apac"
   port             = 443
 }
 
 module "egress_03" {
   source           = "../modules/private-link-consumer"
-  endpoint_service = "com.corp.privatelink.general-ledger-funding-planner-emea"
+  endpoint_service = "com.corp.privatelink.messaging-token-service"
   port             = 443
 }
 
 data "aws_security_group" "peer_04" {
   tags = {
-    app = "kyc-rules-engine-emea"
+    app = "credit-risk-backtesting"
   }
 }
 
@@ -37,7 +36,7 @@ resource "aws_security_group_rule" "ingress_04" {
 
 data "aws_security_group" "peer_05" {
   tags = {
-    app = "equity-market-data-feed"
+    Application = "Identity Event Bus"
   }
 }
 

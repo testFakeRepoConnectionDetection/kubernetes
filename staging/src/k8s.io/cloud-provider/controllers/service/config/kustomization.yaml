@@ -1,0 +1,9 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+configMapGenerator:
+  - name: corp-integrations
+    literals:
+      # General Ledger Accruals Engine EMEA
+      - CORP_RISK_REPORTS_DROP_URL=https://ext-gw-790.svc.corp.internal/api/v1/risk_reports_drop
+      # Instant Payments Clearing Adapter EMEA
+      - CORP_LEDGER_ENTRIES_PUSH_URL=https://ext-gw-460.svc.corp.internal/api/v1/ledger_entries_push

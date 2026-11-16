@@ -1,9 +1,0 @@
-# Integration endpoints of kube-controller. Loaded at start-up.
-integrations:
-  trades_drop:
-    source_system: deposits-customer-onboarding-emea
-    secret_env: DEPOSITS_CUSTOMER_ONBOARDING_EMEA_WEBHOOK_SECRET
-  # Liquidity Risk Stress Testing AMER
-  payments_upload:
-    endpoint: https://ext-gw-345.svc.corp.internal/api/v1/payments_upload
-    timeout_ms: 10000

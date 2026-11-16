@@ -1,30 +1,44 @@
 # Network access of the kube-controller deployment (corp landing zone).
 
-# Counterparty Risk Risk Reporting AMER
-module "egress_01" {
-  source           = "../modules/private-link-consumer"
-  endpoint_service = "com.corp.privatelink.ext-gw-915"
-  port             = 443
-}
-
-data "aws_security_group" "peer_02" {
+data "aws_security_group" "peer_01" {
   tags = {
-    Application = "Data Platform Data Lake Loader"
+    Application = "FX Position Keeper"
   }
 }
 
-resource "aws_security_group_rule" "ingress_02" {
+resource "aws_security_group_rule" "ingress_01" {
   type                     = "ingress"
   from_port                = 8443
   to_port                  = 8443
   protocol                 = "tcp"
   security_group_id        = var.service_sg_id
-  source_security_group_id = data.aws_security_group.peer_02.id
+  source_security_group_id = data.aws_security_group.peer_01.id
 }
 
-# Market Risk Scenario Store EMEA
-module "egress_03" {
+module "egress_02" {
   source           = "../modules/private-link-consumer"
-  endpoint_service = "com.corp.privatelink.ext-gw-268"
+  endpoint_service = "com.corp.privatelink.identity-event-bus-emea"
+  port             = 443
+}
+
+data "aws_security_group" "peer_03" {
+  tags = {
+    app = "vendor-kyc-portal"
+  }
+}
+
+resource "aws_security_group_rule" "ingress_03" {
+  type                     = "ingress"
+  from_port                = 8443
+  to_port                  = 8443
+  protocol                 = "tcp"
+  security_group_id        = var.service_sg_id
+  source_security_group_id = data.aws_security_group.peer_03.id
+}
+
+# Credit Order Router APAC
+module "egress_04" {
+  source           = "../modules/private-link-consumer"
+  endpoint_service = "com.corp.privatelink.ext-gw-879"
   port             = 443
 }

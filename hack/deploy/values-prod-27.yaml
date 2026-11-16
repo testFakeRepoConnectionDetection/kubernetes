@@ -1,0 +1,11 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  - name: ACME_CLEARING_GATEWAY_ACCOUNTS_URL
+    value: https://acme-clearing-gateway.svc.corp.internal/api/v1/accounts
+ingress:
+  enabled: true
+  allowedSourceNamespaces:
+    - ext-gw-654  # Identity Directory Service APAC
+    - ext-gw-733  # Credit Risk Risk Aggregator
+    - ext-gw-593  # Integration API Gateway AMER

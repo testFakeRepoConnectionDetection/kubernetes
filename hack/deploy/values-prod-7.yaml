@@ -1,15 +1,16 @@
 # Production values for the kube-controller-gateway chart.
 replicaCount: 3
 env:
-  # Liquidity Risk Stress Testing APAC
-  - name: EXT_GW_770_PAYMENTS_URL
-    value: https://ext-gw-770.svc.corp.internal/api/v1/payments
-  # Liquidity Risk Risk Reporting APAC
-  - name: EXT_GW_183_MARKET_DATA_URL
-    value: https://ext-gw-183.svc.corp.internal/api/v1/market-data
-  - name: AML_RULES_ENGINE_EMEA_RISK_REPORTS_URL
-    value: https://aml-rules-engine-emea.svc.corp.internal/api/v1/risk-reports
+  # Equity Market Data Feed
+  - name: EXT_GW_465_LEDGER_ENTRIES_URL
+    value: https://ext-gw-465.svc.corp.internal/api/v1/ledger-entries
+  # Loans Account Ledger EMEA
+  - name: EXT_GW_149_PRICES_URL
+    value: https://ext-gw-149.svc.corp.internal/api/v1/prices
+  - name: INTEGRATION_SCHEDULER_APAC_PRICES_URL
+    value: https://integration-scheduler-apac.svc.corp.internal/api/v1/prices
+  - name: LIQUIDITY_RISK_STRESS_TESTING_EMEA_RISK_REPORTS_URL
+    value: https://liquidity-risk-stress-testing-emea.svc.corp.internal/api/v1/risk-reports
 ingress:
   enabled: true
   allowedSourceNamespaces:
-    - ext-gw-691  # Corporate Accounts Product Catalog AMER

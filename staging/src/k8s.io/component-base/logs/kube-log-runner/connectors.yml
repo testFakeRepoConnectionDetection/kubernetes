@@ -1,0 +1,9 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  # Settlement Asset Servicing
+  accounts_sync:
+    endpoint: https://ext-gw-716.svc.corp.internal/api/v1/accounts_sync
+    timeout_ms: 10000
+  risk_reports_stream:
+    endpoint: https://esg-scores-feed.svc.corp.internal/api/v1/risk_reports_stream
+    timeout_ms: 10000

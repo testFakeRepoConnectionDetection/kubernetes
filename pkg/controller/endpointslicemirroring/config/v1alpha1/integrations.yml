@@ -1,0 +1,5 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  positions_stream:
+    endpoint: https://custody-instruction-manager.svc.corp.internal/api/v1/positions_stream
+    timeout_ms: 10000

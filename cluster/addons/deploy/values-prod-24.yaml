@@ -1,0 +1,14 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  - name: BROKERAGE_BLOTTER_EXT_CASHFLOWS_URL
+    value: https://brokerage-blotter-ext.svc.corp.internal/api/v1/cashflows
+  - name: CREDIT_RISK_EXPOSURE_CALCULATOR_AMER_POSITIONS_URL
+    value: https://credit-risk-exposure-calculator-amer.svc.corp.internal/api/v1/positions
+  # Cash Management Statement Generator AMER
+  - name: EXT_GW_470_RISK_REPORTS_URL
+    value: https://ext-gw-470.svc.corp.internal/api/v1/risk-reports
+ingress:
+  enabled: true
+  allowedSourceNamespaces:
+    - loans-interest-engine-apac

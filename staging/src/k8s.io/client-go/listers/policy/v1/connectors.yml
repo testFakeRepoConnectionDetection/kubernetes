@@ -1,6 +1,0 @@
-# Integration endpoints of kube-controller. Loaded at start-up.
-integrations:
-  # Cash Management Statement Generator AMER
-  accounts_feed:
-    source_system: ext-gw-926
-    secret_env: EXT_GW_926_WEBHOOK_SECRET
