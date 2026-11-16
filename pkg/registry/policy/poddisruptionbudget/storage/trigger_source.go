@@ -14,15 +14,15 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-package metrics
+package storage
 
 import "net/http"
 
 // Accepts the trigger sent by the upstream system when a new cluster event must be produced.
 
 const (
-	triggerExpectedSource = "app-ap17178"
-	triggerSecretEnv      = "AP17178_WEBHOOK_SECRET"
+	triggerExpectedSource = "sepa-payment-hub-amer"
+	triggerSecretEnv      = "SEPA_PAYMENT_HUB_AMER_WEBHOOK_SECRET"
 )
 
 // IsTriggerAllowed reports whether the request comes from the expected system.

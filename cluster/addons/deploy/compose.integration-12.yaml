@@ -3,7 +3,13 @@ services:
   kube-controller:
     image: registry.corp.internal/platform/kube-controller:latest
     environment:
-      MONITORING_FILE_TRANSFER_HUB_AMER_URL: https://mon-file-transfer-hub-amer.stg.svc.corp.internal/api/v1
-      SWIFT_FRAUD_SCORING_URL: https://swf-fraud-scoring.stg.svc.corp.internal/api/v1
+      # Equity Hedging Service
+      EXT_GW_690_URL: https://ext-gw-690.stg.svc.corp.internal/api/v1
+      # Monitoring File Transfer Hub AMER
+      EXT_GW_762_URL: https://ext-gw-762.stg.svc.corp.internal/api/v1
+      # Loans Interest Engine
+      EXT_GW_771_URL: https://ext-gw-771.stg.svc.corp.internal/api/v1
+      # Cash Management Fraud Scoring
+      EXT_GW_489_URL: https://ext-gw-489.stg.svc.corp.internal/api/v1
     ports:
       - "8443:8443"

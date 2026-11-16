@@ -14,20 +14,21 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-package cache
+package plugin
 
-import "net/http"
-
-// Accepts the trigger sent by the upstream system when a new cluster event must be produced.
+// Publishes cluster event events for the downstream service.
 
 const (
-	triggerExpectedSource = "app-ap26664"
-	triggerSecretEnv      = "AP26664_WEBHOOK_SECRET"
+	eventsBootstrapServers = "kafka-01.svc.corp.internal:9093"
+	eventsTopic            = "counterparty-risk-exposure-calculator-emea.inbound.cluster_events"
 )
 
-// IsTriggerAllowed reports whether the request comes from the expected system.
-func IsTriggerAllowed(r *http.Request) bool {
-	return r.Header.Get("X-Source-System") == triggerExpectedSource
+// EventsProducerConfig returns the settings of the events producer.
+func EventsProducerConfig() map[string]string {
+	return map[string]string{
+		"bootstrap.servers": eventsBootstrapServers,
+		"security.protocol": "ssl",
+		"acks":              "all",
+		"topic":             eventsTopic,
+	}
 }
-
-// Field names follow the KYC Transaction Monitor APAC report layout; this module never calls it.

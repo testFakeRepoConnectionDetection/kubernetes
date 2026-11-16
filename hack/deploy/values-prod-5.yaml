@@ -1,0 +1,15 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  - name: DEPOSITS_INTEREST_ENGINE_URL
+    value: https://deposits-interest-engine.svc.corp.internal/api/v1
+  - name: COUNTERPARTY_RISK_EXPOSURE_CALCULATOR_EMEA_URL
+    value: https://counterparty-risk-exposure-calculator-emea.svc.corp.internal/api/v1
+  # Equity Derivatives Algo Engine
+  - name: EXT_GW_371_URL
+    value: https://ext-gw-371.svc.corp.internal/api/v1
+ingress:
+  enabled: true
+  allowedSourceNamespaces:
+    - ext-gw-874  # Counterparties Golden Source APAC
+    - retail-accounts-customer-onboarding

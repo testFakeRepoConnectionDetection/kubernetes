@@ -1,0 +1,9 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  # Equity Derivatives Hedging Service
+  incident_hook:
+    endpoint: https://ext-gw-141.svc.corp.internal/api/v1/incident_hook
+    timeout_ms: 10000
+  usage_upload:
+    source_system: corporate-actions-event-processor-amer
+    secret_env: CORPORATE_ACTIONS_EVENT_PROCESSOR_AMER_WEBHOOK_SECRET

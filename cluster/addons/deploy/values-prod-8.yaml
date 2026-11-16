@@ -1,15 +1,13 @@
 # Production values for the kube-controller-gateway chart.
 replicaCount: 3
 env:
-  # Liquidity Risk Sensitivities Service EMEA
-  - name: EXT_GW_946_URL
-    value: https://ext-gw-946.svc.corp.internal/api/v1
-  - name: AP81821_URL
-    value: https://app-ap81821.svc.corp.internal/api/v1
-  - name: INPPAYHUB_AM_URL
-    value: https://inppayhub-am.svc.corp.internal/api/v1
-  - name: AP84411_URL
-    value: https://app-ap84411.svc.corp.internal/api/v1
+  - name: INSTANT_PAYMENTS_SANCTIONS_FILTER_EMEA_URL
+    value: https://instant-payments-sanctions-filter-emea.svc.corp.internal/api/v1
+  - name: SEPA_STATEMENT_GENERATOR_APAC_URL
+    value: https://sepa-statement-generator-apac.svc.corp.internal/api/v1
 ingress:
   enabled: true
   allowedSourceNamespaces:
+    - deposits-batch-processor-amer
+    - ext-gw-324  # Credit Risk Scenario Store APAC
+    - liquidity-risk-collateral-engine

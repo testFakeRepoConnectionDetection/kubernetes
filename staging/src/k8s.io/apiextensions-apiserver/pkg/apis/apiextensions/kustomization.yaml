@@ -1,8 +1,0 @@
-apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
-configMapGenerator:
-  - name: corp-integrations
-    literals:
-      - CORP_STATUS_CALLBACK_URL=https://app-ap27835.svc.corp.internal/api/v1/status_callback
-      - CORP_INCIDENT_HOOK_URL=https://eq-hedging-service.svc.corp.internal/api/v1/incident_hook
-      - CORP_METRICS_RELAY_URL=https://app-ap33838.svc.corp.internal/api/v1/metrics_relay

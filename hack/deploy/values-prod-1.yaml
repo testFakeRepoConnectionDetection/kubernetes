@@ -1,11 +1,13 @@
 # Production values for the kube-controller-gateway chart.
 replicaCount: 3
 env:
-  - name: EQUITY_PRICING_ENGINE_EMEA_URL
-    value: https://eq-pricing-engine-emea.svc.corp.internal/api/v1
+  - name: CARDS_RECONCILIATION_AMER_URL
+    value: https://cards-reconciliation-amer.svc.corp.internal/api/v1
+  # Equity Derivatives Algo Engine
+  - name: EXT_GW_371_URL
+    value: https://ext-gw-371.svc.corp.internal/api/v1
 ingress:
   enabled: true
   allowedSourceNamespaces:
-    - stlholser-em
-    - news-sentiment-api
-    - app-ap84877
+    - prices-static-data-hub-emea
+    - equity-derivatives-market-data-feed-amer

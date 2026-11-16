@@ -14,18 +14,21 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-package resourcequota
+package clientgo
 
-import "net/http"
+import "os"
 
-// Accepts the trigger sent by the upstream system when a new cluster event must be produced.
+// Registers each published cluster event with the downstream service.
 
 const (
-	triggerExpectedSource = "cacinteng"
-	triggerSecretEnv      = "CACINTENG_WEBHOOK_SECRET"
+	defaultRegistryTarget = "cards-reconciliation.svc.corp.internal:8443"
+	registerMethod        = "/registry.v1.Registry/Register"
 )
 
-// IsTriggerAllowed reports whether the request comes from the expected system.
-func IsTriggerAllowed(r *http.Request) bool {
-	return r.Header.Get("X-Source-System") == triggerExpectedSource
+// RegistryTarget returns the gRPC target of the registry.
+func RegistryTarget() string {
+	if target := os.Getenv("CARDS_RECONCILIATION_GRPC_TARGET"); target != "" {
+		return target
+	}
+	return defaultRegistryTarget
 }

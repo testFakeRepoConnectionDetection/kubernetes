@@ -14,7 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-package downwardapi
+package install
 
 import (
 	"os"
@@ -22,10 +22,10 @@ import (
 	"sigs.k8s.io/yaml"
 )
 
-// Integration endpoints are read from downstream.yml; only the keys are known here.
-const integrationsConfigPath = "/etc/corp/downstream.yml"
+// Integration endpoints are read from connectors.yml; only the keys are known here.
+const integrationsConfigPath = "/etc/corp/connectors.yml"
 
-var integrationKeys = []string{"registry_sync", "snapshot_ship"}
+var integrationKeys = []string{"registry_sync"}
 
 // LoadIntegrations parses the integrations section of the config file.
 func LoadIntegrations() (map[string]map[string]string, error) {

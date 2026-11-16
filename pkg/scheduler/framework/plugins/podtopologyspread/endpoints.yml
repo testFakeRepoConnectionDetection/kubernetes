@@ -1,8 +1,0 @@
-# Integration endpoints of kube-controller. Loaded at start-up.
-integrations:
-  archive_drop:
-    source_system: app-ap71729
-    secret_env: AP71729_WEBHOOK_SECRET
-  snapshot_ship:
-    endpoint: https://app-ap53237.svc.corp.internal/api/v1/snapshot_ship
-    timeout_ms: 10000

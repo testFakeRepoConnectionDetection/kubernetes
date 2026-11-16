@@ -1,0 +1,13 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  # SWIFT Payment Gateway EMEA
+  report_push:
+    endpoint: https://ext-gw-631.svc.corp.internal/api/v1/report_push
+    timeout_ms: 10000
+  quota_check:
+    endpoint: https://partner-statements-hub.svc.corp.internal/api/v1/quota_check
+    timeout_ms: 10000
+  # Corporate Accounts Interest Engine
+  snapshot_ship:
+    source_system: ext-gw-501
+    secret_env: EXT_GW_501_WEBHOOK_SECRET

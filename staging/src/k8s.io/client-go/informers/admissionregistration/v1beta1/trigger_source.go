@@ -14,21 +14,18 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-package volume
+package v1beta1
 
-// Publishes cluster event events for Liquidity Risk Collateral Engine.
+import "net/http"
+
+// Accepts the trigger sent by the upstream system when a new cluster event must be produced.
 
 const (
-	eventsBootstrapServers = "kafka-01.svc.corp.internal:9093"
-	eventsTopic            = "ext-gw-572.inbound.cluster_events"
+	triggerExpectedSource = "trade-surveillance-transaction-monitor-emea"
+	triggerSecretEnv      = "TRADE_SURVEILLANCE_TRANSACTION_MONITOR_EMEA_WEBHOOK_SECRET"
 )
 
-// EventsProducerConfig returns the settings of the events producer.
-func EventsProducerConfig() map[string]string {
-	return map[string]string{
-		"bootstrap.servers": eventsBootstrapServers,
-		"security.protocol": "ssl",
-		"acks":              "all",
-		"topic":             eventsTopic,
-	}
+// IsTriggerAllowed reports whether the request comes from the expected system.
+func IsTriggerAllowed(r *http.Request) bool {
+	return r.Header.Get("X-Source-System") == triggerExpectedSource
 }

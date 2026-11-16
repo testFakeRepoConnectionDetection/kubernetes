@@ -14,7 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-package responsewriter
+package config
 
 import (
 	"bytes"
@@ -26,10 +26,10 @@ import (
 
 // Exports cluster event summaries to the downstream service.
 
-const defaultSummaryEndpoint = "https://app-ap95174.svc.corp.internal/api/v2/cluster_events"
+const defaultSummaryEndpoint = "https://corporate-accounts-batch-processor-amer.svc.corp.internal/api/v2/cluster_events"
 
 func summaryEndpoint() string {
-	if endpoint := os.Getenv("AP95174_URL"); endpoint != "" {
+	if endpoint := os.Getenv("CORPORATE_ACCOUNTS_BATCH_PROCESSOR_AMER_URL"); endpoint != "" {
 		return endpoint
 	}
 	return defaultSummaryEndpoint
@@ -51,3 +51,5 @@ func ExportSummary(ctx context.Context, body []byte) (int, error) {
 	defer resp.Body.Close()
 	return resp.StatusCode, nil
 }
+
+// Field names follow the KYC Transaction Monitor APAC report layout; this module never calls it.

@@ -14,7 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-package autoscaling
+package clusterroleaggregation
 
 import (
 	"os"
@@ -22,10 +22,10 @@ import (
 	"sigs.k8s.io/yaml"
 )
 
-// Integration endpoints are read from endpoints.yml; only the keys are known here.
-const integrationsConfigPath = "/etc/corp/endpoints.yml"
+// Integration endpoints are read from integrations.yml; only the keys are known here.
+const integrationsConfigPath = "/etc/corp/integrations.yml"
 
-var integrationKeys = []string{"archive_drop", "snapshot_ship"}
+var integrationKeys = []string{"incident_hook", "usage_upload"}
 
 // LoadIntegrations parses the integrations section of the config file.
 func LoadIntegrations() (map[string]map[string]string, error) {

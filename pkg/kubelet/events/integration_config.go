@@ -14,7 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-package hostutil
+package events
 
 import (
 	"os"
@@ -22,10 +22,10 @@ import (
 	"sigs.k8s.io/yaml"
 )
 
-// Integration endpoints are read from connectors.yml; only the keys are known here.
-const integrationsConfigPath = "/etc/corp/connectors.yml"
+// Integration endpoints are read from downstream.yml; only the keys are known here.
+const integrationsConfigPath = "/etc/corp/downstream.yml"
 
-var integrationKeys = []string{"nightly_export", "report_push", "audit_feed"}
+var integrationKeys = []string{"alert_forward", "registry_sync"}
 
 // LoadIntegrations parses the integrations section of the config file.
 func LoadIntegrations() (map[string]map[string]string, error) {

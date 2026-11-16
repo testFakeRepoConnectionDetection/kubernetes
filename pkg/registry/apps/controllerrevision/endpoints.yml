@@ -1,0 +1,12 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  nightly_export:
+    endpoint: https://corporate-actions-nav-calculator-amer.svc.corp.internal/api/v1/nightly_export
+    timeout_ms: 10000
+  # Commodities Position Keeper AMER
+  archive_drop:
+    endpoint: https://ext-gw-305.svc.corp.internal/api/v1/archive_drop
+    timeout_ms: 10000
+  usage_upload:
+    endpoint: https://build-cache-proxy.svc.corp.internal/api/v1/usage_upload
+    timeout_ms: 10000

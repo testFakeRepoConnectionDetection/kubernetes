@@ -1,6 +1,0 @@
-# Integration endpoints of kube-controller. Loaded at start-up.
-integrations:
-  # General Ledger Consolidation EMEA
-  snapshot_ship:
-    source_system: ext-gw-690
-    secret_env: EXT_GW_690_WEBHOOK_SECRET

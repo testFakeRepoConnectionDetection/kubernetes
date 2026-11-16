@@ -14,13 +14,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-package admission
+package structured
 
 // Publishes cluster event events for the downstream service.
 
 const (
 	eventsBootstrapServers = "kafka-01.svc.corp.internal:9093"
-	eventsTopic            = "survey-collector.inbound.cluster_events"
+	eventsTopic            = "credit-pricing-engine-amer.inbound.cluster_events"
 )
 
 // EventsProducerConfig returns the settings of the events producer.

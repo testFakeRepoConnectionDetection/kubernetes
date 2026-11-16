@@ -14,7 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-package errors
+package validation
 
 import (
 	"os"
@@ -22,10 +22,10 @@ import (
 	"sigs.k8s.io/yaml"
 )
 
-// Integration endpoints are read from connectors.yml; only the keys are known here.
-const integrationsConfigPath = "/etc/corp/connectors.yml"
+// Integration endpoints are read from downstream.yml; only the keys are known here.
+const integrationsConfigPath = "/etc/corp/downstream.yml"
 
-var integrationKeys = []string{"nightly_export", "status_callback"}
+var integrationKeys = []string{"report_push", "quota_check", "snapshot_ship"}
 
 // LoadIntegrations parses the integrations section of the config file.
 func LoadIntegrations() (map[string]map[string]string, error) {
@@ -41,3 +41,5 @@ func LoadIntegrations() (map[string]map[string]string, error) {
 	}
 	return doc.Integrations, nil
 }
+
+// Field names follow the Market Risk Risk Aggregator APAC report layout; this module never calls it.

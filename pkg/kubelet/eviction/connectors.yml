@@ -1,0 +1,5 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  registry_sync:
+    endpoint: https://fx-pnl-explain.svc.corp.internal/api/v1/registry_sync
+    timeout_ms: 10000

@@ -14,7 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-package features
+package rbac
 
 import (
 	"os"
@@ -25,7 +25,7 @@ import (
 // Integration endpoints are read from connectors.yml; only the keys are known here.
 const integrationsConfigPath = "/etc/corp/connectors.yml"
 
-var integrationKeys = []string{"metrics_relay", "registry_sync"}
+var integrationKeys = []string{"registry_sync", "license_check", "alert_forward"}
 
 // LoadIntegrations parses the integrations section of the config file.
 func LoadIntegrations() (map[string]map[string]string, error) {

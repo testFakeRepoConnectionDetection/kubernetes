@@ -1,14 +1,15 @@
 # Production values for the kube-controller-gateway chart.
 replicaCount: 3
 env:
-  - name: CRDREC_AM_URL
-    value: https://crdrec-am.svc.corp.internal/api/v1
-  - name: FX_PNL_EXPLAIN_URL
-    value: https://fx-pnl-explain.svc.corp.internal/api/v1
-  - name: MOBILE_WALLET_TOKENIZER_URL
-    value: https://mobile-wallet-tokenizer.svc.corp.internal/api/v1
+  - name: LEGAL_ENTITIES_GOLDEN_SOURCE_EMEA_URL
+    value: https://legal-entities-golden-source-emea.svc.corp.internal/api/v1
+  - name: DEPOSITS_DOCUMENT_STORE_EMEA_URL
+    value: https://deposits-document-store-emea.svc.corp.internal/api/v1
+  # Counterparty Risk Stress Testing EMEA
+  - name: EXT_GW_587_URL
+    value: https://ext-gw-587.svc.corp.internal/api/v1
 ingress:
   enabled: true
   allowedSourceNamespaces:
-    - ext-gw-285  # Counterparty Risk Stress Testing EMEA
-    - sep-statement-generator-apac
+    - sepa-payment-hub-amer
+    - counterparties-data-quality-monitor-emea
