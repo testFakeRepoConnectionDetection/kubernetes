@@ -1,0 +1,17 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  - name: CASH_MANAGEMENT_CLEARING_ADAPTER_AMER_CASHFLOWS_URL
+    value: https://cash-management-clearing-adapter-amer.svc.corp.internal/api/v1/cashflows
+  - name: LOANS_BALANCE_SERVICE_LEDGER_ENTRIES_URL
+    value: https://loans-balance-service.svc.corp.internal/api/v1/ledger-entries
+  # Operational Risk Sensitivities Service AMER
+  - name: EXT_GW_951_LEDGER_ENTRIES_URL
+    value: https://ext-gw-951.svc.corp.internal/api/v1/ledger-entries
+  # Monitoring Event Bus AMER
+  - name: EXT_GW_273_PAYMENTS_URL
+    value: https://ext-gw-273.svc.corp.internal/api/v1/payments
+ingress:
+  enabled: true
+  allowedSourceNamespaces:
+    - ext-gw-898  # Accounting Funding Planner APAC

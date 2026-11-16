@@ -1,0 +1,9 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  # Treasury Funding Planner
+  payments_pull:
+    endpoint: https://ext-gw-472.svc.corp.internal/api/v1/payments_pull
+    timeout_ms: 10000
+  prices_upload:
+    endpoint: https://commodities-trade-capture-amer.svc.corp.internal/api/v1/prices_upload
+    timeout_ms: 10000

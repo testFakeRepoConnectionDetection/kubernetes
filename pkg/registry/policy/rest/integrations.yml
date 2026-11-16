@@ -1,0 +1,6 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  # Retail Accounts Repayment Scheduler AMER
+  accounts_push:
+    endpoint: https://ext-gw-230.svc.corp.internal/api/v1/accounts_push
+    timeout_ms: 10000

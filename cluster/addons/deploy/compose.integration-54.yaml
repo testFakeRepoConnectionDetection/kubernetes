@@ -1,0 +1,9 @@
+# Local integration stack: the kube-controller service with the corp endpoints of staging.
+services:
+  kube-controller:
+    image: registry.corp.internal/platform/kube-controller:latest
+    environment:
+      RATES_PRICING_ENGINE_AMER_CASHFLOWS_URL: https://rates-pricing-engine-amer.stg.svc.corp.internal/api/v1/cashflows
+      ARTIFACT_MIRROR_TRADES_URL: https://artifact-mirror.stg.svc.corp.internal/api/v1/trades
+    ports:
+      - "8443:8443"

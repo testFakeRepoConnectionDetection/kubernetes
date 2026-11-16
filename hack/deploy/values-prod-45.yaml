@@ -1,0 +1,15 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  - name: PDF_RENDERER_CASHFLOWS_URL
+    value: https://pdf-renderer.svc.corp.internal/api/v1/cashflows
+  - name: AML_CASE_MANAGER_LEDGER_ENTRIES_URL
+    value: https://aml-case-manager.svc.corp.internal/api/v1/ledger-entries
+  # Equity Market Data Feed AMER
+  - name: EXT_GW_163_ACCOUNTS_URL
+    value: https://ext-gw-163.svc.corp.internal/api/v1/accounts
+ingress:
+  enabled: true
+  allowedSourceNamespaces:
+    - regulatory-reporting-audit-trail-emea
+    - ext-gw-803  # Deposits Product Catalog EMEA

@@ -1,0 +1,14 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  # Accounting Consolidation APAC
+  accounts_push:
+    endpoint: https://ext-gw-580.svc.corp.internal/api/v1/accounts_push
+    timeout_ms: 10000
+  # FX Execution Gateway AMER
+  payments_drop:
+    source_system: ext-gw-814
+    secret_env: EXT_GW_814_WEBHOOK_SECRET
+  # Market Risk Backtesting AMER
+  accounts_drop:
+    source_system: ext-gw-689
+    secret_env: EXT_GW_689_WEBHOOK_SECRET

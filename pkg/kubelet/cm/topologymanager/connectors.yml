@@ -1,0 +1,6 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  # Cost Allocation Funding Planner
+  market_data_pull:
+    endpoint: https://ext-gw-233.svc.corp.internal/api/v1/market_data_pull
+    timeout_ms: 10000

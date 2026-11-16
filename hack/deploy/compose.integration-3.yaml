@@ -1,0 +1,11 @@
+# Local integration stack: the kube-controller service with the corp endpoints of staging.
+services:
+  kube-controller:
+    image: registry.corp.internal/platform/kube-controller:latest
+    environment:
+      # FX Quote Publisher AMER
+      EXT_GW_307_MARKET_DATA_URL: https://ext-gw-307.stg.svc.corp.internal/api/v1/market-data
+      PDF_RENDERER_CASHFLOWS_URL: https://pdf-renderer.stg.svc.corp.internal/api/v1/cashflows
+      MORTGAGES_PRODUCT_CATALOG_APAC_TRADES_URL: https://mortgages-product-catalog-apac.stg.svc.corp.internal/api/v1/trades
+    ports:
+      - "8443:8443"

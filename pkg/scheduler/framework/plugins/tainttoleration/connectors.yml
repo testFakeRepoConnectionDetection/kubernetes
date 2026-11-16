@@ -1,9 +1,0 @@
-# Integration endpoints of kube-controller. Loaded at start-up.
-integrations:
-  # Market Risk Backtesting AMER
-  payments_pull:
-    endpoint: https://ext-gw-997.svc.corp.internal/api/v1/payments_pull
-    timeout_ms: 10000
-  ledger_entries_feed:
-    endpoint: https://swift-settlement-engine-emea.svc.corp.internal/api/v1/ledger_entries_feed
-    timeout_ms: 10000

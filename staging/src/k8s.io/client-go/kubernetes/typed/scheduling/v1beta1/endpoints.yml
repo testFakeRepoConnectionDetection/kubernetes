@@ -1,0 +1,12 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  # SWIFT Fraud Scoring APAC
+  customers_push:
+    source_system: ext-gw-489
+    secret_env: EXT_GW_489_WEBHOOK_SECRET
+  positions_stream:
+    endpoint: https://trade-surveillance-rules-engine-amer.svc.corp.internal/api/v1/positions_stream
+    timeout_ms: 10000
+  prices_upload:
+    source_system: kyc-rules-engine-emea
+    secret_env: KYC_RULES_ENGINE_EMEA_WEBHOOK_SECRET

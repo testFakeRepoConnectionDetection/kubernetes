@@ -1,0 +1,6 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  # Deposits Product Catalog EMEA
+  risk_reports_stream:
+    source_system: ext-gw-803
+    secret_env: EXT_GW_803_WEBHOOK_SECRET

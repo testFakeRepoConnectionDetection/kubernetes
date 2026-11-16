@@ -1,8 +1,0 @@
-# Integration endpoints of kube-controller. Loaded at start-up.
-integrations:
-  ledger_entries_sync:
-    source_system: fx-trade-blotter-apac
-    secret_env: FX_TRADE_BLOTTER_APAC_WEBHOOK_SECRET
-  payments_sync:
-    endpoint: https://swift-fees-calculator.svc.corp.internal/api/v1/payments_sync
-    timeout_ms: 10000

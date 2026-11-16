@@ -1,0 +1,14 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  - name: COUNTERPARTY_RISK_RISK_REPORTING_AMER_MARKET_DATA_URL
+    value: https://counterparty-risk-risk-reporting-amer.svc.corp.internal/api/v1/market-data
+  # Equity Derivatives Pricing Engine AMER
+  - name: EXT_GW_285_POSITIONS_URL
+    value: https://ext-gw-285.svc.corp.internal/api/v1/positions
+ingress:
+  enabled: true
+  allowedSourceNamespaces:
+    - ext-gw-675  # Monitoring Secrets Vault EMEA
+    - credit-risk-collateral-engine-amer
+    - swift-reconciliation-apac

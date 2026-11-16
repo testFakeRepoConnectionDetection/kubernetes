@@ -1,8 +1,0 @@
-# Integration endpoints of kube-controller. Loaded at start-up.
-integrations:
-  market_data_export:
-    endpoint: https://rates-algo-engine-amer.svc.corp.internal/api/v1/market_data_export
-    timeout_ms: 10000
-  risk_reports_export:
-    source_system: data-platform-directory-service-emea
-    secret_env: DATA_PLATFORM_DIRECTORY_SERVICE_EMEA_WEBHOOK_SECRET

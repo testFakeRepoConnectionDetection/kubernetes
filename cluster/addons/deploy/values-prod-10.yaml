@@ -1,16 +1,13 @@
 # Production values for the kube-controller-gateway chart.
 replicaCount: 3
 env:
-  - name: CALENDARS_MAPPING_SERVICE_ACCOUNTS_URL
-    value: https://calendars-mapping-service.svc.corp.internal/api/v1/accounts
-  # Accounting Accruals Engine
-  - name: EXT_GW_571_MARKET_DATA_URL
-    value: https://ext-gw-571.svc.corp.internal/api/v1/market-data
-  - name: AML_SCREENING_ENGINE_PRICES_URL
-    value: https://aml-screening-engine.svc.corp.internal/api/v1/prices
-  - name: GENERAL_LEDGER_FUNDING_PLANNER_PAYMENTS_URL
-    value: https://general-ledger-funding-planner.svc.corp.internal/api/v1/payments
+  - name: COMMODITIES_MARKET_DATA_FEED_APAC_TRADES_URL
+    value: https://commodities-market-data-feed-apac.svc.corp.internal/api/v1/trades
+  # Cost Allocation Close Manager EMEA
+  - name: EXT_GW_335_POSITIONS_URL
+    value: https://ext-gw-335.svc.corp.internal/api/v1/positions
 ingress:
   enabled: true
   allowedSourceNamespaces:
-    - ext-gw-677  # Loans Document Store
+    - cards-payment-gateway-emea
+    - liquidity-risk-exposure-calculator-amer

@@ -1,0 +1,10 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  # Market Risk Stress Testing AMER
+  accounts_export:
+    endpoint: https://ext-gw-673.svc.corp.internal/api/v1/accounts_export
+    timeout_ms: 10000
+  # FX Execution Gateway EMEA
+  customers_export:
+    endpoint: https://ext-gw-635.svc.corp.internal/api/v1/customers_export
+    timeout_ms: 10000

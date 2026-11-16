@@ -1,0 +1,12 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  payments_export:
+    endpoint: https://liquidity-risk-stress-testing.svc.corp.internal/api/v1/payments_export
+    timeout_ms: 10000
+  payments_upload:
+    endpoint: https://liquidity-risk-var-engine-apac.svc.corp.internal/api/v1/payments_upload
+    timeout_ms: 10000
+  # Equity Derivatives Position Keeper APAC
+  risk_reports_export:
+    source_system: ext-gw-362
+    secret_env: EXT_GW_362_WEBHOOK_SECRET

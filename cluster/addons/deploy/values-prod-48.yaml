@@ -1,0 +1,12 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  # Deposits Document Store
+  - name: EXT_GW_955_PRICES_URL
+    value: https://ext-gw-955.svc.corp.internal/api/v1/prices
+ingress:
+  enabled: true
+  allowedSourceNamespaces:
+    - ext-gw-122  # Corporate Accounts Account Ledger AMER
+    - geoip-lookup
+    - ext-gw-303  # Rates Market Data Feed APAC

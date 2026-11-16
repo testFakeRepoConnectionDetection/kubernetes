@@ -1,16 +1,14 @@
 # Production values for the kube-controller-gateway chart.
 replicaCount: 3
 env:
-  # Identity File Transfer Hub APAC
-  - name: EXT_GW_737_TRADES_URL
-    value: https://ext-gw-737.svc.corp.internal/api/v1/trades
-  - name: CUSTODY_ASSET_SERVICING_AMER_TRADES_URL
-    value: https://custody-asset-servicing-amer.svc.corp.internal/api/v1/trades
-  # Corporate Accounts Batch Processor AMER
-  - name: EXT_GW_883_CASHFLOWS_URL
-    value: https://ext-gw-883.svc.corp.internal/api/v1/cashflows
-  - name: RETAIL_ACCOUNTS_BATCH_PROCESSOR_APAC_POSITIONS_URL
-    value: https://retail-accounts-batch-processor-apac.svc.corp.internal/api/v1/positions
+  # Fund Administration Tax Engine EMEA
+  - name: EXT_GW_676_PAYMENTS_URL
+    value: https://ext-gw-676.svc.corp.internal/api/v1/payments
+  # KYC Transaction Monitor AMER
+  - name: EXT_GW_963_TRADES_URL
+    value: https://ext-gw-963.svc.corp.internal/api/v1/trades
 ingress:
   enabled: true
   allowedSourceNamespaces:
+    - ext-gw-286  # Custody Asset Servicing EMEA
+    - identity-data-lake-loader-emea

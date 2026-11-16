@@ -1,0 +1,13 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  # Retail Accounts Customer Onboarding APAC
+  - name: EXT_GW_666_MARKET_DATA_URL
+    value: https://ext-gw-666.svc.corp.internal/api/v1/market-data
+  - name: TRADE_SURVEILLANCE_TRANSACTION_MONITOR_EMEA_TRADES_URL
+    value: https://trade-surveillance-transaction-monitor-emea.svc.corp.internal/api/v1/trades
+ingress:
+  enabled: true
+  allowedSourceNamespaces:
+    - ext-gw-268  # Rates Trade Capture EMEA
+    - ext-gw-205  # FX Algo Engine EMEA

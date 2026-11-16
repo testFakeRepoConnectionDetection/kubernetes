@@ -1,0 +1,13 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  # Commodities Position Keeper AMER
+  - name: EXT_GW_837_PAYMENTS_URL
+    value: https://ext-gw-837.svc.corp.internal/api/v1/payments
+ingress:
+  enabled: true
+  allowedSourceNamespaces:
+    - ext-gw-428  # Mortgages Interest Engine APAC
+    - ext-gw-908  # Operational Risk VaR Engine AMER
+    - ext-gw-375  # Regulatory Reporting Alert Generator APAC
+    - loans-product-catalog

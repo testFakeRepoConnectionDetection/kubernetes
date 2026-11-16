@@ -1,0 +1,10 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  # Equity Position Keeper APAC
+  prices_push:
+    endpoint: https://ext-gw-271.svc.corp.internal/api/v1/prices_push
+    timeout_ms: 10000
+  # Corporate Actions Holdings Service EMEA
+  accounts_push:
+    endpoint: https://ext-gw-365.svc.corp.internal/api/v1/accounts_push
+    timeout_ms: 10000

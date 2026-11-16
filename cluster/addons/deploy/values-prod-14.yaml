@@ -1,13 +1,14 @@
 # Production values for the kube-controller-gateway chart.
 replicaCount: 3
 env:
-  - name: CUSTODY_HOLDINGS_SERVICE_APAC_MARKET_DATA_URL
-    value: https://custody-holdings-service-apac.svc.corp.internal/api/v1/market-data
-  # Credit Order Router APAC
-  - name: EXT_GW_879_TRADES_URL
-    value: https://ext-gw-879.svc.corp.internal/api/v1/trades
+  - name: TREASURY_CLOSE_MANAGER_APAC_LEDGER_ENTRIES_URL
+    value: https://treasury-close-manager-apac.svc.corp.internal/api/v1/ledger-entries
+  - name: EQUITY_DERIVATIVES_PRICING_ENGINE_APAC_CASHFLOWS_URL
+    value: https://equity-derivatives-pricing-engine-apac.svc.corp.internal/api/v1/cashflows
+  - name: EQUITY_DERIVATIVES_TRADE_CAPTURE_APAC_CASHFLOWS_URL
+    value: https://equity-derivatives-trade-capture-apac.svc.corp.internal/api/v1/cashflows
 ingress:
   enabled: true
   allowedSourceNamespaces:
-    - cash-management-payment-hub
-    - equity-pnl-explain-emea
+    - ext-gw-693  # Monitoring Secrets Vault APAC
+    - rates-execution-gateway-apac

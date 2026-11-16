@@ -1,0 +1,13 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  # Data Platform Notification Service EMEA
+  - name: EXT_GW_777_RISK_REPORTS_URL
+    value: https://ext-gw-777.svc.corp.internal/api/v1/risk-reports
+ingress:
+  enabled: true
+  allowedSourceNamespaces:
+    - cards-statement-generator-emea
+    - cards-settlement-engine-amer
+    - ext-gw-874  # Cash Management Payment Gateway APAC
+    - deposits-batch-processor-amer

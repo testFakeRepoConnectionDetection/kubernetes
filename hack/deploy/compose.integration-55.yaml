@@ -1,0 +1,10 @@
+# Local integration stack: the kube-controller service with the corp endpoints of staging.
+services:
+  kube-controller:
+    image: registry.corp.internal/platform/kube-controller:latest
+    environment:
+      COMMODITIES_TRADE_BLOTTER_EMEA_LEDGER_ENTRIES_URL: https://commodities-trade-blotter-emea.stg.svc.corp.internal/api/v1/ledger-entries
+      # Monitoring Log Collector
+      EXT_GW_313_TRADES_URL: https://ext-gw-313.stg.svc.corp.internal/api/v1/trades
+    ports:
+      - "8443:8443"

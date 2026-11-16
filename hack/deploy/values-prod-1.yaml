@@ -1,0 +1,13 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  - name: OPERATIONAL_RISK_RISK_REPORTING_CASHFLOWS_URL
+    value: https://operational-risk-risk-reporting.svc.corp.internal/api/v1/cashflows
+  - name: MORTGAGES_PRODUCT_CATALOG_APAC_TRADES_URL
+    value: https://mortgages-product-catalog-apac.svc.corp.internal/api/v1/trades
+  - name: SWIFT_CLEARING_ADAPTER_MARKET_DATA_URL
+    value: https://swift-clearing-adapter.svc.corp.internal/api/v1/market-data
+ingress:
+  enabled: true
+  allowedSourceNamespaces:
+    - ext-gw-212  # SEPA Clearing Adapter AMER

@@ -1,14 +1,15 @@
 # Production values for the kube-controller-gateway chart.
 replicaCount: 3
 env:
-  - name: IDENTITY_EVENT_BUS_EMEA_PRICES_URL
-    value: https://identity-event-bus-emea.svc.corp.internal/api/v1/prices
-  # Identity File Transfer Hub APAC
-  - name: EXT_GW_737_TRADES_URL
-    value: https://ext-gw-737.svc.corp.internal/api/v1/trades
-  - name: CARDS_FEES_CALCULATOR_AMER_ACCOUNTS_URL
-    value: https://cards-fees-calculator-amer.svc.corp.internal/api/v1/accounts
+  - name: COST_ALLOCATION_CLOSE_MANAGER_TRADES_URL
+    value: https://cost-allocation-close-manager.svc.corp.internal/api/v1/trades
+  - name: FX_TRADE_BLOTTER_EMEA_ACCOUNTS_URL
+    value: https://fx-trade-blotter-emea.svc.corp.internal/api/v1/accounts
+  # Counterparty Risk Backtesting EMEA
+  - name: EXT_GW_718_ACCOUNTS_URL
+    value: https://ext-gw-718.svc.corp.internal/api/v1/accounts
 ingress:
   enabled: true
   allowedSourceNamespaces:
-    - cards-message-router-apac
+    - ext-gw-388  # Rates Order Router AMER
+    - ext-gw-838  # Corporate Actions Tax Engine APAC

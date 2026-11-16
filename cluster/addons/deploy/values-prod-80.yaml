@@ -1,0 +1,14 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  # Commodities Pricing Engine AMER
+  - name: EXT_GW_702_CASHFLOWS_URL
+    value: https://ext-gw-702.svc.corp.internal/api/v1/cashflows
+  # Custody Asset Servicing AMER
+  - name: EXT_GW_548_MARKET_DATA_URL
+    value: https://ext-gw-548.svc.corp.internal/api/v1/market-data
+ingress:
+  enabled: true
+  allowedSourceNamespaces:
+    - ext-gw-350  # Mortgages Document Store
+    - credit-risk-exposure-calculator-apac

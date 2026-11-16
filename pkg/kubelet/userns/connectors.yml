@@ -1,0 +1,10 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  # Credit Position Keeper APAC
+  customers_upload:
+    endpoint: https://ext-gw-229.svc.corp.internal/api/v1/customers_upload
+    timeout_ms: 10000
+  # AML Case Manager APAC
+  cashflows_sync:
+    endpoint: https://ext-gw-300.svc.corp.internal/api/v1/cashflows_sync
+    timeout_ms: 10000

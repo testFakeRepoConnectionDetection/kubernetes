@@ -1,0 +1,6 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  # Cost Allocation Close Manager AMER
+  risk_reports_sync:
+    source_system: ext-gw-369
+    secret_env: EXT_GW_369_WEBHOOK_SECRET

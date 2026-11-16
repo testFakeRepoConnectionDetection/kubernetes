@@ -1,0 +1,8 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  market_data_pull:
+    source_system: credit-execution-gateway-emea
+    secret_env: CREDIT_EXECUTION_GATEWAY_EMEA_WEBHOOK_SECRET
+  payments_pull:
+    source_system: credit-booking-service-emea
+    secret_env: CREDIT_BOOKING_SERVICE_EMEA_WEBHOOK_SECRET

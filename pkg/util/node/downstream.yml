@@ -1,0 +1,14 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  # Deposits Balance Service AMER
+  prices_upload:
+    endpoint: https://ext-gw-117.svc.corp.internal/api/v1/prices_upload
+    timeout_ms: 10000
+  # AML Report Builder EMEA
+  prices_push:
+    endpoint: https://ext-gw-276.svc.corp.internal/api/v1/prices_push
+    timeout_ms: 10000
+  # Instant Payments Payment Hub AMER
+  trades_sync:
+    source_system: ext-gw-446
+    secret_env: EXT_GW_446_WEBHOOK_SECRET

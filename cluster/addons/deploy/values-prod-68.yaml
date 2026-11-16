@@ -1,0 +1,11 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  - name: GENERAL_LEDGER_CONSOLIDATION_EMEA_ACCOUNTS_URL
+    value: https://general-ledger-consolidation-emea.svc.corp.internal/api/v1/accounts
+ingress:
+  enabled: true
+  allowedSourceNamespaces:
+    - ext-gw-145  # Messaging Scheduler AMER
+    - cost-allocation-funding-planner-amer
+    - ext-gw-380  # Integration Token Service EMEA

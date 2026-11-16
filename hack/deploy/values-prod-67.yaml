@@ -1,0 +1,13 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  - name: RETAIL_ACCOUNTS_INTEREST_ENGINE_AMER_LEDGER_ENTRIES_URL
+    value: https://retail-accounts-interest-engine-amer.svc.corp.internal/api/v1/ledger-entries
+  # Corporate Actions NAV Calculator EMEA
+  - name: EXT_GW_474_LEDGER_ENTRIES_URL
+    value: https://ext-gw-474.svc.corp.internal/api/v1/ledger-entries
+ingress:
+  enabled: true
+  allowedSourceNamespaces:
+    - integration-scheduler-apac
+    - accounting-accruals-engine-amer

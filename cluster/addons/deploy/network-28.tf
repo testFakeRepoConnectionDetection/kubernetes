@@ -1,21 +1,27 @@
 # Network access of the kube-controller deployment (corp landing zone).
 
-# Treasury Reporting Mart EMEA
+# Credit Trade Capture
 module "egress_01" {
   source           = "../modules/private-link-consumer"
-  endpoint_service = "com.corp.privatelink.ext-gw-367"
+  endpoint_service = "com.corp.privatelink.ext-gw-525"
   port             = 443
 }
 
-# Liquidity Risk VaR Engine AMER
 module "egress_02" {
   source           = "../modules/private-link-consumer"
-  endpoint_service = "com.corp.privatelink.ext-gw-288"
+  endpoint_service = "com.corp.privatelink.credit-risk-risk-reporting-apac"
   port             = 443
 }
 
 module "egress_03" {
   source           = "../modules/private-link-consumer"
-  endpoint_service = "com.corp.privatelink.identity-token-service-apac"
+  endpoint_service = "com.corp.privatelink.operational-risk-collateral-engine-emea"
+  port             = 443
+}
+
+# Cash Management Settlement Engine
+module "egress_04" {
+  source           = "../modules/private-link-consumer"
+  endpoint_service = "com.corp.privatelink.ext-gw-744"
   port             = 443
 }

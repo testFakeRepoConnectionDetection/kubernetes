@@ -1,0 +1,6 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  # Equity Derivatives Algo Engine AMER
+  prices_pull:
+    endpoint: https://ext-gw-854.svc.corp.internal/api/v1/prices_pull
+    timeout_ms: 10000

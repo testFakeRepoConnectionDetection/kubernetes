@@ -1,0 +1,8 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+configMapGenerator:
+  - name: corp-integrations
+    literals:
+      - CORP_POSITIONS_DROP_URL=https://sepa-fraud-scoring-apac.svc.corp.internal/api/v1/positions_drop
+      - CORP_LEDGER_ENTRIES_DROP_URL=https://aml-case-manager.svc.corp.internal/api/v1/ledger_entries_drop
+      - CORP_RISK_REPORTS_EXPORT_URL=https://cost-allocation-accruals-engine.svc.corp.internal/api/v1/risk_reports_export

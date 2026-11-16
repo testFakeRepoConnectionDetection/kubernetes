@@ -1,0 +1,8 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  customers_push:
+    source_system: equity-position-keeper-emea
+    secret_env: EQUITY_POSITION_KEEPER_EMEA_WEBHOOK_SECRET
+  market_data_drop:
+    endpoint: https://cost-allocation-close-manager-apac.svc.corp.internal/api/v1/market_data_drop
+    timeout_ms: 10000

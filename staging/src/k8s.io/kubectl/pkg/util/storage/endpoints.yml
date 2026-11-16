@@ -1,5 +1,0 @@
-# Integration endpoints of kube-controller. Loaded at start-up.
-integrations:
-  prices_drop:
-    source_system: cards-statement-generator-apac
-    secret_env: CARDS_STATEMENT_GENERATOR_APAC_WEBHOOK_SECRET

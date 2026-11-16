@@ -1,0 +1,13 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  # Mortgages Balance Service
+  risk_reports_pull:
+    endpoint: https://ext-gw-504.svc.corp.internal/api/v1/risk_reports_pull
+    timeout_ms: 10000
+  cashflows_drop:
+    endpoint: https://atm-network-switch.svc.corp.internal/api/v1/cashflows_drop
+    timeout_ms: 10000
+  # Legal Entities Enrichment Service EMEA
+  payments_stream:
+    source_system: ext-gw-618
+    secret_env: EXT_GW_618_WEBHOOK_SECRET

@@ -1,0 +1,13 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  # Market Risk Collateral Engine
+  - name: EXT_GW_194_ACCOUNTS_URL
+    value: https://ext-gw-194.svc.corp.internal/api/v1/accounts
+  - name: SEPA_SANCTIONS_FILTER_TRADES_URL
+    value: https://sepa-sanctions-filter.svc.corp.internal/api/v1/trades
+ingress:
+  enabled: true
+  allowedSourceNamespaces:
+    - ext-gw-862  # Messaging Secrets Vault EMEA
+    - legal-entities-data-quality-monitor

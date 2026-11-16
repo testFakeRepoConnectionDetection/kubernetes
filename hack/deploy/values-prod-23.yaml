@@ -1,0 +1,16 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  - name: SEPA_FRAUD_SCORING_APAC_POSITIONS_URL
+    value: https://sepa-fraud-scoring-apac.svc.corp.internal/api/v1/positions
+  - name: MORTGAGES_PRODUCT_CATALOG_APAC_TRADES_URL
+    value: https://mortgages-product-catalog-apac.svc.corp.internal/api/v1/trades
+  # FX Pricing Engine
+  - name: EXT_GW_148_LEDGER_ENTRIES_URL
+    value: https://ext-gw-148.svc.corp.internal/api/v1/ledger-entries
+  # SWIFT Settlement Engine
+  - name: EXT_GW_401_LEDGER_ENTRIES_URL
+    value: https://ext-gw-401.svc.corp.internal/api/v1/ledger-entries
+ingress:
+  enabled: true
+  allowedSourceNamespaces:

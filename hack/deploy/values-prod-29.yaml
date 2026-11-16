@@ -1,12 +1,12 @@
 # Production values for the kube-controller-gateway chart.
 replicaCount: 3
 env:
-  - name: SEPA_RECONCILIATION_AMER_PAYMENTS_URL
-    value: https://sepa-reconciliation-amer.svc.corp.internal/api/v1/payments
-  - name: COMMODITIES_TRADE_BLOTTER_EMEA_LEDGER_ENTRIES_URL
-    value: https://commodities-trade-blotter-emea.svc.corp.internal/api/v1/ledger-entries
+  # Operational Risk Sensitivities Service AMER
+  - name: EXT_GW_951_LEDGER_ENTRIES_URL
+    value: https://ext-gw-951.svc.corp.internal/api/v1/ledger-entries
 ingress:
   enabled: true
   allowedSourceNamespaces:
-    - corporate-actions-tax-engine-amer
-    - regulatory-reporting-alert-generator-amer
+    - ext-gw-622  # Monitoring File Transfer Hub
+    - liquidity-risk-exposure-calculator-amer
+    - ext-gw-145  # Messaging Scheduler AMER

@@ -1,0 +1,11 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  - name: CREDIT_ORDER_ROUTER_AMER_PRICES_URL
+    value: https://credit-order-router-amer.svc.corp.internal/api/v1/prices
+ingress:
+  enabled: true
+  allowedSourceNamespaces:
+    - ext-gw-548  # KYC Evidence Archive EMEA
+    - kyc-report-builder
+    - ext-gw-581  # Data Platform API Gateway EMEA

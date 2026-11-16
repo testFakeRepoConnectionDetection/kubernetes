@@ -1,0 +1,12 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  - name: SETTLEMENT_HOLDINGS_SERVICE_AMER_TRADES_URL
+    value: https://settlement-holdings-service-amer.svc.corp.internal/api/v1/trades
+ingress:
+  enabled: true
+  allowedSourceNamespaces:
+    - instant-payments-sanctions-filter
+    - ext-gw-950  # Loans Account Ledger EMEA
+    - ext-gw-768  # Rates Trade Capture APAC
+    - ext-gw-879  # Monitoring Directory Service

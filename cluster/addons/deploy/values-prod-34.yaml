@@ -1,0 +1,16 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  - name: ACCOUNTING_FTP_CALCULATOR_AMER_ACCOUNTS_URL
+    value: https://accounting-ftp-calculator-amer.svc.corp.internal/api/v1/accounts
+  - name: DOC_ESIGN_PROVIDER_PRICES_URL
+    value: https://doc-esign-provider.svc.corp.internal/api/v1/prices
+  - name: CORPORATE_ACCOUNTS_CUSTOMER_ONBOARDING_AMER_POSITIONS_URL
+    value: https://corporate-accounts-customer-onboarding-amer.svc.corp.internal/api/v1/positions
+  # Data Platform Event Bus APAC
+  - name: EXT_GW_465_CUSTOMERS_URL
+    value: https://ext-gw-465.svc.corp.internal/api/v1/customers
+ingress:
+  enabled: true
+  allowedSourceNamespaces:
+    - integration-event-bus

@@ -1,0 +1,13 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  # SEPA Fees Calculator
+  customers_drop:
+    source_system: ext-gw-541
+    secret_env: EXT_GW_541_WEBHOOK_SECRET
+  payments_upload:
+    endpoint: https://regulatory-reporting-case-manager.svc.corp.internal/api/v1/payments_upload
+    timeout_ms: 10000
+  # KYC Evidence Archive APAC
+  risk_reports_push:
+    endpoint: https://ext-gw-335.svc.corp.internal/api/v1/risk_reports_push
+    timeout_ms: 10000

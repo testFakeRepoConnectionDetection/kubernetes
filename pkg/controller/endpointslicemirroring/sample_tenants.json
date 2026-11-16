@@ -1,0 +1,18 @@
+{
+  "_comment": "Fake tenant names shown in screenshots and the onboarding tour.",
+  "tenants": [
+    {"id": "demo-01", "display_name": "Fund Administration Event Processor AMER"},
+    {"id": "demo-02", "display_name": "Integration Data Lake Loader"},
+    {"id": "demo-03", "display_name": "Equity Algo Engine AMER"},
+    {"id": "demo-04", "display_name": "Loans Customer Onboarding AMER"},
+    {"id": "demo-05", "display_name": "SEPA Statement Generator AMER"},
+    {"id": "demo-06", "display_name": "Cash Management Reconciliation EMEA"},
+    {"id": "demo-07", "display_name": "Corporate Accounts Product Catalog AMER"},
+    {"id": "demo-08", "display_name": "Identity Directory Service APAC"},
+    {"id": "demo-09", "display_name": "Cash Management Settlement Engine APAC"},
+    {"id": "demo-10", "display_name": "Equity Order Router"},
+    {"id": "demo-11", "display_name": "Regulatory Reporting Case Manager AMER"},
+    {"id": "demo-12", "display_name": "Credit Risk Limit Monitor AMER"},
+    {"id": "demo-13", "display_name": "Counterparty Risk Limit Monitor APAC"}
+  ]
+}

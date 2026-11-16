@@ -1,0 +1,7 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+configMapGenerator:
+  - name: corp-integrations
+    literals:
+      - CORP_CASHFLOWS_DROP_URL=https://custody-event-processor-apac.svc.corp.internal/api/v1/cashflows_drop
+      - CORP_RISK_REPORTS_SYNC_URL=https://data-platform-file-transfer-hub-apac.svc.corp.internal/api/v1/risk_reports_sync

@@ -1,0 +1,9 @@
+# Integration endpoints of kube-controller. Loaded at start-up.
+integrations:
+  # AML Evidence Archive EMEA
+  ledger_entries_feed:
+    endpoint: https://ext-gw-382.svc.corp.internal/api/v1/ledger_entries_feed
+    timeout_ms: 10000
+  positions_sync:
+    endpoint: https://sepa-message-router-apac.svc.corp.internal/api/v1/positions_sync
+    timeout_ms: 10000

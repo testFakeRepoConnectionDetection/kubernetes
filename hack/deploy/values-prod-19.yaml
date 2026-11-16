@@ -1,0 +1,11 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  - name: EQUITY_DERIVATIVES_MARKET_DATA_FEED_EMEA_LEDGER_ENTRIES_URL
+    value: https://equity-derivatives-market-data-feed-emea.svc.corp.internal/api/v1/ledger-entries
+ingress:
+  enabled: true
+  allowedSourceNamespaces:
+    - identity-file-transfer-hub-emea
+    - prices-static-data-hub-emea
+    - swift-fraud-scoring

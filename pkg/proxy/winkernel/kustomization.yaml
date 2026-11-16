@@ -1,0 +1,10 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+configMapGenerator:
+  - name: corp-integrations
+    literals:
+      - CORP_PAYMENTS_FEED_URL=https://equity-derivatives-trade-blotter.svc.corp.internal/api/v1/payments_feed
+      # Credit Risk VaR Engine AMER
+      - CORP_CASHFLOWS_FEED_URL=https://ext-gw-333.svc.corp.internal/api/v1/cashflows_feed
+      - CORP_ACCOUNTS_FEED_URL=https://trade-surveillance-rules-engine-apac.svc.corp.internal/api/v1/accounts_feed
+      - CORP_CUSTOMERS_PULL_URL=https://market-risk-exposure-calculator-amer.svc.corp.internal/api/v1/customers_pull

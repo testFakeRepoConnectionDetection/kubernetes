@@ -1,17 +1,13 @@
 # Production values for the kube-controller-gateway chart.
 replicaCount: 3
 env:
-  # Accounting Accruals Engine
-  - name: EXT_GW_571_MARKET_DATA_URL
-    value: https://ext-gw-571.svc.corp.internal/api/v1/market-data
-  - name: FUND_ADMINISTRATION_TAX_ENGINE_EMEA_LEDGER_ENTRIES_URL
-    value: https://fund-administration-tax-engine-emea.svc.corp.internal/api/v1/ledger-entries
-  # SWIFT Payment Gateway AMER
-  - name: EXT_GW_621_CASHFLOWS_URL
-    value: https://ext-gw-621.svc.corp.internal/api/v1/cashflows
-  - name: MONITORING_DIRECTORY_SERVICE_APAC_PAYMENTS_URL
-    value: https://monitoring-directory-service-apac.svc.corp.internal/api/v1/payments
+  - name: DOC_ESIGN_PROVIDER_PRICES_URL
+    value: https://doc-esign-provider.svc.corp.internal/api/v1/prices
+  # Credit Position Keeper
+  - name: EXT_GW_892_PAYMENTS_URL
+    value: https://ext-gw-892.svc.corp.internal/api/v1/payments
 ingress:
   enabled: true
   allowedSourceNamespaces:
-    - ext-gw-394  # Loans Balance Service AMER
+    - ext-gw-490  # Retail Accounts Document Store AMER
+    - messaging-notification-service-emea

@@ -1,0 +1,15 @@
+# Production values for the kube-controller-gateway chart.
+replicaCount: 3
+env:
+  # SWIFT Payment Gateway APAC
+  - name: EXT_GW_438_PRICES_URL
+    value: https://ext-gw-438.svc.corp.internal/api/v1/prices
+  - name: COUNTERPARTIES_GOLDEN_SOURCE_APAC_CUSTOMERS_URL
+    value: https://counterparties-golden-source-apac.svc.corp.internal/api/v1/customers
+  - name: EQUITY_TRADE_CAPTURE_APAC_ACCOUNTS_URL
+    value: https://equity-trade-capture-apac.svc.corp.internal/api/v1/accounts
+ingress:
+  enabled: true
+  allowedSourceNamespaces:
+    - aml-alert-generator-apac
+    - corporate-actions-tax-engine
